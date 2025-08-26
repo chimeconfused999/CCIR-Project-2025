@@ -1,0 +1,10 @@
+script: phantomjs test/runner.js test/index.html
+notifications:
+  on_success: change
+  on_failure: always
+  slack:
+    rooms:
+      # Generate with
+      #     travis encrypt "khanacademy:<token>" --add notifications.slack.rooms
+      # where <token> is from the Slack integration settings.
+      secure: TnzVhxCX5mQIscOAlLKVgqeRj63Hu9v23CUkWV5mPzAnbPWei+Jr6DH+tqC/4DgTWULmlxQFb2t1+Yj0wyfCDT43xqVoot8FptBlgrUAiSpNKj8iRaDcL779h9DRegKtK0j1FzQcimXRtn9eF6aO6ikzMcgZZ6c/VvCaJXjETzA=
