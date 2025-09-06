@@ -1,21 +1,27 @@
 # train_deberta_math_classifiers.py
 # Fine-tunes DeBERTa-v3-large to classify SUBJECT and LEVEL on a MATH-like dataset.
-# It AUTO-DETECTS field names and falls back to folder names for subject.
+# - Auto-detects field names (problem/subject/level) and falls back to folder name for subject.
+# - Uses Transformers 4.56+ argument names (eval_strategy/save_strategy/logging_strategy).
+# - Keeps _path so we can dump per-file predictions.
 
 import os, json, pathlib, random, re
 import numpy as np
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple
 from datasets import Dataset, DatasetDict
-from transformers import (AutoTokenizer, AutoModelForSequenceClassification,
-                          TrainingArguments, Trainer)
+from transformers import (
+    AutoTokenizer,
+    AutoModelForSequenceClassification,
+    TrainingArguments,
+    Trainer,
+)
 import evaluate
 from sklearn.metrics import classification_report, confusion_matrix
 
 # -------------------------
 # Config
 # -------------------------
-DATA_ROOT = "MATH"      # change if your folder name is different
+DATA_ROOT = "MATH"      # <- change if your dataset folder is named differently
 MODEL_NAME = "microsoft/deberta-v3-large"
 MAX_LEN = 512
 SEED = 42
@@ -36,9 +42,11 @@ CANDIDATE_LEVEL_KEYS   = ["level", "difficulty", "difficulty_level", "difficulty
 LEVEL_RE = re.compile(r"(?:level\s*)?(\d+)", re.IGNORECASE)
 
 def normalize_level(raw: str) -> str:
-    if not raw: return "Level ?"
-    m = LEVEL_RE.search(str(raw))
-    return f"Level {m.group(1)}" if m else str(raw).strip()
+    if raw is None:
+        return "Level ?"
+    s = str(raw)
+    m = LEVEL_RE.search(s)
+    return f"Level {m.group(1)}" if m else s.strip()
 
 def discover_jsons(root_dir: str, split: str) -> List[str]:
     base = pathlib.Path(root_dir) / split
@@ -48,14 +56,12 @@ def load_split_as_list(root_dir: str, split: str) -> List[Dict]:
     items = []
     for path in discover_jsons(root_dir, split):
         data = json.loads(pathlib.Path(path).read_text(encoding="utf-8"))
-        # Keep all original keys; we’ll detect names later
         data["_path"] = path
-        # Also store subject_from_path (folder name under split/)
+        # subject from folder: .../train/<SUBJECT>/file.json
         try:
-            subj_from_path = pathlib.Path(path).parent.name
+            data["_subject_from_path"] = pathlib.Path(path).parent.name
         except Exception:
-            subj_from_path = None
-        data["_subject_from_path"] = subj_from_path
+            data["_subject_from_path"] = None
         items.append(data)
     return items
 
@@ -65,32 +71,31 @@ def make_hf_dataset(root_dir: str) -> DatasetDict:
     if not train:
         raise RuntimeError(f"No JSON files found under {root_dir}/train")
     if not test:
-        print(f"[warn] No files found under {root_dir}/test — using 10% of train as test.")
+        # fallback: 10% of train as test
         n = max(1, int(0.1*len(train)))
         test, train = train[:n], train[n:]
-    return DatasetDict({
-        "train": Dataset.from_list(train),
-        "test":  Dataset.from_list(test),
-    })
+        print(f"[warn] No {root_dir}/test found. Using {len(test)} examples from train as test.")
+    return DatasetDict({"train": Dataset.from_list(train), "test": Dataset.from_list(test)})
 
 @dataclass
 class FieldMap:
     problem_key: str
     subject_key: Optional[str]  # can be None (fallback to folder)
-    level_key: Optional[str]    # can be None (we’ll error if truly missing)
+    level_key: Optional[str]    # can be None (error if truly missing)
 
 def detect_fields(ds: DatasetDict) -> FieldMap:
     cols = set(ds["train"].column_names)
+
     # problem key
-    pk = next((k for k in CANDIDATE_PROBLEM_KEYS if k in cols and all(ds["train"][k])), None)
+    pk = next((k for k in CANDIDATE_PROBLEM_KEYS if k in cols and any(ds["train"][k])), None)
     if not pk:
-        # try to guess the most text-like column
         pk = next((c for c in ds["train"].column_names if c.lower() in {"problem","prompt","question","text"}), None)
     if not pk:
-        raise RuntimeError(f"Could not find a problem text column in {cols}")
+        raise RuntimeError(f"Could not find a problem text column in {sorted(cols)}")
 
     # subject key
     sk = next((k for k in CANDIDATE_SUBJECT_KEYS if k in cols), None)
+
     # level key
     lk = next((k for k in CANDIDATE_LEVEL_KEYS if k in cols), None)
 
@@ -101,16 +106,14 @@ def compute_subject_list(ds: DatasetDict, fm: FieldMap) -> Tuple[List[str], Dict
     if fm.subject_key and fm.subject_key in ds["train"].column_names:
         subjects = sorted({ (s or "").strip() for s in ds["train"][fm.subject_key] if s is not None })
     else:
-        # fallback: derive from folder: .../train/<SUBJECT>/file.json
         subjects = sorted({ pathlib.Path(p).parent.name for p in ds["train"]["_path"] })
     sub2id = {s:i for i,s in enumerate(subjects)}
     return subjects, sub2id
 
 def compute_level_list(ds: DatasetDict, fm: FieldMap) -> Tuple[List[str], Dict[str,int]]:
     if not fm.level_key or fm.level_key not in ds["train"].column_names:
-        # Try to infer from values in train if missing entirely -> bail with a clear error
         raise RuntimeError("Could not find a level/difficulty column. "
-                           f"Available columns: {ds['train'].column_names}")
+                           f"Available columns: {sorted(ds['train'].column_names)}")
     levels = sorted({ normalize_level(v) for v in ds["train"][fm.level_key] })
     lvl2id = {l:i for i,l in enumerate(levels)}
     return levels, lvl2id
@@ -158,7 +161,9 @@ def main():
     ds = make_hf_dataset(DATA_ROOT)
 
     fm = detect_fields(ds)
-    tok = AutoTokenizer.from_pretrained(MODEL_NAME)
+
+    # Use slow tokenizer to avoid conversion issues on Windows/Py3.13
+    tok = AutoTokenizer.from_pretrained(MODEL_NAME, use_fast=False)
 
     # ---------- SUBJECT ----------
     subjects, sub2id = compute_subject_list(ds, fm)
@@ -167,35 +172,60 @@ def main():
 
     def map_subject(ex):
         text = ex[fm.problem_key]
-        d = tok(text, truncation=True, max_length=MAX_LEN)
+        enc = tok(text, truncation=True, max_length=MAX_LEN)
         if fm.subject_key and fm.subject_key in ex and ex[fm.subject_key]:
             subj = (ex[fm.subject_key] or "").strip()
         else:
-            # from folder
             subj = pathlib.Path(ex["_path"]).parent.name
-        d["labels"] = sub2id[subj]
-        # keep path so we can export per-file predictions later
-        d["_path"] = ex["_path"]
-        return d
+        enc["labels"] = sub2id[subj]
+        enc["_path"] = ex["_path"]
+        return enc
 
-    enc_sub = ds.map(map_subject, remove_columns=[c for c in ds["train"].column_names if c not in {fm.problem_key, fm.subject_key, "_path"}])
+    # keep only features needed by Trainer; preserve _path for reporting
+    keep_for_sub = {fm.problem_key}
+    if fm.subject_key: keep_for_sub.add(fm.subject_key)
+    keep_for_sub.add("_path")
+    enc_sub = ds.map(
+        map_subject,
+        remove_columns=[c for c in ds["train"].column_names if c not in keep_for_sub],
+    )
+
     model_sub = AutoModelForSequenceClassification.from_pretrained(
         MODEL_NAME, num_labels=len(subjects), label2id=sub2id, id2label=id2sub
     )
+
     args_sub = TrainingArguments(
         output_dir=SUBJECT_OUT,
-        per_device_train_batch_size=32, per_device_eval_batch_size=64,
-        learning_rate=2e-5, weight_decay=0.01, num_train_epochs=3,
-        warmup_ratio=0.06, evaluation_strategy="epoch", save_strategy="epoch",
-        logging_steps=50, fp16=True, report_to="none",
-        load_best_model_at_end=True, metric_for_best_model="accuracy",
-        greater_is_better=True, seed=SEED,
+        per_device_train_batch_size=32,
+        per_device_eval_batch_size=64,
+        learning_rate=2e-5,
+        weight_decay=0.01,
+        num_train_epochs=3,
+        warmup_ratio=0.06,
+
+        # Transformers 4.56+ arg names:
+        eval_strategy="epoch",
+        save_strategy="epoch",
+        logging_strategy="steps",
+        logging_steps=50,
+
+        fp16=True,  # set bf16=True instead if your stack supports BF16
+        report_to="none",
+        load_best_model_at_end=True,
+        metric_for_best_model="accuracy",
+        greater_is_better=True,
+        seed=SEED,
     )
+
     trainer_sub = Trainer(
-        model=model_sub, args=args_sub,
-        train_dataset=enc_sub["train"], eval_dataset=enc_sub["test"],
-        tokenizer=tok, compute_metrics=compute_metrics_builder(id2sub),
+        model=model_sub,
+        args=args_sub,
+        train_dataset=enc_sub["train"],
+        eval_dataset=enc_sub["test"],
+        tokenizer=tok,
+        compute_metrics=compute_metrics_builder(id2sub),
     )
+
     print("\nTraining SUBJECT classifier…")
     trainer_sub.train()
     trainer_sub.save_model(SUBJECT_OUT)
@@ -208,30 +238,55 @@ def main():
 
     def map_level(ex):
         text = ex[fm.problem_key]
-        d = tok(text, truncation=True, max_length=MAX_LEN)
+        enc = tok(text, truncation=True, max_length=MAX_LEN)
         lvl = normalize_level(ex[fm.level_key]) if fm.level_key in ex else "Level ?"
-        d["labels"] = lvl2id[lvl]
-        d["_path"] = ex["_path"]
-        return d
+        enc["labels"] = lvl2id[lvl]
+        enc["_path"] = ex["_path"]
+        return enc
 
-    enc_lvl = ds.map(map_level, remove_columns=[c for c in ds["train"].column_names if c not in {fm.problem_key, fm.level_key, "_path"}])
+    keep_for_lvl = {fm.problem_key}
+    if fm.level_key: keep_for_lvl.add(fm.level_key)
+    keep_for_lvl.add("_path")
+    enc_lvl = ds.map(
+        map_level,
+        remove_columns=[c for c in ds["train"].column_names if c not in keep_for_lvl],
+    )
+
     model_lvl = AutoModelForSequenceClassification.from_pretrained(
         MODEL_NAME, num_labels=len(levels), label2id=lvl2id, id2label=id2lvl
     )
+
     args_lvl = TrainingArguments(
         output_dir=LEVEL_OUT,
-        per_device_train_batch_size=32, per_device_eval_batch_size=64,
-        learning_rate=2e-5, weight_decay=0.01, num_train_epochs=3,
-        warmup_ratio=0.06, evaluation_strategy="epoch", save_strategy="epoch",
-        logging_steps=50, fp16=True, report_to="none",
-        load_best_model_at_end=True, metric_for_best_model="accuracy",
-        greater_is_better=True, seed=SEED,
+        per_device_train_batch_size=32,
+        per_device_eval_batch_size=64,
+        learning_rate=2e-5,
+        weight_decay=0.01,
+        num_train_epochs=3,
+        warmup_ratio=0.06,
+
+        eval_strategy="epoch",
+        save_strategy="epoch",
+        logging_strategy="steps",
+        logging_steps=50,
+
+        fp16=True,
+        report_to="none",
+        load_best_model_at_end=True,
+        metric_for_best_model="accuracy",
+        greater_is_better=True,
+        seed=SEED,
     )
+
     trainer_lvl = Trainer(
-        model=model_lvl, args=args_lvl,
-        train_dataset=enc_lvl["train"], eval_dataset=enc_lvl["test"],
-        tokenizer=tok, compute_metrics=compute_metrics_builder(id2lvl),
+        model=model_lvl,
+        args=args_lvl,
+        train_dataset=enc_lvl["train"],
+        eval_dataset=enc_lvl["test"],
+        tokenizer=tok,
+        compute_metrics=compute_metrics_builder(id2lvl),
     )
+
     print("\nTraining LEVEL classifier…")
     trainer_lvl.train()
     trainer_lvl.save_model(LEVEL_OUT)
