@@ -1,0 +1,41 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Ordering decimals}
+\textbf{Question.} Order the following numbers from least to greatest:
+                    
+                        
+                            [[NUM[3]]]
+                            [[NUM[3]]]
+                        
+                    
+                    [[SORTER.init("sortable")]]
+
+\textbf{Answer.} SORTER.getContent()
+                    
+                        return guess.join( ",\textbackslash\{\}\textbackslash\{\} " ) === DECIMAL\_SORT\_TEX;
+                    
+                    
+                        SORTER.setContent( guess );
+
+\textbf{Hints.}
+\begin{itemize}
+  \item \textbackslash\{\}qquad \textbackslash\{\}begin\{align*\}
+                        
+                            [[NUM[3]]] \&= [[NUM[1]]] \textbackslash\{\}text\{ [[plural\_form(decimalPlaceNames[NUM[2]], NUM[1])]]\} \textbackslash\{\}\textbackslash\{\}
+                    \textbackslash\{\}end\{align*\}
+  \item Get each number in [[plural\_form(decimalPlaceNames[MAX\_P], 2)]].
+  \item \textbackslash\{\}qquad \textbackslash\{\}begin\{align*\}
+                        
+                            [[NUM[3]]] \&= [[round(NUM[0] * P)]]\textbackslash\{\}text\{ [[plural\_form(decimalPlaceNames[MAX\_P], 2)]]\} \textbackslash\{\}\textbackslash\{\}
+                    \textbackslash\{\}end\{align*\}
+  \item Order the numbers: [[NUMS\_SORT\_TEX]].
+  \item Convert back to decimals.
+                        [[DECIMAL\_SORT\_TEX]].
+\end{itemize}
+\end{document}

@@ -1,0 +1,21 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Multiplying fractions}
+\textbf{Question.} [[fraction(A, B)]] $\times$
+                [[fraction(C, D, false, false, false, C < 0)]]
+
+\textbf{Answer.} [[(A * C) / (B * D)]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item = $\frac{[[A]] $\textbackslash\{\}times$ [[negParens(C)]]}{[[B]] $\textbackslash\{\}times$ [[D]]}$
+  \item = $\frac{[[A * C]]}{[[B * D]]}$
+  \item = [[fractionReduce(A * C, B * D)]]
+\end{itemize}
+\end{document}

@@ -1,0 +1,45 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Identifying slope of a line}
+\textbf{Question.} What is the slope of the line through the points ([[X1]], [[Y1]]) and ([[X2]], [[Y2]])?
+
+\textbf{Answer.} [[(Y1 - Y2) / (X1 - X2)]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The slope of a line is the amount of change in the y-coordinate as the x-coordinate increases by one unit.
+  \item The equation for the slope is:
+                    \textbackslash\{\}qquad m = \textbackslash\{\}dfrac\{\textbackslash\{\}blue\{y\_2\} - \textbackslash\{\}purple\{y\_1\}\}\{\textbackslash\{\}blue\{x\_2\} - \textbackslash\{\}purple\{x\_1\}\}
+  \item Substitute the values for
+                            (\textbackslash\{\}purple\{[[X1]]\}, \textbackslash\{\}purple\{[[Y1]]\}) and
+                            (\textbackslash\{\}blue\{[[X2]]\}, \textbackslash\{\}blue\{[[Y2]]\}):
+                        
+                        
+                            \textbackslash\{\}qquad m = \textbackslash\{\}dfrac\{\textbackslash\{\}blue\{[[Y2]]\} - \textbackslash\{\}purple\{[[negParens(Y1)]]\}\}
+                            \{\textbackslash\{\}blue\{[[X2]]\} - \textbackslash\{\}purple\{[[negParens(X1)]]\}\} =
+                            \textbackslash\{\}dfrac\{\textbackslash\{\}green\{[[Y2 - Y1]]\}\}\{\textbackslash\{\}pink\{[[X2 - X1]]\}\}
+  \item So, the slope m is [[fractionReduce( Y2 - Y1, X2 - X1 )]].
+  \item A slope of [[M.display]] means that the y-coordinate changes by [[M.display]]
+                    as the x-coordinate increases by one unit.
+  \item The \textbackslash\{\}color\{[[COLORS[WHICH].hex]]\}\{\textbackslash\{\}text\{[[COLORS[WHICH].name.toLowerCase()]]\}\}
+                        graph has a slope of [[M.display]].
+                        The other graphs have slopes of [[toSentence(OTHER\_SLOPES)]].
+  \item A slope of [[M.display]] means the
+                    y-coordinate doesn't change at all as the x-coordinate changes.
+  \item A vertical line has an undefined slope.
+                    The x-coordinate doesn't change,
+                    so if we try to calculate the slope between two points with
+                    m = \textbackslash\{\}dfrac\{\textbackslash\{\}blue\{y\_2\} - \textbackslash\{\}purple\{y\_1\}\}\{\textbackslash\{\}blue\{x\_2\} - \textbackslash\{\}purple\{x\_1\}\},
+                    we'll have to divide by zero!
+  \item The \textbackslash\{\}color\{[[COLORS[WHICH].hex]]\}\{\textbackslash\{\}text\{[[COLORS[WHICH].name.toLowerCase()]]\}\}
+                    graph depicts an undefined slope.
+  \item The \textbackslash\{\}color\{[[COLORS[WHICH].hex]]\}\{\textbackslash\{\}text\{[[COLORS[WHICH].name.toLowerCase()]]\}\}
+                    graph depicts a slope of [[M.display]].
+\end{itemize}
+\end{document}

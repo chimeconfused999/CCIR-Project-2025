@@ -1,0 +1,36 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Add within 100}
+\textbf{Question.} \textbackslash\{\}Large\{
+                        [[A * 10 + B]] + [[C]]
+                        [[C]] + [[A * 10 + B]]
+                    = ?\}
+
+\textbf{Answer.} [[A * 10 + B + C]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item \textbackslash\{\}Large\{= \textbackslash\{\}pink\{[[A]]\}\textbackslash\{\}blue\{[[B]]\} + \textbackslash\{\}blue\{[[C]]\}\}
+                        \textbackslash\{\}Large\{= \textbackslash\{\}pink\{[[A * 10]]\} + \textbackslash\{\}blue\{[[B]]\} + \textbackslash\{\}blue\{[[C]]\}\}
+  \item \textbackslash\{\}Large\{= \textbackslash\{\}blue\{[[C]]\} + \textbackslash\{\}pink\{[[A]]\}\textbackslash\{\}blue\{[[B]]\}\}
+                            \textbackslash\{\}Large\{= \textbackslash\{\}blue\{[[C]]\} + \textbackslash\{\}pink\{[[A * 10]]\} + \textbackslash\{\}blue\{[[B]]\}\}
+                        
+                        \textbackslash\{\}Large\{= \textbackslash\{\}pink\{[[A * 10]]\} + \textbackslash\{\}blue\{[[B]]\} + \textbackslash\{\}blue\{[[C]]\}\}
+  \item \textbackslash\{\}Large\{= \textbackslash\{\}pink\{[[A * 10]]\} + \textbackslash\{\}blue\{[[B + C]]\}\}
+  \item \textbackslash\{\}Large\{= \textbackslash\{\}pink\{[[A]]\}\textbackslash\{\}blue\{[[B + C]]\}\}
+  \item \textbackslash\{\}Large\{= \textbackslash\{\}pink\{[[A]]\}\textbackslash\{\}blue\{[[B]]\} + \textbackslash\{\}pink\{[[C * 10]]\}\}
+                            \textbackslash\{\}Large\{= \textbackslash\{\}pink\{[[A * 10]]\} + \textbackslash\{\}blue\{[[B]]\} + \textbackslash\{\}pink\{[[C * 10]]\}\}
+                        
+                        \textbackslash\{\}Large\{= \textbackslash\{\}pink\{[[A * 10]]\} + \textbackslash\{\}pink\{[[C * 10]]\} + \textbackslash\{\}blue\{[[B]]\}\}
+  \item \textbackslash\{\}Large\{= \textbackslash\{\}pink\{[[C * 10]]\} + \textbackslash\{\}pink\{[[A]]\}\textbackslash\{\}blue\{[[B]]\}\}
+                        \textbackslash\{\}Large\{= \textbackslash\{\}pink\{[[C * 10]]\} + \textbackslash\{\}pink\{[[A * 10]]\} + \textbackslash\{\}blue\{[[B]]\}\}
+  \item \textbackslash\{\}Large\{= \textbackslash\{\}pink\{[[(A + C) * 10]]\} + \textbackslash\{\}blue\{[[B]]\}\}
+  \item \textbackslash\{\}Large\{= \textbackslash\{\}pink\{[[A + C]]\}\textbackslash\{\}blue\{[[B]]\}\}
+\end{itemize}
+\end{document}

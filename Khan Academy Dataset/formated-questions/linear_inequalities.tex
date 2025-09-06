@@ -1,0 +1,39 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Multi-step linear inequalities}
+\textbf{Question.} Solve for x:
+
+\textbf{Answer.} x
+                    
+                        [[A - C > 0 ? REL : FREL]]
+                    
+                    [[( D - B ) / ( A - C )]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Subtract [[C]]x from both sides:
+                ([[A]]x + [[B]]) - [[C]]x [[REL]] ([[C]]x + [[D]]) - [[C]]x
+                [[A - C]]x + [[B]] [[REL]] [[D]]
+  \item Subtract [[abs(B)]] from both sides:Add [[abs(B)]] to both sides:
+                ([[A - C]]x + [[B]]) + [[-B]] [[REL]] [[D]] + [[-B]]
+                [[A - C]]x [[REL]] [[D - B]]
+  \item Divide both sides by [[A - C]]. Because [[A - C]] is positive, the inequality sign [[REL]] should not be flipped.
+                    $\frac{[[A - C]]x}{[[A - C]]}$ [[REL]] $\frac{[[D - B]]}{[[A - C]]}$
+                
+                
+                    Simplify.
+                    x [[REL]] [[SOLUTION]]
+  \item Divide both sides by [[A - C]]. Because [[A - C]] is negative, the inequality sign [[REL]] must be flipped to [[FREL]].
+                    $\frac{[[A - C]]x}{[[A - C]]}$ [[FREL]] $\frac{[[D - B]]}{[[A - C]]}$
+                
+                
+                    Simplify.
+                    x [[FREL]] [[SOLUTION]]
+\end{itemize}
+\end{document}

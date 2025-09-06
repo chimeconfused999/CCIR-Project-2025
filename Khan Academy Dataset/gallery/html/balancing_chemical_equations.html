@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>balancing_chemical_equations</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+</head>
+<body>
+<h1 class="unnumbered" id="balancing-chemical-equations">Balancing
+chemical equations</h1>
+<p><strong>Question.</strong> Balance the following chemical
+equation:</p>
+<p><strong>Answer.</strong> \{}qquad 1\{}text{H}_2 + 3\{}text{O}_2
+\{}rightarrow 2\{}text{H}_2\{}text{O}</p>
+<p><strong>Hints.</strong></p>
+<ul>
+<li><p>There are 2 \{}text{ O} on the left and only 1 on the right, so
+multiply \{}text{H}_2\{}text{O} by \{}blue{2}.</p>
+<p>\{}qquad \{}text{H}_2 + \{}text{O}_2 \{}rightarrow
+\{}blue{2}\{}text{H}_2\{}text{O}</p></li>
+<li><p>That gives us 4 \{}text{ H} on the right and only 2 on the left,
+so multiply \{}text{H}_2 by \{}red{2}.</p>
+<p>\{}qquad \{}red{2}\{}text{H}_2 + \{}text{O}_2 \{}rightarrow
+2\{}text{H}_2\{}text{O}</p></li>
+<li><p>The balanced equation is: \{}qquad 2\{}text{H}_2 + \{}text{O}_2
+\{}rightarrow 2\{}text{H}_2\{}text{O}</p></li>
+<li><p>\{}text{C} is already balanced.</p></li>
+<li><p>There are 4 \{}text{ H} on the left and only 1 on the right, so
+multiply \{}text{HCl} by \{}blue{4}.</p>
+<p>\{}qquad \{}text{CH}_4 + \{}text{Cl}_2 \{}rightarrow \{}text{CCl}_4 +
+\{}blue{4}\{}text{HCl}</p></li>
+<li><p>That gives us 8 \{}text{ Cl} on the right and only 2 on the left,
+so multiply \{}text{Cl}_2 by \{}red{4}.</p>
+<p>\{}qquad \{}text{CH}_4 + \{}red{4}\{}text{Cl}_2 \{}rightarrow
+\{}text{CCl}_4 + 4\{}text{HCl}</p></li>
+<li><p>The balanced equation is: \{}qquad \{}text{CH}_4 + 4\{}text{Cl}_2
+\{}rightarrow \{}text{CCl}_4 + 4\{}text{HCl}</p></li>
+<li><p>There are 2 \{}text{ O} on the left and 3 on the right. The
+lowest common denominator is 6, so multiply \{}text{O}_2 by \{}blue{3}
+and \{}text{Al}_2\{}text{O}_3 by \{}red{2}.</p>
+<p>\{}qquad \{}text{Al} + \{}blue{3}\{}text{O}_2 \{}rightarrow
+\{}red{2}\{}text{Al}_2\{}text{O}_3</p></li>
+<li><p>That gives us 4 \{}text{ Al} on the right and only 1 on the left,
+so multiply \{}text{Al} by \{}pink{4}.</p>
+<p>\{}qquad \{}pink{4}\{}text{Al} + 3\{}text{O}_2 \{}rightarrow
+2\{}text{Al}_2\{}text{O}_3</p></li>
+<li><p>The balanced equation is: \{}qquad 4\{}text{Al} + 3\{}text{O}_2
+\{}rightarrow 2\{}text{Al}_2\{}text{O}_3</p></li>
+<li><p>\{}text{C} is already balanced.</p></li>
+<li><p>There are 4 \{}text{ H} on the left and 2 on the right, so
+multiply \{}text{H}_2\{}text{O} by \{}blue{2}.</p>
+<p>\{}qquad \{}text{CH}_4 + \{}text{O}_2 \{}rightarrow \{}text{CO}_2 +
+\{}blue{2}\{}text{H}_2\{}text{O}</p></li>
+<li><p>That gives us 4 \{}text{ O} on the right and only 2 on the left,
+so multiply \{}text{O}_2 by \{}red{2}. (Since oxygen is by itself on the
+left, it should be done at the end because you can give it a coefficient
+without affecting another element.)</p>
+<p>\{}qquad \{}text{CH}_4 + \{}red{2}\{}text{O}_2 \{}rightarrow
+\{}text{CO}_2 + 2\{}text{H}_2\{}text{O}</p></li>
+<li><p>The balanced equation is: \{}qquad \{}text{CH}_4 + 2\{}text{O}_2
+\{}rightarrow \{}text{CO}_2 + 2\{}text{H}_2\{}text{O}</p></li>
+<li><p>There is 1 \{}text{ Br} on the left and 2 on the right, so
+multiply \{}text{NaBr} by \{}blue{2}.</p>
+<p>\{}qquad \{}blue{2}\{}text{NaBr} + \{}text{Cl}_2 \{}rightarrow
+\{}text{NaCl} + \{}text{Br}_2</p></li>
+<li><p>There are 2 \{}text{ Cl} on the left and 1 on the right, so
+multiply \{}text{NaCl} by \{}red{2}.</p>
+<p>\{}qquad 2\{}text{NaBr} + \{}text{Cl}_2 \{}rightarrow
+\{}red{2}\{}text{NaCl} + \{}text{Br}_2</p></li>
+<li><p>Now \{}text{Na} is balanced again.</p></li>
+<li><p>The balanced equation is: \{}qquad 2\{}text{NaBr} + \{}text{Cl}_2
+\{}rightarrow 2\{}text{NaCl} + \{}text{Br}_2</p></li>
+<li><p>There are 2 \{}text{ Cl} on the right and only 1 on the left, so
+multiply \{}text{HCl} by \{}blue{2}.</p>
+<p>\{}qquad \{}text{Mg} + \{}blue{2}\{}text{HCl} \{}rightarrow
+\{}text{MgCl}_2 + \{}text{H}_2</p></li>
+<li><p>Now all atoms are balanced; the balanced equation is: \{}qquad
+\{}text{Mg} + 2\{}text{HCl} \{}rightarrow \{}text{MgCl}_2 +
+\{}text{H}_2</p></li>
+<li><p>Start with the compound that has the most elements
+(\{}text{NH}_4\{}text{NO}_3).</p></li>
+<li><p>There are 2 \{}text{N} on the left and 2 \{}text{N} on the right,
+so \{}text{N} is already balanced.</p></li>
+<li><p>There are 4 \{}text{ H} on the left and 2 on the right, so
+multiply \{}text{H}_2\{}text{O} by \{}blue{2}.</p>
+<p>\{}qquad \{}text{NH}_4\{}text{NO}_3 \{}rightarrow \{}text{N}_2 +
+\{}text{O}_2 + \{}blue{2}\{}text{H}_2\{}text{O}</p></li>
+<li><p>That gives us 3 \{}text{ O} on the left and 4 on the right. If we
+try giving \{}text{O}_2 a coefficient of \{}red{<span
+class="math inline">\frac{1}{2}</span>}, it gives us 3 \{}text{ O} on
+both sides.</p>
+<p>\{}qquad \{}text{NH}_4\{}text{NO}_3 \{}rightarrow \{}text{N}_2 +
+\{}red{<span class="math inline">\frac{1}{2}</span>}\{}text{O}_2 +
+2\{}text{H}_2\{}text{O}</p></li>
+<li><p>Since fractions are not usually used as coefficients, multiply
+everything by 2 to get rid of the fraction.</p>
+<p>\{}qquad 2\{}text{NH}_4\{}text{NO}_3 \{}rightarrow 2\{}text{N}_2 +
+1\{}text{O}_2 + 4\{}text{H}_2\{}text{O}</p></li>
+<li><p>The balanced equation is: \{}qquad 2\{}text{NH}_4\{}text{NO}_3
+\{}rightarrow 2\{}text{N}_2 + \{}text{O}_2 +
+4\{}text{H}_2\{}text{O}</p></li>
+<li><p>For a combustion reaction, it is usually easiest to start with
+\{}text{C}.</p></li>
+<li><p>There are 2 \{}text{ C} on the left and 1 on the right, so
+multiply \{}text{CO}_2 by \{}blue{2}.</p>
+<p>\{}qquad \{}text{C}_2\{}text{H}_6\{}text{O} + \{}text{O}_2
+\{}rightarrow \{}blue{2}\{}text{CO}_2 + \{}text{H}_2\{}text{O}</p></li>
+<li><p>There are 6 \{}text{ H} on the left and 2 on the right, so
+multiply \{}text{H}_2\{}text{O} by \{}red{3}.</p>
+<p>\{}qquad \{}text{C}_2\{}text{H}_6\{}text{O} + \{}text{O}_2
+\{}rightarrow 2\{}text{CO}_2 + \{}red{3}\{}text{H}_2\{}text{O}</p></li>
+<li><p>That gives us 7 \{}text{ O} on the right and 3 on the left, so
+multiply \{}text{O}_2 by \{}pink{3}.</p>
+<p>\{}qquad \{}text{C}_2\{}text{H}_6\{}text{O} + \{}pink{3}\{}text{O}_2
+\{}rightarrow 2\{}text{CO}_2 + 3\{}text{H}_2\{}text{O}</p></li>
+<li><p>The balanced equation is: \{}qquad
+\{}text{C}_2\{}text{H}_6\{}text{O} + 3\{}text{O}_2 \{}rightarrow
+2\{}text{CO}_2 + 3\{}text{H}_2\{}text{O}</p></li>
+<li><p>There are 2 \{}text{ O} on the left and only 1 on the right, so
+multiply \{}text{MgO} by \{}blue{2}.</p>
+<p>\{}qquad \{}text{Mg} + \{}text{O}_2 \{}rightarrow
+\{}blue{2}\{}text{MgO}</p></li>
+<li><p>That gives us 2 \{}text{ Mg} on the right and only 1 on the left,
+so multiply \{}text{Mg} by \{}red{2}.</p>
+<p>\{}qquad \{}red{2}\{}text{Mg} + \{}text{O}_2 \{}rightarrow
+2\{}text{MgO}</p></li>
+<li><p>The balanced equation is: \{}qquad 2\{}text{Mg} + \{}text{O}_2
+\{}rightarrow 2\{}text{MgO}</p></li>
+<li><p>There is 1 \{}text{ H} and 1 \{}text{ Cl} on the left and 3
+\{}text{ Cl} and 2 \{}text{ H} on the right. The lowest common
+denominator for the right is 6, so multiply \{}text{AlCl}_3 by
+\{}blue{2} and \{}text{H}_2 by \{}red{3}.</p>
+<p>\{}qquad \{}text{Al} + \{}text{HCl} \{}rightarrow
+\{}blue{2}\{}text{AlCl}_3 + \{}red{3}\{}text{H}_2</p></li>
+<li><p>That gives us 6 \{}text{ H} and 6 \{}text{ Cl} on the right, so
+multiply \{}text{HCl} by \{}pink{6}.</p>
+<p>\{}qquad \{}text{Al} + \{}pink{6}\{}text{HCl} \{}rightarrow
+2\{}text{AlCl}_3 + 3\{}text{H}_2</p></li>
+<li><p>That gives us 2 \{}text{ Al} on the right and only 1 on the left,
+so multiply \{}text{Al} by \{}green{2}.</p>
+<p>\{}qquad \{}green{2}\{}text{Al} + 6\{}text{HCl} \{}rightarrow
+2\{}text{AlCl}_3 + 3\{}text{H}_2</p></li>
+<li><p>The balanced equation is: \{}qquad 2\{}text{Al} + 6\{}text{HCl}
+\{}rightarrow 2\{}text{AlCl}_3 + 3\{}text{H}_2</p></li>
+<li><p>We can treat the phosphate polyatomic ion
+\{}text{(PO}_4\{}text{)} as an atom, symbolized by \{}green{X}:</p>
+<p>\{}qquad \{}text{CaCl}_2 + \{}text{Na}_3\{}green{\{}text{PO}_4}
+\{}rightarrow \{}text{Ca}_3(\{}green{\{}text{PO}_4\{}text{}})_2 +
+\{}text{NaCl}</p>
+<p>\{}qquad \{}text{CaCl}_2 + \{}text{Na}_3\{}green{X} \{}rightarrow
+\{}text{Ca}_3\{}green{X}_2 + \{}text{NaCl}</p></li>
+<li><p>There is 1 \{}space X on the left and 2 \{}space X on the right,
+so multiply \{}text{Na}_3X by \{}blue{2}.</p>
+<p>\{}qquad \{}text{CaCl}_2 + \{}blue{2}\{}text{Na}_3X \{}rightarrow
+\{}text{Ca}_3X_2 + \{}text{NaCl}</p></li>
+<li><p>There are 6 \{}text{ Na} on the left and only 1 on the right, so
+multiply \{}text{NaCl} by \{}red{6}.</p>
+<p>\{}qquad \{}text{CaCl}_2 + 2\{}text{Na}_3X \{}rightarrow
+\{}text{Ca}_3X_2 + \{}red{6}\{}text{NaCl}</p></li>
+<li><p>That gives us 6 \{}text{ Cl} on the right and only 2 on the left,
+so multiply \{}text{CaCl}_2 by \{}pink{3}.</p>
+<p>\{}qquad \{}pink{3}\{}text{CaCl}_2 + 2\{}text{Na}_3X \{}rightarrow
+\{}text{Ca}_3X_2 + 6\{}text{NaCl}</p></li>
+<li><p>Now \{}text{Ca} is balanced too.</p></li>
+<li><p>Replacing \{}text{PO}_4 for X, the balanced equation is: \{}qquad
+3\{}text{CaCl}_2 + 2\{}text{Na}_3\{}text{PO}_4 \{}rightarrow
+\{}text{Ca}_3\{}text{(PO}_4\{}text{)}_2 + 6\{}text{NaCl}</p></li>
+<li><p>There are 2 \{}text{ N} on the left and only 1 on the right, so
+multiply \{}text{NO}_2 by \{}blue{2}.</p>
+<p>\{}qquad \{}text{N}_2\{}text{H}_4 + \{}text{O}_2 \{}rightarrow
+\{}blue{2}\{}text{NO}_2 + \{}text{H}_2\{}text{O}</p></li>
+<li><p>There are 4 \{}text{ H} on the left and only 2 on the right, so
+multiply \{}text{H}_2\{}text{O} by \{}red{2}.</p>
+<p>\{}qquad \{}text{N}_2\{}text{H}_4 + \{}text{O}_2 \{}rightarrow
+2\{}text{NO}_2 + \{}red{2}\{}text{H}_2\{}text{O}</p></li>
+<li><p>That gives us 6 \{}text{ O} on the right and only 2 on the left,
+so multiply \{}text{O}_2 by \{}pink{3}. (Since oxygen is by itself on
+the left, it should be done at the end because you can give it a
+coefficient without affecting another element.)</p>
+<p>\{}qquad \{}text{N}_2\{}text{H}_4 + \{}pink{3}\{}text{O}_2
+\{}rightarrow 2\{}text{NO}_2 + 2\{}text{H}_2\{}text{O}</p></li>
+<li><p>The balanced equation is: \{}qquad \{}text{N}_2\{}text{H}_4 +
+3\{}text{O}_2 \{}rightarrow 2\{}text{NO}_2 +
+2\{}text{H}_2\{}text{O}</p></li>
+<li><p>There are 3 \{}text{ Fe} on the right and only 1 on the left, so
+multiply \{}text{Fe} by \{}blue{3}.</p>
+<p>\{}qquad \{}blue{3}\{}text{Fe} + \{}text{H}_2\{}text{O} \{}rightarrow
+\{}text{Fe}_3\{}text{O}_4 + \{}text{H}_2</p></li>
+<li><p>There are 4 \{}text{ O} on the right and only 1 on the left, so
+multiply \{}text{H}_2\{}text{O} by \{}red{4}.</p>
+<p>\{}qquad 3\{}text{Fe} + \{}red{4}\{}text{H}_2\{}text{O} \{}rightarrow
+\{}text{Fe}_3\{}text{O}_4 + \{}text{H}_2</p></li>
+<li><p>That gives us 8 \{}text{ H} on the left and only 2 on the right,
+so multiply \{}text{H}_2 by \{}pink{4}. (Since hydrogen is by itself on
+the right, it should be done at the end because you can give it a
+coefficient without affecting another element.)</p>
+<p>\{}qquad 3\{}text{Fe} + 4\{}text{H}_2\{}text{O} \{}rightarrow
+\{}text{Fe}_3\{}text{O}_4 + \{}pink{4}\{}text{H}_2</p></li>
+<li><p>The balanced equation is: \{}qquad 3\{}text{Fe} +
+4\{}text{H}_2\{}text{O} \{}rightarrow \{}text{Fe}_3\{}text{O}_4 +
+4\{}text{H}_2</p></li>
+<li><p>There are 2 \{}text{ N} on the right and 2 on the left, so
+\{}text{N} is already balanced.</p></li>
+<li><p>There are 4 \{}text{ H} on the left and only 2 on the right, so
+multiply \{}text{H}_2\{}text{O} by \{}blue{2}.</p>
+<p>\{}qquad \{}text{NH}_4\{}text{NO}_3 \{}rightarrow
+\{}text{N}_2\{}text{O} + \{}blue{2}\{}text{H}_2\{}text{O}</p></li>
+<li><p>There are 3 \{}text{ O} on the right and 3 on the left, so
+\{}text{O} is already balanced.</p></li>
+<li><p>The balanced equation is: \{}qquad \{}text{NH}_4\{}text{NO}_3
+\{}rightarrow \{}text{N}_2\{}text{O} + 2\{}text{H}_2\{}text{O}</p></li>
+<li><p>There are 2 \{}text{ O} on the right and only 1 on the left, so
+multiply \{}text{HgO} by \{}blue{2}.</p>
+<p>\{}qquad \{}blue{2}\{}text{HgO} \{}rightarrow \{}text{Hg} +
+\{}text{O}_2</p></li>
+<li><p>Now there are 2 \{}text{ Hg} on the left and only 1 on the right,
+so multiply \{}text{Hg} by \{}red{2}.</p>
+<p>\{}qquad 2\{}text{HgO} \{}rightarrow \{}red{2}\{}text{Hg} +
+\{}text{O}_2</p></li>
+<li><p>The balanced equation is: \{}qquad 2\{}text{HgO} \{}rightarrow
+2\{}text{Hg} + \{}text{O}_2</p></li>
+<li><p>There is 1 \{}text{ Si} on the right and 1 on the left, so
+\{}text{Si} is already balanced.</p></li>
+<li><p>There are 2 \{}text{ O} on the left and only 1 on the right, so
+multiply \{}text{H}_2\{}text{O} by \{}blue{2}.</p>
+<p>\{}qquad \{}text{SiO}_2 + \{}text{HF} \{}rightarrow \{}text{SiF}_4 +
+\{}blue{2}\{}text{H}_2\{}text{O}</p></li>
+<li><p>Now there are 4 \{}text{ H} on the right and only 1 on the left,
+so multiply \{}text{HF} by \{}red{4}.</p>
+<p>\{}qquad \{}text{SiO}_2 + \{}red{4}\{}text{HF} \{}rightarrow
+\{}text{SiF}_4 + 2\{}text{H}_2\{}text{O}</p></li>
+<li><p>Now \{}text{F} is balanced too.</p></li>
+<li><p>The balanced equation is: \{}qquad \{}text{SiO}_2 + 4\{}text{HF}
+\{}rightarrow \{}text{SiF}_4 + 2\{}text{H}_2\{}text{O}</p></li>
+<li><p>There is 1 \{}text{ Mg} on the right and 1 on the left, so
+\{}text{Mg} is already balanced.</p></li>
+<li><p>There are 2 \{}text{ Cl} on the right and only 1 on the left, so
+multiply \{}text{HCl} by \{}blue{2}.</p>
+<p>\{}qquad \{}text{Mg(OH)}_2 + \{}blue{2}\{}text{HCl} \{}rightarrow
+\{}text{MgCl}_2 + \{}text{H}_2\{}text{O}</p></li>
+<li><p>Now there are 4 \{}text{ H} on the left and only 2 on the right,
+so multiply \{}text{H}_2\{}text{O} by \{}red{2}.</p>
+<p>\{}qquad \{}text{Mg(OH)}_2 + 2\{}text{HCl} \{}rightarrow
+\{}text{MgCl}_2 + \{}red{2}\{}text{H}_2\{}text{O}</p></li>
+<li><p>Now \{}text{O} is balanced too.</p></li>
+<li><p>The balanced equation is: \{}qquad \{}text{Mg(OH)}_2 +
+2\{}text{HCl} \{}rightarrow \{}text{MgCl}_2 +
+2\{}text{H}_2\{}text{O}</p></li>
+<li><p>We can treat the sulfate polyatomic ion \{}text{(SO}_4\{}text{)}
+as an atom, symbolized by \{}green{X}:</p>
+<p>\{}qquad \{}text{H}_2\{}green{\{}text{SO}_4} + \{}text{Pb(OH)}_4
+\{}rightarrow \{}text{Pb(}\{}green{\{}text{SO}_4}\{}text{)}_2 +
+\{}text{H}_2\{}text{O}</p>
+<p>\{}qquad \{}text{H}_2\{}green{X} + \{}text{Pb(OH)}_4 \{}rightarrow
+\{}text{Pb}\{}green{X}_2 + \{}text{H}_2\{}text{O}</p></li>
+<li><p>There is 1 \{}space X on the left and 2 \{}space X on the right,
+so multiply \{}text{H}_2X by \{}blue{2}.</p>
+<p>\{}qquad \{}blue{2}\{}text{H}_2X + \{}text{Pb(OH)}_4 \{}rightarrow
+\{}text{Pb}X_2 + \{}text{H}_2\{}text{O}</p></li>
+<li><p>That gives us 8 \{}text{ H} on the left and only 2 on the right,
+so multiply \{}text{H}_2\{}text{O} by \{}red{4}.</p>
+<p>\{}qquad 2\{}text{H}_2X + \{}text{Pb(OH)}_4 \{}rightarrow
+\{}text{Pb}X_2 + \{}red{4}\{}text{H}_2\{}text{O}</p></li>
+<li><p>Everything is now balanced. Replacing \{}text{SO}_4 for X, the
+balanced equation is: \{}qquad 2\{}text{H}_2\{}text{SO}_4 +
+\{}text{Pb(OH)}_4 \{}rightarrow \{}text{Pb(}\{}text{SO}_4\{}text{)}_2 +
+4\{}text{H}_2\{}text{O}</p></li>
+<li><p>\{}text{As} is already balanced.</p></li>
+<li><p>There are 6 \{}text{ S} on the left and only 1 on the right, so
+multiply \{}text{SO}_2 by \{}blue{6}.</p>
+<p>\{}qquad \{}text{As}_4\{}text{S}_6 + \{}text{O}_2 \{}rightarrow
+\{}text{As}_4\{}text{O}_6 + \{}blue{6}\{}text{SO}_2</p></li>
+<li><p>That gives us 18 \{}text{ O} on the right and only 2 on the left,
+so multiply \{}text{O}_2 by \{}red{9}. (Since oxygen is by itself on the
+left, it should be done at the end because you can give it a coefficient
+without affecting another element.)</p>
+<p>\{}qquad \{}text{As}_4\{}text{S}_6 + \{}red{9}\{}text{O}_2
+\{}rightarrow \{}text{As}_4\{}text{O}_6 + 6\{}text{SO}_2</p></li>
+<li><p>The balanced equation is: \{}qquad \{}text{As}_4\{}text{S}_6 +
+9\{}text{O}_2 \{}rightarrow \{}text{As}_4\{}text{O}_6 +
+6\{}text{SO}_2</p></li>
+<li><p>There are 2 \{}text{ Cr} on the left and only 1 on the right, so
+multiply \{}text{Cr} by \{}blue{2}.</p>
+<p>\{}qquad \{}text{Cr}_2\{}text{O}_3 + \{}text{Mg} \{}rightarrow
+\{}blue{2}\{}text{Cr} + \{}text{MgO}</p></li>
+<li><p>There are 3 \{}text{ O} on the left and only 1 on the right, so
+multiply \{}text{MgO} by \{}red{3}.</p>
+<p>\{}qquad \{}text{Cr}_2\{}text{O}_3 + \{}text{Mg} \{}rightarrow
+2\{}text{Cr} + \{}red{3}\{}text{MgO}</p></li>
+<li><p>That gives us 3 \{}text{ Mg} on the right and only 1 on the left,
+so multiply \{}text{Mg} by \{}pink{3}.</p>
+<p>\{}qquad \{}text{Cr}_2\{}text{O}_3 + \{}pink{3}\{}text{Mg}
+\{}rightarrow 2\{}text{Cr} + 3\{}text{MgO}</p></li>
+<li><p>The balanced equation is: \{}qquad \{}text{Cr}_2\{}text{O}_3 +
+3\{}text{Mg} \{}rightarrow 2\{}text{Cr} + 3\{}text{MgO}</p></li>
+</ul>
+</body>
+</html>

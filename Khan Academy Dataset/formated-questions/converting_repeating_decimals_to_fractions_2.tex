@@ -1,0 +1,24 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Converting multi-digit repeating decimals to fractions}
+\textbf{Question.} Rewrite as a simplified fraction.
+
+\textbf{Answer.} 0.013333333333333334
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Let x equal the decimal. Set up two equations such that the digits after the decimal point are identical.
+  \item \textbackslash\{\}large\{\textbackslash\{\}begin\{align*\}10x \&= 3.9999999978718983...\textbackslash\{\}\textbackslash\{\}
+        1x \&= 3.836631235560135...\textbackslash\{\}end\{align*\}\}
+  \item Subtracting the two equations, we have:
+            \textbackslash\{\}large\{9x = 0\}
+  \item \textbackslash\{\}large\{x = 0\}\textbackslash\{\}quad \textbackslash\{\}text\{or\} \textbackslash\{\}quad\textbackslash\{\}large\{[[mixedFractionFromImproper( DIFF, MULT1 - MULT2 )]]\}
+  \item \textbackslash\{\}large\{x = [[fraction( toFraction( N4 )[ 0 ], toFraction( N4 )[ 1 ])]]\}\textbackslash\{\}quad
+\end{itemize}
+\end{document}

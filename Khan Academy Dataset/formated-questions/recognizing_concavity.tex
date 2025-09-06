@@ -1,0 +1,85 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Recognizing concavity}
+\textbf{Question.} 
+
+\textbf{Answer.} graph.slidingWindow.getX()
+        
+        
+            var correct = \_.reduce(\_.range(guess, guess + 1, 0.02), function(correct, x) \{
+                return correct \&\& PREDICATE(x);
+            \}, true);
+            if (!graph.moved \&\& !correct) \{
+                return ""
+            \}
+            return correct;
+        
+        
+            graph.slidingWindow.moveTo(guess, 0);
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The first derivative, f\textasciicircum{}\textbackslash\{\}prime(x), is greater
+                    than 0 wherever the function is increasing.
+  \item The intervals
+                        where f(x) is increasing
+                        are
+                        highlighted above.
+  \item The second derivative, f\textasciicircum{}\{\textbackslash\{\}prime\textbackslash\{\}prime\}(x), is greater
+                    than 0 wherever the function is concave up.
+  \item The intervals
+                        where f(x) is concave up
+                        are
+                        highlighted above.
+  \item Select any part of the function that is highlighted for
+                        both conditions.
+  \item The first derivative, f\textasciicircum{}\textbackslash\{\}prime(x), is greater
+                    than 0 wherever the function is increasing.
+  \item The intervals
+                        where f(x) is increasing
+                        are
+                        highlighted above.
+  \item The second derivative, f\textasciicircum{}\{\textbackslash\{\}prime\textbackslash\{\}prime\}(x), is less
+                    than 0 wherever the function is concave down.
+  \item The intervals
+                        where f(x) is concave down
+                        are
+                        highlighted above.
+  \item Select any part of the function that is highlighted for
+                        both conditions.
+  \item The first derivative, f\textasciicircum{}\textbackslash\{\}prime(x), is less
+                    than 0 wherever the function is decreasing.
+  \item The intervals
+                        where f(x) is decreasing
+                        are
+                        highlighted above.
+  \item The second derivative, f\textasciicircum{}\{\textbackslash\{\}prime\textbackslash\{\}prime\}(x), is greater
+                    than 0 wherever the function is concave up.
+  \item The intervals
+                        where f(x) is concave up
+                        are
+                        highlighted above.
+  \item Select any part of the function that is highlighted for
+                        both conditions.
+  \item The first derivative, f\textasciicircum{}\textbackslash\{\}prime(x), is less
+                    than 0 wherever the function is decreasing.
+  \item The intervals
+                        where f(x) is decreasing
+                        are
+                        highlighted above.
+  \item The second derivative, f\textasciicircum{}\{\textbackslash\{\}prime\textbackslash\{\}prime\}(x), is less
+                    than 0 wherever the function is concave down.
+  \item The intervals
+                        where f(x) is concave down
+                        are
+                        highlighted above.
+  \item Select any part of the function that is highlighted for
+                        both conditions.
+\end{itemize}
+\end{document}

@@ -1,0 +1,61 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Multiplying a matrix by a matrix}
+\textbf{Question.} What is [[PRETTY\_MAT\_1\_ID + PRETTY\_MAT\_2\_ID]]?
+
+\textbf{Answer.} [[elem]]
+                
+                
+                    [[elem]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Because [[PRETTY\_MAT\_1\_ID]] has dimensions ([[DIM\_1 + "\textbackslash\{\}$\times$" + DIM\_2]]) and [[PRETTY\_MAT\_2\_ID]] has dimensions ([[DIM\_3 + "\textbackslash\{\}$\times$" + DIM\_4]]), the answer matrix will have dimensions ([[DIM\_1 + "\textbackslash\{\}$\times$" + DIM\_4]]).
+            
+            
+                
+                    [[PRETTY\_MAT\_1\_ID + PRETTY\_MAT\_2\_ID]]
+                    =
+                    [[printColoredDimMatrix(MAT\_1, ROW\_COLORS, true)]]
+                    [[printColoredDimMatrix(MAT\_2, COL\_COLORS, false)]]
+                    =
+                    [[printSimpleMatrix(maskMatrix(FINAL\_HINT\_MAT, []))]]
+  \item To find the element at any row i, column j of the answer matrix, multiply the elements in row i of the first matrix, [[PRETTY\_MAT\_1\_ID]], with the corresponding elements in column j of the second matrix, [[PRETTY\_MAT\_2\_ID]], and add the products together.
+  \item So, to find the element at row 1, column 1 of the answer matrix, multiply the first element in [[colorMarkup("\textbackslash\{\}\textbackslash\{\}text\{" + ROW + " \}1", ROW\_COLORS[0])]] of [[PRETTY\_MAT\_1\_ID]] with the first element in [[colorMarkup("\textbackslash\{\}\textbackslash\{\}text\{" + COLUMN + " \}1", COL\_COLORS[0])]] of [[PRETTY\_MAT\_2\_ID]], then multiply the second element in [[colorMarkup("\textbackslash\{\}\textbackslash\{\}text\{" + ROW + " \}1", ROW\_COLORS[0])]] of [[PRETTY\_MAT\_1\_ID]] with the second element in [[colorMarkup("\textbackslash\{\}\textbackslash\{\}text\{" + COLUMN + " \}1", COL\_COLORS[0])]] of [[PRETTY\_MAT\_2\_ID]], and so on. Add the products together.
+            
+            
+                
+                    [[printSimpleMatrix(
+                            maskMatrix(FINAL\_HINT\_MAT, [[1, 1]])
+                        )]]
+  \item Likewise, to find the element at row 2, column 1 of the answer matrix, multiply the elements in [[colorMarkup("\textbackslash\{\}\textbackslash\{\}text\{" + ROW + " \}2", ROW\_COLORS[1])]] of [[PRETTY\_MAT\_1\_ID]] with the corresponding elements in [[colorMarkup("\textbackslash\{\}\textbackslash\{\}text\{" + COLUMN + " \}1", COL\_COLORS[0])]] of [[PRETTY\_MAT\_2\_ID]] and add the products together.
+            
+            
+                
+                    [[printSimpleMatrix(
+                            maskMatrix(FINAL\_HINT\_MAT, [[1, 1], [2, 1]])
+                        )]]
+  \item Likewise, to find the element at row 1, column 2 of the answer matrix, multiply the elements in [[colorMarkup("\textbackslash\{\}\textbackslash\{\}text\{" + ROW + " \}1", ROW\_COLORS[0])]] of [[PRETTY\_MAT\_1\_ID]] with the corresponding elements in [[colorMarkup("\textbackslash\{\}\textbackslash\{\}text\{" + COLUMN + " \}2", COL\_COLORS[1])]] of [[PRETTY\_MAT\_2\_ID]] and add the products together.
+            
+            
+                
+                    [[printSimpleMatrix(
+                            maskMatrix(FINAL\_HINT\_MAT, [[1, 1], [2, 1], [1, 2]])
+                        )]]
+  \item Fill out the rest:
+            
+            
+                
+                    [[printSimpleMatrix(FINAL\_HINT\_MAT)]]
+  \item After simplifying, we end up with:
+            
+                
+                    [[printSimpleMatrix(SOLN\_MAT)]]
+\end{itemize}
+\end{document}

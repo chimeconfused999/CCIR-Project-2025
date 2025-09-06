@@ -1,0 +1,28 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Multiplying expressions 0.5}
+\textbf{Question.} [[LEFT + (SQUARE ? "\textasciicircum{}2" : RIGHT)]] = \textbackslash\{\} ?
+
+\textbf{Answer.} [[plus((A * C) + XX, (A * D + B * C) + X, B * D)]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item = [[LEFT + RIGHT]]
+  \item Start by distributing the (\textbackslash\{\}blue\{[[X]] + [[B]]\}):
+                \textbackslash\{\}qquad = \textbackslash\{\}quad (\textbackslash\{\}blue\{[[X]] + [[B]]\})([[X]] + [[D]])
+                \textbackslash\{\}qquad = \textbackslash\{\}quad \textbackslash\{\}blue\{[[X]]\}([[X]] + [[D]]) \textbackslash\{\}blue\{+[[B]]\}([[X]] + [[D]])
+  \item Next, distribute the \textbackslash\{\}blue\{[[X]]\} and the \textbackslash\{\}blue\{[[B]]\}:
+                \textbackslash\{\}qquad = \textbackslash\{\}quad (\textbackslash\{\}blue\{[[X]]\} $\cdot$ [[X]]) + (\textbackslash\{\}blue\{[[X]]\} $\cdot$ [[D]]) + (\textbackslash\{\}blue\{[[B]]\} $\cdot$ [[X]]) + (\textbackslash\{\}blue\{[[B]]\} $\cdot$ [[D]])
+                Notice that by distributing you're really just multiplying each term in the first expression by each term in the second expression.
+  \item Simplify:
+                \textbackslash\{\}qquad = \textbackslash\{\}quad [[XX]] + [[D]][[X]] + [[B]][[X]] + [[B * D]]
+  \item Keep simplifying to get the final answer:
+                \textbackslash\{\}qquad = \textbackslash\{\}quad [[plus(XX, (D + B) + X, (B * D))]]
+\end{itemize}
+\end{document}

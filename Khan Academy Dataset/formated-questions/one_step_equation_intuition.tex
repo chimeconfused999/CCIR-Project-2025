@@ -1,0 +1,45 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{One step equation intuition}
+\textbf{Question.} How much does [[UNKNOWN]] weigh?
+
+\textbf{Answer.} Balance the scale with [[UNKNOWN]] alone on
+                        one side and enter the weight:
+                        
+                    
+                    [
+                        $("input#answer").val(),
+                        KhanUtil.scale.leftConst,
+                        KhanUtil.scale.rightConst
+                    ]
+                    
+                        if (guess[0] === "") {
+                            return "";
+                        }
+                        if (guess[1] !== 0) {
+                            return i18n._("Make sure %(name)s is alone on " +
+                                "one side of the scale.", {name: UNKNOWN});
+                        }
+                        if (guess[1] + X !== guess[2]) {
+                            return i18n._("Make sure the scale is balanced.");
+                        }
+                        return +guess[0] === X;
+                    
+                    
+                        KhanUtil.scale.setLeftWeight(guess[1]);
+                        KhanUtil.scale.setRightWeight(guess[2]);
+                    
+                    
+                        $("input\#answer").val(guess[0]);
+
+\textbf{Hints.}
+\begin{itemize}
+
+\end{itemize}
+\end{document}

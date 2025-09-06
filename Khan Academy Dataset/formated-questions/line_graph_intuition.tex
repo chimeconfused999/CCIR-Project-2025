@@ -1,0 +1,85 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Line graph intuition}
+\textbf{Question.} Graph a line that has [[SLOPE\_NAME]] slope:
+
+\textbf{Answer.} [POINTS.pointA.coord, POINTS.pointB.coord]
+                
+                
+                    if (SLOPE !== 2\&\&
+                            guess[0][0] === -5 \&\&
+                            guess[0][1] === 5 \&\&
+                            guess[1][0] === 5 \&\&
+                            guess[1][1] === 5) \{
+                        return "";
+                    \}
+                    var slope = (guess[1][1] - guess[0][1]) /
+                        (guess[1][0] - guess[0][0]);
+                    if (SLOPE === 0) \{
+                        return slope > 0;
+                    \} else if (SLOPE === 1) \{
+                        return slope < 0;
+                    \} else if (SLOPE === 2) \{
+                        return abs(slope) < 0.001;
+                    \} else if (SLOPE === 3) \{
+                        return guess[1][0] === guess[0][0];
+                    \}
+                
+                
+                    POINTS.pointA.setCoord(guess[0]);
+                    POINTS.pointB.setCoord(guess[1]);
+                    graph.line1.transform(true);
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The slope of a line is the ratio of the change in
+                    y over the change in x. Also
+                    known as rise over run.
+  \item For a positive slope, if the change in y from
+                    one point to another is positive then the change in
+                    x should also be positive.
+  \item For a negative slope, if the change in y from
+                    one point to another is positive then the change in
+                    x should be negative.
+  \item For a zero slope, the change in y should be
+                    zero from any point to another point.
+  \item For an undefined slope, the change in x should
+                    be zero from any point to another point.
+  \item A line with [[SLOPE\_NAME]] slope looks like:
+  \item The slope of the original line is negative.
+                    
+                        The slope of the original line is positive.
+  \item If the slope of the new line is negative and
+                            greater than the slope of the original line with
+                            negative slope then the new line should be less
+                            steep.
+                        
+                    
+                    
+                        
+                            If the slope of the new line is negative and less
+                            than the slope of the original line with negative
+                            slope, then the new line should be steeper.
+  \item If the slope of the new line is positive and greater
+                            than the slope of the original line with positive
+                            slope, then the new line should be steeper.
+                        
+                    
+                    
+                        
+                            If the slope of the new line is positive and less
+                            than the slope of the original line with positive
+                            slope, then the new line should be less steep.
+  \item Since the original slope is 
+                        [[fractionReduce(SLOPE\_N, SLOPE\_D)]],
+                        the slope of the new line could be 
+                        [[decimalFraction(NEW\_SLOPE, true, true)]]
+                         and could look like this:
+\end{itemize}
+\end{document}

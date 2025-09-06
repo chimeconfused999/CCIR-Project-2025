@@ -1,0 +1,85 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Multiplying and dividing rational expressions 4}
+\textbf{Question.} 
+
+\textbf{Answer.} ([[NUMERSOL.toString()]])/([[DENOMSOL.toString()]])
+                ([[NUMERSOL.toStringFactored()]])/([[DENOMSOL.toString()]])
+                ([[NUMERSOL.toString()]])/([[DENOMSOL.toStringFactored()]])
+                ([[NUMERSOL.toStringFactored()]])/([[DENOMSOL.toStringFactored()]])
+                [[NUMERSOL.toString()]]
+                [[NUMERSOL.toStringFactored()]]
+            
+
+            
+                [[-B]]
+                [[SOL]]
+                
+                    [[X]] \textbackslash\{\}neq \textbackslash\{\}space
+                    
+                        [[X]] \textbackslash\{\}neq \textbackslash\{\}space
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Dividing by an expression is the same as multiplying by its inverse.
+                \textbackslash\{\}qquad
+                    $\frac{[[NUMERATORS[ORDER[0]]]]}{[[DENOMINATORS[ORDER[0]]]]}$ $\times$
+                    $\frac{[[NUMERATORS[ORDER[1]]]]}{[[DENOMINATORS[ORDER[1]]]]}$
+  \item First factor the quadratic.
+  \item \textbackslash\{\}qquad
+                $\frac{[[NUMER_STRINGS[ORDER[0]]]]}{[[DENOM_STRINGS[ORDER[0]]]]}$ $\times$
+                $\frac{[[NUMER_STRINGS[ORDER[1]]]]}{[[DENOM_STRINGS[ORDER[1]]]]}$
+  \item Then factor out any other terms.
+
+                \textbackslash\{\}qquad
+                    $\frac{[[NUMER_STRINGS2[ORDER[0]]]]}{[[DENOM_STRINGS2[ORDER[0]]]]}$ $\times$
+                    $\frac{[[NUMER_STRINGS2[ORDER[1]]]]}{[[DENOM_STRINGS2[ORDER[1]]]]}$
+  \item Then multiply the two numerators and multiply the two denominators.
+  \item \textbackslash\{\}qquad \textbackslash\{\}dfrac\{
+                ([[NUMER\_STRINGS2[ORDER[0]]]])
+                [[NUMER\_STRINGS2[ORDER[0]]]] $\times$
+                ([[NUMER\_STRINGS2[ORDER[1]]]])
+                [[NUMER\_STRINGS2[ORDER[1]]]] \} \{
+                ([[DENOM\_STRINGS2[ORDER[0]]]])
+                [[DENOM\_STRINGS2[ORDER[0]]]] $\times$
+                ([[DENOM\_STRINGS2[ORDER[1]]]])
+                [[DENOM\_STRINGS2[ORDER[1]]]] \}
+  \item \textbackslash\{\}qquad $\frac{
+                [[getProduct(NUMER_PRODUCT[0], NUMER_PRODUCT[1])]]}{
+                [[getProduct(DENOM_PRODUCT[0], DENOM_PRODUCT[1])]]}$
+  \item Notice that
+                
+                    ([[CANCEL]]) and ([[TERM\_B]]) appear
+                
+                ([[TERM\_B]]) appears twice
+                in both the numerator and denominator so we can cancel them.
+  \item \textbackslash\{\}qquad $\frac{
+                    [[getProduct(NUMER_PRODUCT[0], NUMER_PRODUCT[1], CANCEL_ORDER[0].slice(0, 1))]]}{
+                    [[getProduct(DENOM_PRODUCT[0], DENOM_PRODUCT[1], CANCEL_ORDER[1].slice(0, 1))]]}$
+                
+
+                We are dividing by [[TERM\_B]], so [[TERM\_B]] \textbackslash\{\}neq 0.
+                Therefore, [[X]] \textbackslash\{\}neq [[-B]].
+  \item \textbackslash\{\}qquad $\frac{
+                    [[getProduct(NUMER_PRODUCT[0], NUMER_PRODUCT[1], CANCEL_ORDER[0])]]}{
+                    [[getProduct(DENOM_PRODUCT[0], DENOM_PRODUCT[1], CANCEL_ORDER[1])]]}$
+                
+
+                We are dividing by [[CANCEL]], so [[CANCEL]] \textbackslash\{\}neq 0.
+                Therefore, [[X]] \textbackslash\{\}neq [[-CANCEL.terms[1]]].
+  \item \textbackslash\{\}qquad
+                    $\frac{[[NUMERSOL.multiply(COMMON_FACTOR).toStringFactored()]]}{[[DENOMSOL.multiply(COMMON_FACTOR).toStringFactored()]]}$
+  \item \textbackslash\{\}qquad
+                [[NUMERSOL.toStringFactored()]]
+                [[NUMERSOL.multiply(-1).toStringFactored()]]
+                $\frac{[[NUMERSOL.toStringFactored()]]}{[[DENOMSOL.toStringFactored()]]}$
+                ; \textbackslash\{\}space [[X]] \textbackslash\{\}neq [[-B]]
+                ; \textbackslash\{\}space [[X]] \textbackslash\{\}neq [[-CANCEL.terms[1]]]
+\end{itemize}
+\end{document}

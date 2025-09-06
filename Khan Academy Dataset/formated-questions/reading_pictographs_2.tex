@@ -1,0 +1,92 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Reading pictographs 2}
+\textbf{Question.} 
+
+\textbf{Answer.} [[DATA[ PERSON ] * VALUE\_PER\_IMG + HALF[ PERSON ] * VALUE\_PER\_IMG / 2]] [[new Plural(function(num) \{
+            return i18n.ngettext("symbol", "symbols", num);
+        \})]] badges
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The key at the bottom of the pictograph shows that each full symbol represents 0, 1, 1, 0, 1 badges.
+  \item Find Alex's row in the table:
+                    
+                        Alex[["<div style=\textbackslash\{\}"background-image:url('" + Khan.imageBase + "badges/" + BADGE\_ID + "-small.png'); width:20px; height:40px;\textbackslash\{\}"> </div>"]]
+                        2
+  \item There are [[DATA[PERSON]]] full symbols and 1 half symbol.
+                    
+                        The full symbols represent 0, 1, 1, 0, 1 badges.
+                        The half symbol must represent [[VALUE\_PER\_IMG/2]] badges.
+  \item [[DATA[ PERSON ]]] [[plural\_form(SYMBOL\_PL, DATA[ PERSON ] )]]
+                         $\times$ 
+                        0, 1, 1, 0, 1 badges per symbol
+                         = [[DATA[ PERSON ] * VALUE\_PER\_IMG]] badges.
+                        
+                            1 half symbol  $\times$ [[VALUE\_PER\_IMG/2]] badges per half symbol  = [[VALUE\_PER\_IMG / 2]]
+                            badges.
+  \item Alex earned [[DATA[ PERSON ] * VALUE\_PER\_IMG + HALF[ PERSON ] * VALUE\_PER\_IMG / 2]] [[new Plural(function(num) \{
+            return i18n.ngettext("symbol", "symbols", num);
+        \})]] badges.
+  \item The key at the bottom of the pictograph shows that each full symbol represents 0, 1, 1, 0, 1 badges.
+  \item How many symbols are needed to represent [[mixedFractionFromImproper( toFraction( VALUE / VALUE\_PER\_IMG, 0.001 )[0], toFraction( VALUE / VALUE\_PER\_IMG, 0.001 )[1] )]] badges?
+  \item \textbackslash\{\}dfrac\{[[mixedFractionFromImproper( toFraction( VALUE / VALUE\_PER\_IMG, 0.001 )[0], toFraction( VALUE / VALUE\_PER\_IMG, 0.001 )[1] )]] \textbackslash\{\}text\{ [[plural(BADGE\_PL, VALUE )]]\}\}\{0, 1, 1, 0, 1 \textbackslash\{\}text\{ 4\}\} =
+                        [[i18n.\_("\%(point)s per badge", \{point: plural\_form(SYMBOL\_PL, VALUE\_PER\_IMG )\})]] \textbackslash\{\}text\{ [[plural\_form(SYMBOL\_PL, VALUE / VALUE\_PER\_IMG )]]\}
+  \item Who has [[i18n.\_("\%(point)s per badge", \{point: plural\_form(SYMBOL\_PL, VALUE\_PER\_IMG )\})]] symbols next to his name?Who has [[i18n.\_("\%(point)s per badge", \{point: plural\_form(SYMBOL\_PL, VALUE\_PER\_IMG )\})]] symbols next to her name?
+                    
+                        ???[["<div style=\textbackslash\{\}"background-image:url('" + Khan.imageBase + "badges/" + BADGE\_ID + "-small.png'); width:20px; height:40px;\textbackslash\{\}"> </div>"]]
+                        2
+  \item Alex has [[i18n.\_("\%(point)s per badge", \{point: plural\_form(SYMBOL\_PL, VALUE\_PER\_IMG )\})]] symbols next to his name.
+  \item Alex has [[i18n.\_("\%(point)s per badge", \{point: plural\_form(SYMBOL\_PL, VALUE\_PER\_IMG )\})]] symbols next to her name.
+  \item Alex earned [[mixedFractionFromImproper( toFraction( VALUE / VALUE\_PER\_IMG, 0.001 )[0], toFraction( VALUE / VALUE\_PER\_IMG, 0.001 )[1] )]] [[new Plural(function(num) \{
+            return i18n.ngettext("symbol", "symbols", num);
+        \})]] badges.
+  \item The key at the bottom of the pictograph shows that each full symbol represents 0, 1, 1, 0, 1 badges.
+  \item Find Alex's and Alex's rows in the table:
+                    
+                        Alex[["<div style=\textbackslash\{\}"background-image:url('" + Khan.imageBase + "badges/" + BADGE\_ID + "-small.png'); width:20px; height:40px;\textbackslash\{\}"> </div>"]]
+                        2
+                         
+                    
+                    
+                        Alex[["<div style=\textbackslash\{\}"background-image:url('" + Khan.imageBase + "badges/" + BADGE\_ID + "-small.png'); width:20px; height:40px;\textbackslash\{\}"> </div>"]]
+                        2
+  \item Alex has 24 more symbols next to his name than Alex does.
+  \item Alex has 24 more symbols next to her name than Alex does.
+  \item 24 [[plural\_form(SYMBOL\_PL, SYMBOL\_DIFF )]]
+                         $\times$ 
+                        0, 1, 1, 0, 1 badges per symbol
+                         = [[VAL1 - VAL2]] badges.
+  \item Alex earned [[VAL1 - VAL2]] more [[new Plural(function(num) \{
+            return i18n.ngettext("symbol", "symbols", num);
+        \})]] badges than Alex.
+  \item Start by counting the total number of [[new Plural(function(num) \{
+            return i18n.ngettext("symbol", "symbols", num);
+        \})]] symbols.
+  \item There are [[sum( HALF )]] symbols and [[sum( DATA ) * VALUE\_PER\_IMG + sum( HALF ) * ( VALUE\_PER\_IMG / 2 )]] half symbols.
+  \item Each symbol represents 0, 1, 1, 0, 1 [[new Plural(function(num) \{
+            return i18n.ngettext("symbol", "symbols", num);
+        \})]] badges.
+                    Each half symbol represents [[VALUE\_PER\_IMG / 2]] [[new Plural(function(num) \{
+            return i18n.ngettext("symbol", "symbols", num);
+        \})]] badges.
+  \item [[sum( HALF )]] [[plural\_form(SYMBOL\_PL, FULL\_SYM )]]
+                         $\times$ 
+                        0, 1, 1, 0, 1 badges per symbol
+                         = [[FULL\_SYM * VALUE\_PER\_IMG]] badges.
+                        
+                            [[sum( DATA ) * VALUE\_PER\_IMG + sum( HALF ) * ( VALUE\_PER\_IMG / 2 )]] half symbols
+                             $\times$ [[VALUE\_PER\_IMG/2]] badges per half symbol
+                             = [[HALF\_SYM * VALUE\_PER\_IMG / 2]]
+                            badges.
+  \item All together, everyone earned [[TOTAL]] [[new Plural(function(num) \{
+            return i18n.ngettext("symbol", "symbols", num);
+        \})]] badges.
+\end{itemize}
+\end{document}

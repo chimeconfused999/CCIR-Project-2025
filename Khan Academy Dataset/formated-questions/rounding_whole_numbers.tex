@@ -1,0 +1,22 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Rounding whole numbers}
+\textbf{Question.} Round [[commafy(NUM)]] to the nearest [[numberPlaceNames[PLACE].toString()]].
+
+\textbf{Answer.} [[Math.round(roundTo(-PLACE, NUM))]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Because we want to round to the [[plural\_form(numberPlaceNames[PLACE], 2).toString()]] place, we need to look at the digit in the [[plural\_form(numberPlaceNames[PLACE - 1], 2)]] place.
+  \item The digit in the [[plural\_form(numberPlaceNames[PLACE - 1], 2)]] place is 5.
+  \item Because the [[plural\_form(numberPlaceNames[PLACE - 1], 2)]] place digit is 5,
+            we round up to [[commafy(ROUNDED)]].
+  \item Because 5 is less than 5, we round down to [[commafy(ROUNDED)]].
+\end{itemize}
+\end{document}

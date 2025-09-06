@@ -1,0 +1,66 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Distance between point and line}
+\textbf{Question.} Find the minimum distance between the point \textbackslash\{\}red\{([[X1]], [[Y1]])\}
+                        and the line \textbackslash\{\}blue\{y =
+                        [[M2\_FRAC]]
+                        [[M2\_SIGN]]x
+                        + [[B2]]\}.
+
+\textbf{Answer.} [[DISTANCE]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item First, find the equation of the perpendicular line that passes through \textbackslash\{\}red\{([[X1]], [[Y1]])\}.
+  \item The slope of the blue line is \textbackslash\{\}blue\{[[M2\_FRAC]]\},
+                            and its negative reciprocal is \textbackslash\{\}green\{[[M1\_FRAC]]\}.
+                        
+                        
+                            Thus, the equation of our perpendicular line will be of the form \textbackslash\{\}green\{y =
+                            [[M1\_FRAC]]
+                            [[M1\_SIGN]]x + b\}.
+  \item We can plug our point, \textbackslash\{\}red\{([[X1]], [[Y1]])\},
+                            into this equation to solve for \textbackslash\{\}green\{b\}, the y-intercept.
+                        
+                        
+                            [[Y1]] = \textbackslash\{\}green\{
+                            [[M1\_FRAC]]
+                            [[M1\_SIGN]]\}([[X1]]) + \textbackslash\{\}green\{b\}
+  \item [[Y1]] = [[decimalFraction( M1 * X1, "true", "true" )]] + \textbackslash\{\}green\{b\}
+                        [[Y1]] - [[decimalFraction( M1 * X1, "true", "true" )]] = \textbackslash\{\}green\{b\} = [[decimalFraction( Y1 - M1 * X1, "true", "true" )]]
+  \item The equation of the perpendicular line is \textbackslash\{\}green\{y =
+                            [[M1\_FRAC]]
+                            [[M1\_SIGN]]x
+                             + [[B1]]\}.
+  \item We can see from the graph (or by setting the equations equal to one another) that the two lines intersect at the point \textbackslash\{\}red\{([[X2]], [[Y2]])\}. Thus, the distance we're looking for is the distance between the two red points.
+  \item The distance between two points is: $\sqrt{( x_{1}$ - x\_\{2\} )\textasciicircum{}2 + ( y\_\{1\} - y\_\{2\} )\textasciicircum{}2\}
+  \item Plugging in our points \textbackslash\{\}red\{([[X1]], [[Y1]])\} and \textbackslash\{\}red\{([[X2]], [[Y2]])\} gives us: $\sqrt{( \red{[[X1]]}$ - \textbackslash\{\}red\{[[X2]]\} )\textasciicircum{}2 + ( \textbackslash\{\}red\{[[Y1]]\} - \textbackslash\{\}red\{[[Y2]]\} )\textasciicircum{}2\}
+  \item = $\sqrt{( [[X1 - X2]] )^2 + ( [[Y1 - Y2]] )^2}$ = $\sqrt{[[DISTANCE]]}$  = [[formattedSquareRootOf( DISTANCE )]]
+  \item So the minimum distance between the point \textbackslash\{\}red\{([[X1]], [[Y1]])\}
+                        and the line \textbackslash\{\}blue\{y =
+                        [[M2\_FRAC]]
+                        [[M2\_SIGN]]x
+                        + [[B2]]\}
+                        is [[formattedSquareRootOf(DISTANCE)]].
+  \item First, find the equation of the perpendicular line that passes through \textbackslash\{\}red\{([[X1]], [[Y1]])\}.
+  \item Since the slope of the blue line is \textbackslash\{\}blue\{0\}, the perpendicular line will have an infinite slope and therefore will be a vertical line.
+  \item The equation of the vertical line that passes through \textbackslash\{\}red\{([[X1]], [[Y1]])\} is \textbackslash\{\}green\{x = [[X1]]\}.
+  \item We can see from the graph that the two lines intersect at the point \textbackslash\{\}red\{([[X1]], [[B1]])\}. Thus, the distance we're looking for is the distance between the two red points.
+  \item Since their x components are the same, the distance between the two points is simply the change in y:
+  \item $| \red{[[Y1]]} - ( \red{[[B1]]} ) |$ = [[abs( Y1 - B1 )]]
+  \item So the minimum distance between the point \textbackslash\{\}red\{([[X1]], [[Y1]])\} and the line \textbackslash\{\}blue\{y = [[B1]]\} is [[abs( Y1 - B1 )]].
+  \item First, find the equation of the perpendicular line that passes through \textbackslash\{\}red\{([[X1]], [[Y1]])\}.
+  \item Since the blue line has an infinite slope, the perpendicular line will have a slope of \textbackslash\{\}green\{0\} and therefore will be a horizontal line.
+  \item The equation of the perpendicular line that passes through \textbackslash\{\}red\{([[X1]], [[Y1]])\} is \textbackslash\{\}green\{y = [[Y1]]\}.
+  \item We can see from the graph that the two lines intersect at the point \textbackslash\{\}red\{([[B1]], [[Y1]])\}. Thus, the distance we're looking for is the distance between the two red points.
+  \item Since their y components are the same, the distance between the two points is simply the change in x:
+  \item $| \red{[[X1]]} - ( \red{[[B1]]} ) |$ = [[abs( X1 - B1 )]]
+  \item So the minimum distance between the point \textbackslash\{\}red\{([[X1]], [[Y1]])\} and the line \textbackslash\{\}blue\{x = [[B1]]\}is [[abs( X1 - B1 )]].
+\end{itemize}
+\end{document}

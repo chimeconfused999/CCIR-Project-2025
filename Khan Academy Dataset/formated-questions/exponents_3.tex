@@ -1,0 +1,22 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Fractional exponents}
+\textbf{Question.} \textbackslash\{\}Large\{[[fracParens( BASE\_N, BASE\_D )]]\textasciicircum{}\{\textasciicircum{}\{[[fracSmall( EXP\_NEG ? -1 : 1, EXP\_D )]]\}\} = \{?\}\}
+
+\textbf{Answer.} [[SOL\_N / SOL\_D]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item = [[fracParens( BASEF\_N, BASEF\_D )]]\textasciicircum{}\{[[fracSmall( 1, EXP\_D )]]\}
+  \item Figure out what goes in the blank:\textbackslash\{\}Big(? \textbackslash\{\}Big)\textasciicircum{}\{[[VALS.root]]\}=[[frac( BASEF\_N, BASEF\_D )]]
+  \item Figure out what goes in the blank:\textbackslash\{\}Big(\textbackslash\{\}color\{blue\}\{[[frac( SOL\_N, SOL\_D )]]\}\textbackslash\{\}Big)\textasciicircum{}\{[[VALS.root]]\}=[[frac( BASEF\_N, BASEF\_D )]]
+  \item So [[fracParens( BASE\_N, BASE\_D )]]\textasciicircum{}\{[[fracSmall( EXP\_NEG ? -1 : 1, EXP\_D )]]\}=[[fracParens( BASEF\_N, BASEF\_D )]]\textasciicircum{}\{[[fracSmall( 1, EXP\_D )]]\}=$\frac{NaN}{NaN}$
+  \item So [[fracParens( BASEF\_N, BASEF\_D )]]\textasciicircum{}\{[[fracSmall( 1, EXP\_D )]]\}=$\frac{NaN}{NaN}$
+\end{itemize}
+\end{document}

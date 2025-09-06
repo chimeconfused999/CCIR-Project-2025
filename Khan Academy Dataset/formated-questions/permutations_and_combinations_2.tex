@@ -1,0 +1,118 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Permutations and combinations}
+\textbf{Question.} How many unique ways are there to arrange the letters in the word [[WORD]]?
+
+\textbf{Answer.} [[ANSWER]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Let's try building the arrangements (or permutations) letter by letter. The word is [[WORD.length]]
+                        letters long:
+                        [[\_.map(\_.range(WORD.length), function(l)\{ return "\_ "; \}).join("")]]
+                        Now, for the first blank, we have [[WORD.length]] choices of letters to put in.
+  \item After we put in the first letter, let's say it's [[PERM[0]]], we have [[WORD.length-1]] blanks left.
+                        [[PERM[0]+" "+\_.map(\_.range(WORD.length-1), function(l)\{ return "\_ "; \}).join("")]]
+                        For the second blank, we only have [[WORD.length-1]] choices of letters left to put in. So far, there were
+                            [[WORD.length]] $\cdot$ [[WORD.length-1]] unique choices we could have made.
+  \item We can continue in this fashion to put in a third letter, then a fourth, and so on. At each step, we have one fewer choice to
+                        make, until we get to the last letter, and there's only one we can put in.
+  \item Using this method, the total number of arrangements is [[\_.map(\_.range(WORD.length).reverse(), function(l)\{ return (++l);\}).join("\textbackslash\{\}$\cdot$")]] = [[factorial(WORD.length)]]. Another way of writing this is [[WORD.length]]!,
+                        or [[WORD.length]] factorial, but this isn't quite the right answer.
+  \item Using the above method, we assumed that all the letters were unique. But they're not! There are [[REPTIMES]]
+                        [[REPLETTER]]s, so we're counting every permutation multiple times. So every time we have these
+                        [[factorial(REPTIMES)]] permutations:
+                            
+                                [[PERM\_UNIQUE.join("</br>")]]
+                            
+                        We actually should have only one permutation:
+                            
+                                [[PERM]]
+  \item Notice that we've overcounted our arrangements by [[REPTIMES]]!. This is not a coincidence!
+                        This is exactly the number of ways to permute [[REPTIMES]] objects, which we were doing with the
+                        non-unique [[REPLETTER]]s. To address this overcounting, we need to divide the number of arrangements we counted
+                        before by [[REPTIMES]]!.
+  \item When we divide the number of permutations we got by the number of times we're overcounting each permutation, we get
+                         $\frac{[[WORD.length]]!}{[[REPTIMES]]!}$ = $\frac{[[factorial(WORD.length)]]}{[[factorial(REPTIMES)]]}$ = [[ANSWER]]
+  \item Forget about the reindeer that can't be together for a second, and let's try to
+                        figure out how many ways we can arrange the reindeer if we don't have to worry about that.Forget about the reindeer that have to be together for a second, and let's try to
+                        figure out how many ways we can arrange the reindeer if we don't have to worry about that.
+                        We can build our line of reindeer one by one: there are [[NAMES.length]] slots,
+                        and we have [[NAMES.length]] different reindeer we can put in the first slot.
+  \item Once we fill the first slot, we only have [[NAMES.length-1]] reindeer left, so we only have
+                        [[NAMES.length-1]]
+                        choices for the second slot. So far, there are [[NAMES.length]] $\cdot$ [[NAMES.length-1]] = [[NAMES.length*(NAMES.length-1)]] unique choices we can make.
+  \item We can continue in this way for the third reindeer, then the fourth, and so on, until we reach the last slot, where we only have
+                        one reindeer left and so we can only make one choice.
+  \item So, the total number of unique choices we could make to get to an arrangement of reindeer is [[\_.map(\_.range(NAMES.length).reverse(), function(l)\{ return (++l);\}).join("\textbackslash\{\}$\cdot$")]] = [[factorial(NAMES.length)]]. Another way of writing this is [[NAMES.length]]!,
+                        or [[NAMES.length]] factorial. But we haven't thought about the two reindeer who can't be together yet.
+  \item So, the total number of unique choices we could make to get to an arrangement of reindeer is [[\_.map(\_.range(NAMES.length).reverse(), function(l)\{ return (++l);\}).join("\textbackslash\{\}$\cdot$")]] = [[factorial(NAMES.length)]]. Another way of writing this is [[NAMES.length]]!,
+                        or [[NAMES.length]] factorial. But we haven't thought about the two reindeer who have to be together yet.
+  \item There are [[factorial(NAMES.length)]] different arrangements of reindeer altogether,
+                            so we just need to subtract
+                            all the arrangements where [[PAIR[0]]] and [[PAIR[1]]] are together. How many of these are there?
+                        
+                        
+                            We can count the number of arrangements where [[PAIR[0]]] and [[PAIR[1]]] are together by treating them as one double-reindeer. Now we can use the same idea as before to come up with [[\_.map(\_.range(NAMES.length-1).reverse(), function(l)\{ return (++l);\}).join("\textbackslash\{\}$\cdot$")]] = [[factorial(NAMES.length-1)]] different arrangements. But that's not quite right.
+                        
+                        
+                            Why? Because you can arrange the double-reindeer with [[PAIR[0]]] in front or with
+                            [[PAIR[1]]] in front, and those are different arrangements! So the actual number of arrangements with [[PAIR[0]]]
+                            and [[PAIR[1]]] together is [[factorial(NAMES.length-1)]] $\cdot$ 2 =
+                            [[factorial(NAMES.length-1)*2]]
+                        
+                        
+                            So, subtracting the number of arrangements where [[PAIR[0]]] and [[PAIR[1]]] are together from the total number
+                            of arrangements, we get [[ANSWER]] arrangements of reindeer where they will fly.
+  \item We can count the number of arrangements where [[PAIR[0]]] and [[PAIR[1]]] are together by treating them as one double-reindeer. Now we can use the same idea as before to come up with [[\_.map(\_.range(NAMES.length-1).reverse(), function(l)\{ return (++l);\}).join("\textbackslash\{\}$\cdot$")]] = [[factorial(NAMES.length-1)]] different arrangements. But that's not quite right.
+                        
+                        
+                            Why? Because you can arrange the double-reindeer with [[PAIR[0]]] in front or with
+                            [[PAIR[1]]] in front, and those are different arrangements! So the actual number of arrangements with [[PAIR[0]]]
+                            and [[PAIR[1]]] together is [[factorial(NAMES.length-1)]] $\cdot$ 2 =
+                            [[factorial(NAMES.length-1)*2]]
+  \item There are [[FAC1\_TIMES]] numbers divisible by [[FAC1]] between 1
+                            and 100, and [[FAC2\_TIMES]] numbers divisible by
+                            [[FAC2]] between 1 and 100.
+                            [Show me why]
+                        
+                        
+                            
+                                One way to see this is to take  $\frac{100}{[[FAC1]]}$ = [[FAC1\_TIMES]]
+                            
+                            
+                                One way to see this is to take  $\frac{100}{[[FAC1]]}$, which is between [[FAC1\_TIMES]] and [[FAC1\_TIMES+1]]. So, starting at 0 and adding [[FAC1]]
+                                at each step, you have to take between [[FAC1\_TIMES]] and [[FAC1\_TIMES+1]] steps to get
+                                to 100. Since if you take a fraction of a step you won't get to a number divisible by [[FAC1]],
+                                you'll hit [[FAC1\_TIMES]] numbers divisible by [[FAC1]] before you get to above 100.
+                                So, there are [[FAC1\_TIMES]] numbers between 1 and 100 divisible by [[FAC1]].
+                            
+                            
+                            
+                                Using similar logic for the second factor, we see that  $\frac{100}{[[FAC2]]}$ = [[FAC2\_TIMES]]
+                            
+                            
+                                Using similar logic for the second factor, take  $\frac{100}{[[FAC2]]}$, which is between [[FAC2\_TIMES]] and [[FAC2\_TIMES+1]]. So, starting at 0 and adding [[FAC2]]
+                                at each step, you have to take between [[FAC2\_TIMES]] and [[FAC2\_TIMES+1]] steps to get
+                                to 100. Since if you take a fraction of a step you won't get to a number divisible by [[FAC2]],
+                                you'll hit [[FAC2\_TIMES]] numbers divisible by [[FAC2]] before you get to above 100.
+                                So, there are [[FAC2\_TIMES]] numbers between 1 and 100 divisible by [[FAC2]].
+  \item So, you might think there are [[FAC1\_TIMES]] + [[FAC2\_TIMES]] = [[FAC1\_TIMES+FAC2\_TIMES]]
+                        numbers divisible by one or the other, but this is overcounting something.
+  \item We're counting every number which is divisible by both [[FAC1]] and [[FAC2]] twice.
+                        So, for example, [[FAC1*FAC2]] is counted once as a number divisible by [[FAC1]], and then again as a number divisible by [[FAC2]].
+  \item So, we need to count how many numbers are divisible by both [[FAC1]] and [[FAC2]]
+                        and subtract this from what we had before.
+  \item Being divisible by both [[FAC1]] and [[FAC2]] is the same thing as being divisible by
+                        [[FAC1*FAC2]], so there is [[BOTH\_TIMES]] number between 1 and 100 divisible by both.
+  \item Being divisible by both [[FAC1]] and [[FAC2]] is the same thing as being divisible by
+                        [[FAC1*FAC2]], so there are [[BOTH\_TIMES]] numbers between 1 and 100 divisible by both.
+  \item Subtracting, there are [[FAC1\_TIMES + FAC2\_TIMES]] - [[BOTH\_TIMES]] = [[FAC1\_TIMES + FAC2\_TIMES - BOTH\_TIMES]] numbers divisible by [[FAC1]] or [[FAC2]].
+\end{itemize}
+\end{document}

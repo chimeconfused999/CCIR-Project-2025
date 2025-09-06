@@ -1,0 +1,46 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Increasing and decreasing intervals of functions}
+\textbf{Question.} 
+
+\textbf{Answer.} Move the orange window to select part of the function.
+        
+        
+            graph.slidingWindow.getX()
+        
+        
+            var correct = \_.reduce(\_.range(guess, guess + 1, 0.02), function(correct, x) \{
+                return correct \&\& PREDICATE(x);
+            \}, true);
+            if (!graph.moved \&\& !correct) \{
+                return ""
+            \}
+            return correct;
+        
+        
+            graph.slidingWindow.moveTo(guess, 0);
+
+\textbf{Hints.}
+\begin{itemize}
+  \item \textbackslash\{\}blue\{f(x)\} is increasing in an interval if in that interval,
+                    when x is increasing, \textbackslash\{\}blue\{f(x)\} is increasing.
+  \item The intervals
+                        where \textbackslash\{\}blue\{f\} is increasing
+                        are
+                        highlighted above.
+  \item Select any part of the function that is highlighted.
+  \item \textbackslash\{\}blue\{f(x)\} is decreasing in an interval if in that interval,
+                    when x is increasing, \textbackslash\{\}blue\{f(x)\} is decreasing.
+  \item The intervals
+                        where \textbackslash\{\}blue\{f\} is decreasing
+                        are
+                        highlighted above.
+  \item Select any part of the function that is highlighted.
+\end{itemize}
+\end{document}

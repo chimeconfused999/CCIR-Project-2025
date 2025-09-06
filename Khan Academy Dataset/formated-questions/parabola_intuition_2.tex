@@ -1,0 +1,69 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Parabola intuition 2}
+\textbf{Question.} Drag the focus and directrix to define a
+                    parabola with the equation:
+
+\textbf{Answer.} Drag the focus and directrix on the graph to match the equation.
+                        
+                            Equation of the parabola:
+                            y\{\}+0
+                            \{\}=\{\}$\frac{1}{4}$
+                            (x\{\}+0)\textasciicircum{}2
+                        
+                    
+
+                    [
+                        graph.currParabola.getVertexX(),
+                        graph.currParabola.getVertexY(),
+                        graph.currParabola.getLeadingCoefficient()
+                    ]
+
+                    
+                        if (guess[0] === 0 \&\& guess[1] === 0 \&\& guess[2] === 0.25) \{
+                            return "";
+                        \}
+                        return (abs(guess[0] - X1) < 0.001) \&\& (abs(guess[1] - Y1) < 0.001) \&\& (abs(guess[2] - A) < 0.001);
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The equation is in the form y - y\_1 = a(x - x\_1)\textasciicircum{}2.
+  \item The leading coefficient, a, in the equation is [[fractionReduce.apply(KhanUtil, toFraction(A, 0.001))]], which is positive.
+                        Therefore the parabola is upward opening.
+  \item The leading coefficient, a, in the equation is [[fractionReduce.apply(KhanUtil, toFraction(A, 0.001))]], which is negative.
+                        Therefore the parabola is downward opening.
+  \item The value of x\_1 is [[fractionReduce.apply(KhanUtil, toFraction(X1, 0.001))]], what does this number mean for the parabola?
+  \item The minimum value of [[fractionReduce.apply(KhanUtil, toFraction(A, 0.001))]](x - [[fractionReduce.apply(KhanUtil, toFraction(X1, 0.001))]])\textasciicircum{}2 occurs when
+                        (x - [[fractionReduce.apply(KhanUtil, toFraction(X1, 0.001))]])\textasciicircum{}2 = 0.
+                        Therefore the vertex of the parabola is at x = [[fractionReduce.apply(KhanUtil, toFraction(X1, 0.001))]].
+  \item The maximum value of [[fractionReduce.apply(KhanUtil, toFraction(A, 0.001))]](x - [[fractionReduce.apply(KhanUtil, toFraction(X1, 0.001))]])\textasciicircum{}2 occurs when
+                        (x - [[fractionReduce.apply(KhanUtil, toFraction(X1, 0.001))]])\textasciicircum{}2 = 0.
+                        Therefore the vertex of the parabola is at x = [[fractionReduce.apply(KhanUtil, toFraction(X1, 0.001))]].
+  \item The focus of the parabola has the same x-coordinate as the vertex,
+                            so move the focus horizontally, so its x-coordinate is [[fractionReduce.apply(KhanUtil, toFraction(X1, 0.001))]].
+                        
+                        
+                            Show me
+  \item At x = [[fractionReduce.apply(KhanUtil, toFraction(X1, 0.001))]], then y - [[fractionReduce.apply(KhanUtil, toFraction(Y1, 0.001))]] = 0.
+                        
+                            Therefore, the vertex of the parabola is at y = [[fractionReduce.apply(KhanUtil, toFraction(Y1, 0.001))]].
+                            The focus and directrix should be an equal distance above and below this value.
+  \item The number in the denominator of a is twice the distance between the directrix to the focus.
+                        Therefore, the focus and directrix are separated by 10 units.
+  \item The focus is therefore 5 units above the vertex,
+                        and the directrix is 5 units below the vertex.
+  \item The focus is therefore -5 units below the vertex,
+                        and the directrix is -5 units above the vertex.
+  \item The focus is at ([[fractionReduce.apply(KhanUtil, toFraction(X1, 0.001))]], [[fractionReduce.apply(KhanUtil, toFraction(VERTEX\_Y, 0.001))]])
+                            and the directrix is at y = [[fractionReduce.apply(KhanUtil, toFraction(DIR\_Y, 0.001))]].
+                        
+                        
+                            Show me
+\end{itemize}
+\end{document}

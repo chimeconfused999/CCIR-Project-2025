@@ -1,0 +1,41 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Volume 1}
+\textbf{Question.} What is the volume of this rectangular prism? Drag on the rectangular prism to rotate it.
+
+\textbf{Answer.} [[LENGTH*WIDTH*HEIGHT]] cubic [[randFromArray(metricUnits)]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The volume of a shape is measured by the number of one \textbackslash\{\}text\{ [[randFromArray(metricUnits)]]\} cubes which make up the shape.
+  \item To make counting the cubes easier, break the rectangular prism into [[max(max(LENGTH, WIDTH), HEIGHT)]] slabs which are each
+                    [[DIMENSIONS[2]]] 6, 8, 7 wide,  [[DIMENSIONS[1]]] 6, 8, 7 long, and
+                    1 6, 8, 7 high.
+  \item Each slab has [[DIMENSIONS[2]]] rows containing [[DIMENSIONS[1]]] cubes, so there are
+                       [[DIMENSIONS[2]]] $\times$ [[DIMENSIONS[1]]] = [[WIDTH*LENGTH]] cubes in each slab.
+  \item Since there are [[WIDTH*LENGTH]] cubes in each slab, there are a total of
+                [[max(max(LENGTH, WIDTH), HEIGHT)]] $\times$ [[WIDTH*LENGTH]] = [[HEIGHT*WIDTH*LENGTH]] cubes in the whole rectangular prism.
+  \item Since each cube is a cubic \textbackslash\{\}text\{ [[randFromArray(metricUnits)]]\}, the volume of the rectangular prism is [[HEIGHT*WIDTH*LENGTH]] 6, 8, 7\textasciicircum{}3
+  \item The volume of the 
+                            [[DIMENSIONS[1]]] 6, 8, 7 $\times$
+                            [[DIMENSIONS[2]]] 6, 8, 7 $\times$
+                            1 6, 8, 7
+                         slab pictured above is 
+                            [[LENGTH*WIDTH]] 6, 8, 7\textasciicircum{}3
+                         since there are
+                        [[DIMENSIONS[1]]] rows of
+                        [[DIMENSIONS[2]]] cubic
+                        [[plural\_form(UNIT)]].
+  \item Since the slabs have a height of 1 \textbackslash\{\}text\{ [[randFromArray(metricUnits)]]\}, x is the number of these slabs which fill up the whole rectangular prism.
+  \item We can figure out the number of slabs needed by seeing how many times [[LENGTH*WIDTH]]
+                     goes into [[LENGTH*WIDTH*HEIGHT]]
+  \item So x = [[LENGTH*WIDTH*HEIGHT]] \textbackslash\{\}div [[LENGTH*WIDTH]]
+  \item Thus x = [[max(max(LENGTH, WIDTH), HEIGHT)]]
+\end{itemize}
+\end{document}

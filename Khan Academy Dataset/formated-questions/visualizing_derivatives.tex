@@ -1,0 +1,47 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Visualizing derivatives}
+\textbf{Question.} A function f(x) is shown in green. The sliding purple window may contain a section of an antiderivative of the function, F(x).
+                
+                
+                    Where does the function in the sliding window correspond to F(x)?
+
+\textbf{Answer.} Drag the sliding window to the correct region or indicate there is no solution.
+                
+                
+                    slidingWindow.getXLims()
+                
+                
+                    if (NO\_SOLUTION \&\&
+                            $(".sol.no-solution :checkbox").prop("checked") ) {
+                        return true;
+                    } else if (_.isEqual(guess, slidingWindow.startRange)) {
+                        return "";
+                    }
+                    return _.any(PROBLEM_RANGES, function(problemRange) {
+                        return _.isEqual(guess, problemRange);
+                    });
+                
+                
+                    slidingWindow.moveTo(guess[0], 0);
+                
+            
+            
+            
+                
+                    
+                        true
+                    
+                    No solution$
+
+\textbf{Hints.}
+\begin{itemize}
+  \item [[value]]
+\end{itemize}
+\end{document}

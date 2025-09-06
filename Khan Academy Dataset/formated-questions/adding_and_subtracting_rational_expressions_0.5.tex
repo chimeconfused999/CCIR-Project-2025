@@ -1,0 +1,29 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Adding and subtracting rational expressions 0.5}
+\textbf{Question.} $\frac{4}{[[new Term(randRange(1, 10), X)]]}$+
+            $\frac{10}{[[new Term(randRange(1, 10), X)]]}$
+
+\textbf{Answer.} ([[NUMERATORSUM / FACTOR]])/([[DENOMINATOR.divide(FACTOR)]])
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Since the expressions have the same denominator we simply combine the numerators:
+                
+                    $\frac{4 + 10}{[[new Term(randRange(1, 10), X)]]}$
+                
+                
+                    $\frac{4 + (10)}{[[new Term(randRange(1, 10), X)]]}$
+  \item Combine like terms:
+                $\frac{14}{[[new Term(randRange(1, 10), X)]]}$
+  \item Simplify by dividing numerator and denominator by [[getGCD(NUMERATORSUM, DENOMINATOR.coefficient)]]:
+                
+                $\frac{[[NUMERATORSUM / FACTOR]]}{[[DENOMINATOR.divide(FACTOR)]]}$
+\end{itemize}
+\end{document}

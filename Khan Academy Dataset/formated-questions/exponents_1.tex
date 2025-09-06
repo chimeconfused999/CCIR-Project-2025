@@ -1,0 +1,31 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Positive and zero exponents}
+\textbf{Question.} \textbackslash\{\}Large\{[[negParens( BASE )]]\textasciicircum{}\{[[VALS.exp]]\} = \{?\}\}
+
+\textbf{Answer.} [[round( pow( BASE, EXP ) )]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Anything to the 1st power equals... ?
+                        x\textasciicircum{}\{1\} = x, no matter what x is.
+                        [[negParens(BASE)]]\textasciicircum{}\{1\} = [[VALS.base]]
+  \item Negative one to any even power equals... ?
+                            Negative one to any even power equals one.
+                            [[negParens(BASE)]]\textasciicircum{}\{[[VALS.exp]]\} = 1
+                        
+                            Negative one to any odd power equals... ?
+                            Negative one to any odd power equals negative one.
+                            [[negParens(BASE)]]\textasciicircum{}\{[[VALS.exp]]\} = -1
+  \item [[CardinalThrough20( BASE )]] to any power equals... ?
+                        [[CardinalThrough20( BASE )]] to any power equals [[cardinalThrough20(round(pow(BASE, EXP)))]].
+                        [[negParens(BASE)]]\textasciicircum{}\{[[VALS.exp]]\} = [[round(pow(BASE, EXP))]]
+  \item = [[v]]
+\end{itemize}
+\end{document}

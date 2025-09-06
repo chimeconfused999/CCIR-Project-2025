@@ -1,0 +1,58 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Multiplying and dividing rational expressions 3}
+\textbf{Question.} $\frac{[[FRACTION1.numerator.string]]}{[[FRACTION1.denominator.string]]}$ $\times$
+                    $\frac{[[FRACTION2.numerator.string]]}{[[FRACTION2.denominator.string]]}$
+
+\textbf{Answer.} ([[NUMERSOL.toString()]])/([[DENOMSOL.toString()]])
+                ([[NUMERSOL.toString()]])/([[DENOMSOL.toStringFactored()]])
+                ([[NUMERSOL.toStringFactored()]])/([[DENOMSOL.toString()]])
+                ([[NUMERSOL.toStringFactored()]])/([[DENOMSOL.toStringFactored()]])
+                [[NUMERSOL.toString()]]
+                [[NUMERSOL.toStringFactored()]]
+            
+            [[randVar()]] \textbackslash\{\}neq \textbackslash\{\}space
+            -2.5
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Dividing by an expression is the same as multiplying by its inverse.
+                        \textbackslash\{\}qquad
+                            $\frac{[[FRACTION1.numerator.string]]}{[[FRACTION1.denominator.string]]}$ $\times$
+                            $\frac{[[FRACTION2.numerator.string]]}{[[FRACTION2.denominator.string]]}$
+  \item When multiplying fractions, we multiply the numerators and the denominators.
+  \item \textbackslash\{\}qquad \textbackslash\{\}dfrac\{
+                ([[FRACTION1.numerator.string]])
+                [[FRACTION1.numerator.string]] $\times$
+                ([[FRACTION2.numerator.string]])
+                [[FRACTION2.numerator.string]] \} \{
+                ([[FRACTION1.denominator.string]])
+                [[FRACTION1.denominator.string]] $\times$
+                ([[FRACTION2.denominator.string]])
+                [[FRACTION2.denominator.string]] \}
+  \item \textbackslash\{\}qquad \textbackslash\{\}dfrac
+                    \{[[FRACTION3.numerator[0]]]
+                     $\times$ [[FRACTION3.numerator[1]]]([[new RationalExpression([[COEFFICIENT, X], CONSTANT])]])\}
+                    \{[[FRACTION3.denominator[0]]]
+                     $\times$ [[FRACTION3.denominator[1]]]([[new RationalExpression([[COEFFICIENT, X], CONSTANT])]])\}
+  \item \textbackslash\{\}qquad $\frac{[[DENOMTERM.coefficient > 0 ?
+                NUMERTERM.getGCD(DENOMTERM) :
+                NUMERTERM.getGCD(DENOMTERM).multiply(-1)]]([[new RationalExpression([[COEFFICIENT, X], CONSTANT])]])}{[[NUMERTERM.divide(FACTOR)]]([[new RationalExpression([[COEFFICIENT, X], CONSTANT])]])}$
+  \item We can cancel the [[new RationalExpression([[COEFFICIENT, X], CONSTANT])]] so long as [[new RationalExpression([[COEFFICIENT, X], CONSTANT])]] \textbackslash\{\}neq 0.
+  \item Therefore [[randVar()]] \textbackslash\{\}neq $\frac{-5}{2}$.
+  \item \textbackslash\{\}qquad
+                \textbackslash\{\}dfrac\{[[DENOMTERM.coefficient > 0 ?
+                NUMERTERM.getGCD(DENOMTERM) :
+                NUMERTERM.getGCD(DENOMTERM).multiply(-1)]] \textbackslash\{\}cancel\{([[new RationalExpression([[COEFFICIENT, X], CONSTANT])]]\})\}\{[[NUMERTERM.divide(FACTOR)]] \textbackslash\{\}cancel\{([[new RationalExpression([[COEFFICIENT, X], CONSTANT])]])\}\}
+                = [[writeExpressionFraction(NUMERTERM, DENOMTERM)]]
+                =
+                    [[writeExpressionFraction(NUMERSOL, DENOMSOL)]]
+                    [[NUMERSOL]]
+\end{itemize}
+\end{document}

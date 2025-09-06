@@ -1,0 +1,62 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Equations of parallel and perpendicular lines}
+\textbf{Question.} Find the slope and y-intercept of the line that is \textbackslash\{\}green\{\textbackslash\{\}text\{[[LINE\_TYPE]]\}\} to \textbackslash\{\}blue\{y =
+                        [[M\_FRAC]]
+                        [[M\_SIGN]]x
+                        + [[B]]\} and passes through the point \textbackslash\{\}red\{([[X]], [[Y]])\}.
+
+\textbf{Answer.} m = [[-1 / M]]
+                    b = [[Y - ( -1 / M * X )]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Lines are considered perpendicular if their slopes are negative reciprocals of each other.
+  \item The slope of the blue line is \textbackslash\{\}blue\{[[M\_FRAC]]\}, and its negative reciprocal is \textbackslash\{\}green\{[[M\_PERP\_FRAC]]\}.
+                        Thus, the equation of our perpendicular line will be of the form \textbackslash\{\}green\{y = [[M\_PERP\_FRAC]][[M\_PERP\_SIGN]]x + b\}.
+  \item We can plug our point, ([[X]], [[Y]]), into this equation to solve for \textbackslash\{\}green\{b\}, the y-intercept.
+                        [[Y]] = \textbackslash\{\}green\{[[M\_PERP\_FRAC]][[M\_PERP\_SIGN]]\}([[X]]) + \textbackslash\{\}green\{b\}
+  \item [[Y]] = [[decimalFraction( -1 / M * X, "true", "true" )]] + \textbackslash\{\}green\{b\}
+                        [[Y]] - [[decimalFraction( -1 / M * X, "true", "true" )]] = \textbackslash\{\}green\{b\} = [[decimalFraction( Y - ( -1 / M * X ), "true", "true" )]]
+  \item The equation of the perpendicular line is \textbackslash\{\}green\{y =
+                            [[M\_PERP\_FRAC]]
+                            [[M\_PERP\_SIGN]]x
+                             + [[decimalFraction( Y - ( -1 / M * X ), "true", "true" )]]\}.
+                        
+                        
+                            So \textbackslash\{\}green\{m = [[decimalFraction( -1 / M, "true", "true" )]]\} and
+                            \textbackslash\{\}green\{b = [[decimalFraction( Y - ( -1 / M * X ), "true", "true" )]]\}.
+  \item Parallel lines have the same slope.
+                        The slope of the blue line is \textbackslash\{\}blue\{[[M\_FRAC]]\}, so the equation of our parallel line will be of the form \textbackslash\{\}green\{y = [[M\_FRAC]][[M\_SIGN]]x + b\}.
+  \item We can plug our point, ([[X]], [[Y]]), into this equation to solve for \textbackslash\{\}green\{b\}, the y-intercept.
+                        [[Y]] = \textbackslash\{\}green\{[[M\_FRAC]][[M\_SIGN]]\}([[X]]) + \textbackslash\{\}green\{b\}
+  \item [[Y]] = [[decimalFraction( M * X, "true", "true" )]] + \textbackslash\{\}green\{b\}
+                        [[Y]] - [[decimalFraction( M * X, "true", "true" )]] = \textbackslash\{\}green\{b\} = [[decimalFraction( Y - M * X, "true", "true" )]]
+  \item The equation of the parallel line is \textbackslash\{\}green\{y =
+                            [[M\_FRAC]]
+                            [[M\_SIGN]]x
+                             + [[decimalFraction( Y - M * X, "true", "true" )]]\}.
+                        
+                        
+                            So \textbackslash\{\}green\{m = [[decimalFraction( M, "true", "true" )]]\} and 
+                            \textbackslash\{\}green\{b = [[decimalFraction( Y - M * X, "true", "true" )]]\}.
+  \item Putting the first equation in y = mx + b form gives:
+                        [[expr(["+", ["*", A1, "x"], ["*", B1, "y"]]) + " = " + C1]]
+                        [[expr(["*", B1, "y"]) + " = " + expr(["+", ["*", (-1 * A1), "x"], C1])]]
+                        [["y = " + fractionReduce( -A1, B1 ) + "x + " + fractionReduce( C1, B1 )]]
+  \item Putting the second equation in y = mx + b form gives:
+                        [[expr(["+", ["*", A2, "x"], ["*", B2, "y"]]) + " = " + C2]]
+                        [[expr(["*", B2, "y"]) + " = " + expr(["+", ["*", (-1 * A2), "x"], C2])]]
+                        [["y = " + fractionReduce( -A2, B2 ) + "x + " + fractionReduce( C2, B2 )]]
+  \item The slopes are not the same, so the lines are not equal or parallel. The slopes are not negative inverses of each other, so the lines are not perpendicular. The correct answer is none of the above.
+  \item So the two equations describe equal lines.
+  \item The slopes are equal, and the y-intercepts are different, so the lines are parallel.
+  \item The slopes are negative inverses of each other, so the lines are perpendicular.
+\end{itemize}
+\end{document}

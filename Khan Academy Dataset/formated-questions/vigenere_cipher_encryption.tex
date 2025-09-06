@@ -1,0 +1,44 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Vigenere cipher encryption}
+\textbf{Question.} Alex wants to encode the following cryptic message:
+                    [["The " + animal( 1 ) + " wears " + an(color(1)) + " " + clothing(1)]]
+                    
+                        In an effort to increase security, Alex decides to encrypt it with a Vigenere cipher
+                        using his own name as the keyword. What will the secret message look like once it is encrypted?
+                    
+                        In an effort to increase security, Alex decides to encrypt it with a Vigenere cipher
+                        using her own name as the keyword. What will the secret message look like once it is encrypted?
+
+\textbf{Answer.} [[applyVigenere(M,person(1))]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item First, we need to convert every letter in the keyword to a number.
+            Where a\{\} = 0 and z\{\} = 25.
+  \item For our keyword Alex the first few letters convert to: 
+                \textbackslash\{\}quad\textbackslash\{\}begin\{align\}
+                    \textbackslash\{\}text\{A\} \&: 0 \textbackslash\{\}\textbackslash\{\}
+                    \textbackslash\{\}text\{l\} \&: 11 \textbackslash\{\}\textbackslash\{\}
+                    \textbackslash\{\}text\{e\} \&: 4
+                    \textbackslash\{\}end\{align\}
+  \item To encrypt our message, shift the first letter in the message to the right by the letter/value
+                of the first letter in our keyword.
+  \item In this case, we shift the letter [ by the value
+                0
+                which results in the letter
+                [["abcdefghijklmnopqrstuvwxyz"[("abcdefghijklmnopqrstuvwxyz".indexOf(M[0].toLowerCase()) + "abcdefghijklmnopqrstuvwxyz".indexOf(person(1)[0].toLowerCase()) ) \% 26]]].
+  \item We do the same with the second letter of the message, and the second letter of the keyword.
+                Shift the letter [ by the value 11
+                which results in the letter k.
+  \item Every time we reach the last letter of the keyword, we can go back to the first letter of the keyword to continue encrypting the rest of the message.
+  \item Be sure to ignore spaces in the message.
+  \item The encrypted message is “[[applyVigenere(M,person(1))]]”
+\end{itemize}
+\end{document}

@@ -1,0 +1,41 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Adding and subtracting radicals}
+\textbf{Question.} Simplify the following expression:
+
+\textbf{Answer.} [[pow( A\_COEFF + B\_COEFF, 2 ) * NUM]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item First, try to factor any perfect squares out of the radicals.
+  \item = $\sqrt{[[A]]}$ + $\sqrt{[[B]]}$
+                    = $\sqrt{[[pow( A_COEFF, 2 )]] $\textbackslash\{\}cdot$ [[NUM]]}$ + $\sqrt{[[pow( B_COEFF, 2 )]] $\textbackslash\{\}cdot$ [[NUM]]}$
+  \item Separate the radicals and simplify.
+  \item = $\sqrt{[[pow( A_COEFF, 2 )]]}$ $\cdot$ $\sqrt{[[NUM]]}$ + $\sqrt{[[pow( B_COEFF, 2 )]]}$ $\cdot$ $\sqrt{[[NUM]]}$
+                    = [[A\_COEFF]]$\sqrt{[[NUM]]}$ + [[B\_COEFF]]$\sqrt{[[NUM]]}$
+  \item Finally, simplify by combining the terms.
+  \item = ( [[A\_COEFF]] + [[B\_COEFF]] )$\sqrt{[[NUM]]}$ = [[A\_COEFF + B\_COEFF]]$\sqrt{[[NUM]]}$
+  \item First, try to factor any perfect squares out of the radicals.
+  \item = $\sqrt{[[A]]}$ - $\sqrt{[[B]]}$
+                    = $\sqrt{[[pow( A_COEFF, 2 )]] $\textbackslash\{\}cdot$ [[NUM]]}$ - $\sqrt{[[pow( B_COEFF, 2 )]] $\textbackslash\{\}cdot$ [[NUM]]}$
+  \item Separate the radicals and simplify.
+  \item = $\sqrt{[[pow( A_COEFF, 2 )]]}$ $\cdot$ $\sqrt{[[NUM]]}$ - $\sqrt{[[pow( B_COEFF, 2 )]]}$ $\cdot$ $\sqrt{[[NUM]]}$
+                    = [[A\_COEFF]]$\sqrt{[[NUM]]}$ - [[B\_COEFF]]$\sqrt{[[NUM]]}$
+  \item Finally, simplify by combining the terms.
+  \item = ( [[A\_COEFF]] - [[B\_COEFF]] )$\sqrt{[[NUM]]}$ = [[A\_COEFF - B\_COEFF]]$\sqrt{[[NUM]]}$
+  \item First, try to factor any perfect squares out of the radicals.
+  \item = $\sqrt{[[A]]}$[[B\_SIGN]]$\sqrt{[[B]]}$[[C\_SIGN]]$\sqrt{[[C]]}$
+                    = $\sqrt{[[pow( A_COEFF, 2 )]] $\textbackslash\{\}cdot$ [[NUM]]}$[[B\_SIGN]]$\sqrt{[[pow( B_COEFF, 2 )]] $\textbackslash\{\}cdot$ [[NUM]]}$[[C\_SIGN]]$\sqrt{[[pow( C_COEFF, 2 )]] $\textbackslash\{\}cdot$ [[NUM]]}$
+  \item Separate the radicals and simplify.
+  \item = $\sqrt{[[pow( A_COEFF, 2 )]]}$ $\cdot$ $\sqrt{[[NUM]]}$[[B\_SIGN]]$\sqrt{[[pow( B_COEFF, 2 )]]}$ $\cdot$ $\sqrt{[[NUM]]}$[[C\_SIGN]]$\sqrt{[[pow( C_COEFF, 2 )]]}$ $\cdot$ $\sqrt{[[NUM]]}$
+                    = [[A\_COEFF]]$\sqrt{[[NUM]]}$[[B\_SIGN]][[abs( B\_COEFF )]]$\sqrt{[[NUM]]}$[[C\_SIGN]][[abs( C\_COEFF )]]$\sqrt{[[NUM]]}$
+  \item Finally, simplify by combining the terms.
+  \item = ( [[A\_COEFF]] + [[B\_COEFF]] + [[C\_COEFF]] )$\sqrt{[[NUM]]}$ = [[A\_COEFF + B\_COEFF + C\_COEFF]]$\sqrt{[[NUM]]}$ = 0
+\end{itemize}
+\end{document}

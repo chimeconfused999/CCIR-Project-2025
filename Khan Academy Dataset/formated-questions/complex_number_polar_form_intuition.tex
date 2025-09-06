@@ -1,0 +1,52 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Complex number polar form intuition}
+\textbf{Question.} Adjust the angle and radius of the orange plotted complex number
+                    to match the blue plotted complex number 1.9985594812264138+0i.
+
+\textbf{Answer.} Radius: 1
+                            
+                                
+                                
+                            
+                        
+                        
+                            Angle: 0
+                            
+                                
+                                
+                            
+                        
+                        1
+                    
+                    [
+                        graph.currComplexPolar.getAngleNumerator(),
+                        graph.currComplexPolar.getRadius()
+                    ]
+                    
+                        var angle = guess[0];
+                        var radius = guess[1];
+
+                        if (angle === 0 \&\& radius === 1) \{
+                            return "";
+                        \}
+
+                        return angle === ANGLE \&\& radius === RADIUS;
+                    
+                    
+                        redrawComplexPolarForm(guess[0], guess[1]);
+                    
+                    
+                        redrawComplexPolarForm(guess[0], guess[1]);
+
+\textbf{Hints.}
+\begin{itemize}
+
+\end{itemize}
+\end{document}

@@ -1,0 +1,71 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Powers of complex numbers}
+\textbf{Question.} \textbackslash\{\}blue\{x\} is plotted in blue below.
+                Change the angle and radius to plot \textbackslash\{\}orange\{y\} in orange.
+
+\textbf{Answer.} Radius: 1
+                        
+                            
+                            
+                        
+                    
+                    
+                        Angle: 0
+                        
+                            
+                            
+                        
+                    
+                    1
+                
+                [
+                    graph.currComplexPolar.getAngleNumerator(),
+                    graph.currComplexPolar.getRadius()
+                    ]
+                
+                    var angle = guess[0];
+                    var radius = guess[1];
+
+                    if (angle === 0 \&\& radius === 1) \{
+                        return "";
+                    \}
+
+                    return angle === ANSWER\_ANGLE\_NUMERATOR \&\& radius === ANSWER\_RADIUS;
+                
+                
+                    redrawComplexPolarForm(guess[0], guess[1]);
+                
+                
+                    redrawComplexPolarForm(guess[0], guess[1]);
+
+\textbf{Hints.}
+\begin{itemize}
+  \item First express \textbackslash\{\}blue\{x\} in Euler form.
+                        \textbackslash\{\}large \{\textbackslash\{\}blue\{[[polarForm( BASE\_RADIUS, BASE\_ANGLE, EULER\_FORM )]]\} = \textbackslash\{\}blue\{[[polarForm( BASE\_RADIUS, BASE\_ANGLE, true )]]\}\}
+                    
+
+                    
+                        
+                            \textbackslash\{\}large\{(\textbackslash\{\}blue\{[[polarForm( BASE\_RADIUS, BASE\_ANGLE, true )]]\}) \textasciicircum{} \{2\} =
+                            
+                            \textbackslash\{\}orange\{[[coefficient(ANSWER\_RADIUS)]]e \textasciicircum{} \{2 $\cdot$ [[eulerFormExponent( BASE\_ANGLE )]]\}\}\}
+                        
+                        
+                    
+
+                    
+                        The angle of the result is \textbackslash\{\}large\{2 $\cdot$ [[piFraction( BASE\_ANGLE, true )]]\},
+                        which is \textbackslash\{\}large\{[[piFraction( ANGLE\_MULTIPLE, true )]]\}.
+  \item \textbackslash\{\}large\{\textbackslash\{\}orange\{y = [[polarForm( ANSWER\_RADIUS, ANSWER\_ANGLE, true )]]\}\}
+                    
+                        Converting this back from Euler form, we get
+                        \textbackslash\{\}large\{y = [[polarForm( ANSWER\_RADIUS, ANSWER\_ANGLE, EULER\_FORM )]]\}.
+\end{itemize}
+\end{document}

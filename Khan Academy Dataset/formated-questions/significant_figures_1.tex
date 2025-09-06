@@ -1,0 +1,20 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Significant figures}
+\textbf{Question.} How many significant figures does [[IS\_ZERO ? '0' : randRange( 1, 9, randRange( 1, 4 ) ).join('')]].0[[randRange( 1, 9, randRange( 1, 6 ) ).join('')]] have?
+
+\textbf{Answer.} 115
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Identify the non-zero digits and any zeros between them. These are all significant.
+            \textbackslash\{\}color\{blue\}\{[[IS\_ZERO ? '0' : randRange( 1, 9, randRange( 1, 4 ) ).join('')]].0[[randRange( 1, 9, randRange( 1, 6 ) ).join('')]]\}
+  \item Counting all the significant digits gives us 115.
+\end{itemize}
+\end{document}

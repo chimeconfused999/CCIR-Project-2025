@@ -1,0 +1,48 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Converting between slope-intercept and standard form}
+\textbf{Question.} Convert the following equation from standard form to slope intercept form.
+
+\textbf{Answer.} m = [[SLOPE]]
+                b = [[Y\_INTERCEPT]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Move the x term to the other side of the equation.
+                    [[expr([ "*", B, "y" ])]] = [[expr([ "*", -1 * A, "x"])]] + [[C]]
+  \item Divide both sides by [[B]].
+                    y = [[fractionReduce( -1 * A, B)]]-x + [[fractionReduce( C, B )]]
+  \item Inspecting the equation in slope intercept form, we see the following.
+                    \textbackslash\{\}begin\{align*\}m \&= [[fractionReduce( -1 * A, B)]]\textbackslash\{\}\textbackslash\{\}
+                        b \&= [[fractionReduce( C, B )]]\textbackslash\{\}end\{align*\}
+  \item Behold! The magic of math, that both equations could represent the same line!
+  \item Move the x term to the same side as the y term.
+                    [[coefficient(fractionReduce(A, B))]]x + y = [[fractionReduce(C, B)]]
+  \item To get integers, multiply all the terms by [[B]].
+                    
+                        [[coefficient(A)]]x + 
+                        [[B]]y = [[C]]
+  \item Since the slope is 0 and there is no x term, the equation is already in slope intercept form.
+                    y = [[Y\_INTERCEPT]]
+  \item So we have \textbackslash\{\}blue\{[[A]]\}
+                         lot of 
+                         lots of 
+                        x, \textbackslash\{\}green\{[[B]]\}
+                         lot of 
+                         lots of 
+                        y, and a \textbackslash\{\}pink\{[[C]]\}.
+                    
+                    \textbackslash\{\}blue\{[[A]]\}x + \textbackslash\{\}green\{[[B]]\}y = \textbackslash\{\}pink\{[[C]]\}
+  \item \textbackslash\{\}begin\{align*\}
+                    \textbackslash\{\}blue\{A\} \&= \textbackslash\{\}blue\{[[A]]\}\textbackslash\{\}\textbackslash\{\}
+                    \textbackslash\{\}green\{B\} \&= \textbackslash\{\}green\{[[B]]\}\textbackslash\{\}\textbackslash\{\}
+                    \textbackslash\{\}pink\{C\} \&= \textbackslash\{\}pink\{[[C]]\}\textbackslash\{\}end\{align*\}
+  \item Behold! The magic of math, that both equations could represent the same line!
+\end{itemize}
+\end{document}

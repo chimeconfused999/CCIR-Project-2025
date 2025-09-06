@@ -1,0 +1,91 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Fractions cut and copy 2}
+\textbf{Question.} The starting block below is [[D\_PARENT === 1 ? N\_PARENT : mixedOrImproper(N\_PARENT, D\_PARENT)]] units long.
+                    
+                    Use the tools below to convert the starting block into both of the goal blocks that are
+                    [[mixedOrImproper(N\_OFFSPRING\_1, D\_OFFSPRING\_1)]] units long and [[mixedOrImproper(N\_OFFSPRING\_2, D\_OFFSPRING\_2)]] units long.
+                    The current blocks show your progress.
+
+\textbf{Answer.} Cut Starting Block into: 1 piece
+                            
+                                
+                                
+                            
+                        
+                        
+                            Copy Current Block 1: 1 time
+                            
+                                
+                                
+                            
+                        
+                        
+                            Copy Current Block 2: 1 time
+                            
+                                
+                                
+                            
+                        
+                    
+
+                    
+                        [pieces, times['current\_block\_1'], times['current\_block\_2']]
+                    
+                    
+                        var guess1 = roundTo(3, guess[1] / guess[0]),
+                            guess2 = roundTo(3, guess[2] / guess[0]),
+                            answer1 = roundTo(3, ANSWER\_1);
+                            answer2 = roundTo(3, ANSWER\_2);
+                        return guess1 === answer1 \&\& guess2 === answer2;
+                    
+                    
+                        pieces = guess[0];
+                        times['current\_block\_1'] = guess[1];
+                        times['current\_block\_2'] = guess[2];
+                        updateGraphAndAnswer();
+                    
+                    
+                        guess = guess.length ? guess : [1, 1, 1];
+                        $('#pieces').text(plural(guess[0], 'piece'));
+                        $('\#current\_block\_1\_times').text(plural(guess[1], 'time'));
+                        $('#current_block_2_times').text(plural(guess[2], 'time'));$
+
+\textbf{Hints.}
+\begin{itemize}
+  \item We want to cut the starting block into a piece that can be copied into both goal block 1 and goal block 2.
+  \item The least common denominator of 6 and 7
+                        (the denominators of the goal blocks) is 20. Therefore you can copy a block
+                        $\frac{1}{20}$ units long to make both goal blocks.
+  \item The starting block has a length of [[D\_PARENT === 1 ? N\_PARENT : mixedOrImproper(N\_PARENT, D\_PARENT)]], which can be rewritten as:
+                        \textbackslash\{\}qquad1 + $\frac{1}{3}$ = 
+                            $\frac{4}{3}$
+  \item We can rewrite the starting block length in terms of $\frac{1}{20}$ units:
+                        \textbackslash\{\}qquad $\frac{4}{3}$ $\times$ 1 = 
+                           $\frac{5}{4}$
+  \item If we cut the starting block into 25 equal pieces,
+                        each piece will have a length of $\frac{1}{20}$ units.
+  \item Goal block 1 has a length of [[mixedOrImproper(N\_OFFSPRING\_1, D\_OFFSPRING\_1)]] units, which can be rewritten as:
+                        \textbackslash\{\}qquad1 + $\frac{-1}{6}$ = 
+                            $\frac{5}{6}$
+  \item We can rewrite the goal block 1 length in terms of $\frac{1}{20}$ units:
+                        \textbackslash\{\}qquad $\frac{5}{6}$ $\times$ 1 = 
+                           1
+  \item If we copy a piece of length $\frac{1}{20}$ units 20 times
+                        we get 1 units, which is the length of goal block 1.
+  \item We can rewrite the goal block 2 length in terms of $\frac{1}{20}$ units:
+                        \textbackslash\{\}qquad $\frac{11}{7}$ $\times$ 1 = 
+                           $\frac{11}{4}$
+  \item If we copy a piece of length $\frac{1}{20}$ units 55 times
+                        we get $\frac{11}{4}$ units, which is the length of goal block 2.
+  \item Therefore the solution is to cut the starting block into 25 pieces, copy current block 1
+                        20 times and current block 2
+                        55 times.
+\end{itemize}
+\end{document}

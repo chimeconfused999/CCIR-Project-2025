@@ -1,0 +1,54 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Parabola intuition 3}
+\textbf{Question.} First, find the focus and directrix of the parabola by moving
+                    the orange point and line to their correct positions. Then use that information to find the equation of the parabola.
+
+\textbf{Answer.} [ graph.vertex.coord, graph.directrix.coordA[1] ] 
+                        
+                            if (\_.isEqual(guess, [[0, 1], -1])) \{
+                                return "";
+                            \}
+                            return guess[0][0] === X1
+                                \&\& guess[0][1] === Y1 + 1 / (4 * A)
+                                \&\& guess[1] === Y1 - 1 / (4 * A)
+                        
+                        
+                            graph.vertex.setCoord( guess[0] );
+                            graph.directrix.coordA = [0, guess[1]];
+                            graph.directrix.coordZ = [1, guess[1]];
+                            graph.directrix.transform();
+                        
+                    
+
+                    Focus: (0,\textbackslash\{\}quad1)
+                    Directrix: y = \{\}-1
+                    
+                        Equation of the parabola:
+                        y - \{\}-0.5\{\} = \{\}-0.5(x - \{\}-0.125)\textasciicircum{}2
+
+\textbf{Hints.}
+\begin{itemize}
+  \item All points on a parabola are equidistant from the focus and directrix. There is only one place to put the orange focus point
+                    and directrix line where this is true.
+                    Show me
+  \item The focus is ([[fractionReduce.apply(KhanUtil, toFraction(X1, 0.001))]],    [[fractionReduce.apply(KhanUtil, toFraction(VERTEX\_Y, 0.001))]])
+                    and the directrix is y = [[fractionReduce.apply(KhanUtil, toFraction(DIR\_Y, 0.001))]]
+  \item The equation for a parabola is y - y\_1 = a (x - x\_1)\textasciicircum{}2, where x\_1 and y\_1
+                    are the coordinates of the vertex of the parabola (halfway between the focus and directrix).
+  \item x\_1 is the same as the x coordinate of the focus.
+                    y\_1 is at the midpoint of [[fractionReduce.apply(KhanUtil, toFraction(VERTEX\_Y, 0.001))]] and [[fractionReduce.apply(KhanUtil, toFraction(DIR\_Y, 0.001))]].
+  \item So x\_1 = [[fractionReduce.apply(KhanUtil, toFraction(X1, 0.001))]].
+                    And y\_1 = $\frac{[[fractionReduce.apply(KhanUtil, toFraction(VERTEX_Y, 0.001))]] + [[fractionReduce.apply(KhanUtil, toFraction(DIR_Y, 0.001))]]}{2}$ = [[fractionReduce.apply(KhanUtil, toFraction(Y1, 0.001))]].
+  \item The leading coefficient a in the equation y - y\_1 = a (x - x\_1)\textasciicircum{}2 indicates how "wide" and
+                    in what direction the parabola opens. It's always the reciprocal of 2 times the distance from the directrix to the focus.
+  \item a = $\frac{1}{2 $\textbackslash\{\}times$ ([[fractionReduce.apply(KhanUtil, toFraction(VERTEX_Y, 0.001))]] {-}$ [[fractionReduce.apply(KhanUtil, toFraction(DIR\_Y, 0.001))]])\} = [[fractionReduce.apply(KhanUtil, toFraction(A, 0.001))]]
+  \item So the equation of the parabola is y - [[fractionReduce.apply(KhanUtil, toFraction(Y1, 0.001))]] = [[fractionReduce.apply(KhanUtil, toFraction(A, 0.001))]](x - [[fractionReduce.apply(KhanUtil, toFraction(X1, 0.001))]])\textasciicircum{}2.
+\end{itemize}
+\end{document}

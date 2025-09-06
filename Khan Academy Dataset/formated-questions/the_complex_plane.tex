@@ -1,0 +1,30 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{The complex plane}
+\textbf{Question.} Move the orange dot to -1-1i.
+
+\textbf{Answer.} graph.movablePoint.coord
+                
+                
+                    return graph.movablePoint.coord.join() === [REAL, IMAG].join();
+                
+                
+                    graph.movablePoint.setCoord(guess);
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Complex numbers can be visualized as points on a plane. The coordinates on the
+                    real and imaginary axes correspond to the real and imaginary parts of the complex number.
+  \item -1-1i has real part -1 and imaginary part -1.
+  \item The vertical orange line represents all complex numbers with real part -1 (including -1-1i).
+  \item The horizontal blue line represents all complex numbers with imaginary part -1, also including -1-1i.
+  \item The only complex number with real part -1 and imaginary part -1 is -1-1i,
+                        so it lies on the intersection of the vertical orange line and the horizontal blue line.
+\end{itemize}
+\end{document}

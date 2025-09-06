@@ -1,0 +1,150 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Volume word problems}
+\textbf{Question.} What could be the dimensions of my box?
+
+\textbf{Answer.} Length =  cm 
+                   Width \textbackslash\{\}hphantom\{ \}=  cm 
+                   Height  =  cm
+                
+                
+                [$("input#response1").val(),$("input\#response2").val(),$("input#response3").val()]
+                
+                    var lengthMessage = null, lengthEmpty = false;
+
+                    var LengthValidator = Khan.answerTypes.predicate.createValidatorFunctional(function(length, error) {
+                        if (length > 10) {
+                            return false;
+                        }
+
+                        var heightMessage = null, heightEmpty = false;
+
+                        var WidthValidator = Khan.answerTypes.predicate.createValidatorFunctional(function(width, error) {
+                            if (width > 10) {
+                                return false;
+                            }
+
+                            var HeightValidator = Khan.answerTypes.predicate.createValidatorFunctional(function(height, error) {
+                                if (height > 10) {
+                                    return false;
+                                }
+                                return Math.abs(length * width * height - VOL) < Math.pow(2, -42);
+                            }, {forms: 'integer, proper, improper, mixed, decimal'});
+
+                            var heightResult = HeightValidator(guess[2]);
+
+                            if (heightResult.empty) {
+                                heightEmpty = true;
+                            }
+                            if (heightResult.message !== null) {
+                                heightMessage = heightResult.message;
+                            }
+                            if (heightResult.correct) {
+                                heightEmpty = false;
+                                heightMessage = null;
+                            }
+
+                            return heightResult.correct;
+                        }, {forms: 'integer, proper, improper, mixed, decimal'});
+
+                        var widthResult = WidthValidator(guess[1]);
+
+                        if (widthResult.empty |$| heightEmpty) \{
+                            lengthEmpty = true;
+                        \}
+                        if (widthResult.message !== null |$| heightMessage !== null) {
+                            lengthMessage = widthResult.message |$| heightMessage;
+                        \}
+                        if (widthResult.correct) \{
+                            lengthEmpty = false;
+                            lengthMessage = null;
+                        \}
+
+                        return widthResult.correct;
+                    \}, \{forms: 'integer, proper, improper, mixed, decimal'\});
+
+                    var lengthResult = LengthValidator(guess[0]);
+
+                    // TODO(emily): In the future, when validator-functions can return empty and
+                    // message separately, make this actually work
+                    if (lengthResult.empty |$| lengthEmpty) {
+                        return "";
+                    } else if (lengthResult.message !== null) {
+                        return lengthResult.message;
+                    } else if (lengthMessage !== null) {
+                        return lengthMessage;
+                    }
+
+                    return lengthResult.correct;$
+
+\textbf{Hints.}
+\begin{itemize}
+  \item We can use a factor tree to break [[VOL]] into its prime
+                    factorization. Which of the prime numbers divides into [[VOL]]?
+  \item [[REMAINING[I]]] is divisible by \textbackslash\{\}blue\{[[FACTOR]]\},
+                        leaving us with [[REMAINING[I] / FACTOR]].
+  \item \textbackslash\{\}blue\{[[FACTORIZATION[FACTORIZATION.length - 1]]]\} is prime, so we're done factoring.
+  \item So the prime factors of [[VOL]] are:
+                    
+                        \textbackslash\{\}qquad[[FACTORIZATION.join("\textbackslash\{\}\textbackslash\{\}space\textbackslash\{\}\textbackslash\{\}color\{black\}\{\textbackslash\{\}$\times$\}\textbackslash\{\}\textbackslash\{\}space")]]
+  \item So the dimensions of the package should be
+                    [[FACTORIZATION[0]]],
+                    [[FACTORIZATION[1]]] and
+                    [[FACTORIZATION[2]]].
+  \item We can find the dimensions of the package by arranging the factors into three groups of products, all less than 10.
+                    
+                        One solution would be:
+                        ([[getPrimeFactorization(WIDTH).join("\textbackslash\{\}\textbackslash\{\}space\textbackslash\{\}\textbackslash\{\}color\{black\}\{\textbackslash\{\}$\times$\}\textbackslash\{\}\textbackslash\{\}space")]]),
+                        ([[getPrimeFactorization(LENGTH).join("\textbackslash\{\}\textbackslash\{\}space\textbackslash\{\}\textbackslash\{\}color\{black\}\{\textbackslash\{\}$\times$\}\textbackslash\{\}\textbackslash\{\}space")]]) and
+                        ([[getPrimeFactorization(HEIGHT).join("\textbackslash\{\}\textbackslash\{\}space\textbackslash\{\}\textbackslash\{\}color\{black\}\{\textbackslash\{\}$\times$\}\textbackslash\{\}\textbackslash\{\}space")]])
+                    
+                    
+                        So the dimensions of the box could be [[WIDTH]],
+                        [[LENGTH]] and [[HEIGHT]].
+  \item The tank has a volume of [[H1]] $\times$ [[L1]] $\times$ [[W1]] = 
+                        [[H1 * L1 * W1]] cubic [[plural\_form(METERS, H1 * L1 * W1)]],
+                        and the metal box has a volume of [[H2]] $\times$ [[L2]] $\times$ [[W2]] = 
+                        [[H2 * W2 * L2]] cubic [[plural\_form(METERS, H2 * L2 * W2)]].
+  \item Since there is no water in the box, the volume of the water in the tank is the volume of the tank minus the volume of the metal box.
+  \item The volume of the water in the tank is 
+                    
+                        [[H1 * L1 * W1]] \textbackslash\{\}text\{[[UNIT]]\}\textasciicircum{}3 -
+                        [[H2 * L2 * W2]] \textbackslash\{\}text\{[[UNIT]]\}\textasciicircum{}3 = 
+                        [[H1 * L1 * W1 - H2 * L2 * W2]]\textbackslash\{\}text\{[[UNIT]]\}\textasciicircum{}3
+  \item The first box has a volume of [[H1]] $\times$ [[L1]] $\times$ [[W1]] = 
+                        [[VOL1]] cubic [[plural\_form(METERS, VOL1)]].
+                        The second box has a volume of [[H2]] $\times$ [[L2]] $\times$ [[W2]] = 
+                        [[VOL2]] cubic [[plural\_form(METERS, VOL2)]]
+  \item Since my gorilla can play in both boxes, we need to add the volumes of the two boxes.
+  \item The total amount of space my gorilla has to play is 
+                    
+                        [[VOL1]] \textbackslash\{\}text\{[[UNIT]]\}\textasciicircum{}3 +
+                        [[VOL2]] \textbackslash\{\}text\{[[UNIT]]\}\textasciicircum{}3 = 
+                        [[VOL1 + VOL2]]\textbackslash\{\}text\{[[UNIT]]\}\textasciicircum{}3
+  \item First we will figure out how many cubic [[plural\_form(TO)]] fit in one cubic [[FROM]].
+  \item There are [[CONVERSION]] [[plural\_form(TO, CONVERSION)]] in every [[FROM]].
+  \item So a cubic [[FROM]] is the same as a
+                        
+                            [[CONVERSION]] \textbackslash\{\}text\{ [[TO\_TEXT]]\}
+                            $\times$ [[CONVERSION]] \textbackslash\{\}text\{ [[TO\_TEXT]]\}
+                            $\times$[[CONVERSION]] \textbackslash\{\}text\{ [[TO\_TEXT]]\}
+                        
+                        cube.
+  \item There are [[CONVERSION]] $\times$ [[CONVERSION]]
+                    $\times$ [[CONVERSION]] = [[CONVERSION\_CUBED]] \textbackslash\{\}text\{ [[TO\_TEXT]]\}\textasciicircum{}3
+                   in each cubic [[FROM]], by the volume formula.
+  \item Since we have [[VOL]] cubic [[plural\_form(FROM, VOL)]],
+                   and each cubic [[FROM]] holds [[CONVERSION\_CUBED]] cubic
+                   [[plural\_form(TO, CONVERSION\_CUBED)]], we have a total of
+                   [[VOL]] $\times$ [[CONVERSION\_CUBED]]
+                   cubic [[plural\_form(TO, VOL * CONVERSION\_CUBED)]].
+  \item So [[VOL * CONVERSION\_CUBED]] cubic [[plural\_form(TO, VOL * CONVERSION\_CUBED)]]
+                    fit in [[VOL]] cubic [[plural\_form(FROM, VOL)]].
+\end{itemize}
+\end{document}

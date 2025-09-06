@@ -1,0 +1,50 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Ordering fractions}
+\textbf{Question.} Order the following fractions from least to greatest:
+                    
+                        
+                            [[NUM[3]]]
+                            [[NUM[3]]]
+                        
+                    
+                    [[SORTER.init( "sortable" )]]
+
+\textbf{Answer.} SORTER.getContent()
+                    
+                        if (SORTER.hasAttempted) \{
+                            return guess.join(",") === FRACTION\_SORT\_TEX;
+                        \} else \{
+                            return "";
+                        \}
+                    
+                    
+                        SORTER.setContent( guess );
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Let's change the fractions to have a common denominator of [[getLCM.apply(KhanUtil, DENOMS)]]:
+                        \textbackslash\{\}qquad
+                            \textbackslash\{\}[[NUM[4]]]\{[[NUM[3]]]\} $\times$
+                            $\frac{[[LCD / NUM[2]]]}{[[LCD / NUM[2]]]}$ =
+                            \textbackslash\{\}[[NUM[4]]]\{$\frac{[[NUMS_LCD[I]]]}{[[getLCM.apply(KhanUtil, DENOMS)]]}$\}
+  \item Now that our fractions have the same denominator, we can order their numerators from least to greatest:
+                        \textbackslash\{\}qquad [[$.map(NUMS_SORT, function(el) {
+                return "\\" + el[4] + "{" + (el[1] * LCD / el[2]) + "}";
+            }).join("<")]]$
+  \item The fractions listed in order from least to greatest are as follows:
+                        \textbackslash\{\}qquad [[$.map(NUMS_SORT, function(el) {
+                return "\\" + el[4] + "{\$\textbackslash\{\}frac\{" + (el[1] * LCD / el[2]) + "\}\{" + LCD + "\}$}";
+            }).join(",\\ ")]].$
+  \item Finally, let's convert the fractions back to their original form:
+                        \textbackslash\{\}qquad [[$.map(NUMS_SORT, function(el) {
+                return "\\" + el[4] + "{" + el[3] + "}";
+            }).join(",\\ ")]].$
+\end{itemize}
+\end{document}

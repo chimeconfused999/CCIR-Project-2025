@@ -1,0 +1,96 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Multiplying and dividing complex numbers in polar form}
+\textbf{Question.} Multiply the following complex numbers:
+
+\textbf{Answer.} Radius: 1
+                            
+                                
+                                
+                            
+                        
+                        
+                            Angle: 0
+                            
+                                
+                                
+                            
+                        
+                        1
+                    
+                    [
+                        graph.currComplexPolar.getAngleNumerator(),
+                        graph.currComplexPolar.getRadius()
+                    ]
+                    
+                        var angle = guess[0];
+                        var radius = guess[1];
+
+                        if (angle === 0 \&\& radius === 1) \{
+                            return "";
+                        \}
+
+                        return angle === ANSWER\_ANGLE\_NUMERATOR \&\&
+                               radius === ANSWER\_RADIUS;
+                    
+                    
+                        redrawComplexPolarForm(guess[0], guess[1]);
+                    
+                    
+                        redrawComplexPolarForm(guess[0], guess[1]);
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Multiplying complex numbers in polar forms can be done by multiplying the lengths
+                    and adding the angles.
+  \item The first number, [["\textbackslash\{\}\textbackslash\{\}blue\{" + polarForm(A\_RADIUS, A\_ANGLE, USE\_EULER\_FORM) + "\}"]],
+                    has angle [["\textbackslash\{\}\textbackslash\{\}blue\{" + piFraction(A\_ANGLE, true) + "\}"]]
+                    and radius \textbackslash\{\}blue\{14\}.
+  \item The second number, [["\textbackslash\{\}\textbackslash\{\}green\{" + polarForm(B\_RADIUS, B\_ANGLE, USE\_EULER\_FORM) + "\}"]],
+                    has angle [["\textbackslash\{\}\textbackslash\{\}green\{" + piFraction(B\_ANGLE) + "\}"]]
+                    and radius \textbackslash\{\}green\{2\}.
+  \item The radius of the result will be
+                    \textbackslash\{\}blue\{14\} $\cdot$ \textbackslash\{\}green\{2\} = \textbackslash\{\}orange\{7\}.
+  \item The sum of the angles is [["\textbackslash\{\}\textbackslash\{\}blue\{" + piFraction(A\_ANGLE, true) + "\}"]] + [["\textbackslash\{\}\textbackslash\{\}green\{" + piFraction(B\_ANGLE) + "\}"]] = [["\textbackslash\{\}\textbackslash\{\}orange\{" + piFraction((A\_ANGLE\_NUMERATOR - B\_ANGLE\_NUMERATOR ) * PI * 2 / DENOMINATOR, true) + "\}"]].
+                    
+                    
+                        The angle [["\textbackslash\{\}\textbackslash\{\}orange\{" + piFraction((A\_ANGLE\_NUMERATOR - B\_ANGLE\_NUMERATOR ) * PI * 2 / DENOMINATOR, true) + "\}"]] is more than 2 \textbackslash\{\}pi.
+                        A complex number goes a full circle if its angle is increased by 2 \textbackslash\{\}pi, so it goes back to itself.
+                        Because of that, angles of complex numbers are convenient to keep between 0 and 2 \textbackslash\{\}pi.
+                    
+                    
+                        [["\textbackslash\{\}\textbackslash\{\}orange\{" + piFraction((A\_ANGLE\_NUMERATOR - B\_ANGLE\_NUMERATOR ) * PI * 2 / DENOMINATOR, true) + "\}"]] - 2 \textbackslash\{\}pi = [["\textbackslash\{\}\textbackslash\{\}orange\{" + piFraction(ANSWER\_ANGLE, true) + "\}"]]
+  \item The angle of the result is [["\textbackslash\{\}\textbackslash\{\}blue\{" + piFraction(A\_ANGLE, true) + "\}"]] + [["\textbackslash\{\}\textbackslash\{\}green\{" + piFraction(B\_ANGLE) + "\}"]] = [["\textbackslash\{\}\textbackslash\{\}orange\{" + piFraction(ANSWER\_ANGLE, true) + "\}"]].
+  \item The radius of the result is \textbackslash\{\}orange\{7\}
+                    and the angle of the result is [["\textbackslash\{\}\textbackslash\{\}orange\{" + piFraction(ANSWER\_ANGLE, true) + "\}"]].
+  \item Dividing complex numbers in polar forms can be done by dividing the radii
+                    and subtracting the angles.
+  \item The dividend, [["\textbackslash\{\}\textbackslash\{\}blue\{" + polarForm(A\_RADIUS, A\_ANGLE, USE\_EULER\_FORM) + "\}"]],
+                    has angle [["\textbackslash\{\}\textbackslash\{\}blue\{" + piFraction(A\_ANGLE, true) + "\}"]]
+                    and radius \textbackslash\{\}blue\{14\}.
+  \item The divisor, [["\textbackslash\{\}\textbackslash\{\}green\{" + polarForm(B\_RADIUS, B\_ANGLE, USE\_EULER\_FORM) + "\}"]],
+                    has angle [["\textbackslash\{\}\textbackslash\{\}green\{" + piFraction(B\_ANGLE) + "\}"]]
+                    and radius \textbackslash\{\}green\{2\}.
+  \item The radius of the result will be
+                    \textbackslash\{\}dfrac\{\textbackslash\{\}blue\{14\}\}\{\textbackslash\{\}green\{2\}\} = \textbackslash\{\}orange\{7\}.
+  \item The difference of the angles is
+                        [["\textbackslash\{\}\textbackslash\{\}blue\{" + piFraction(A\_ANGLE, true) + "\}"]] - [["\textbackslash\{\}\textbackslash\{\}green\{" + piFraction(B\_ANGLE) + "\}"]] = [["\textbackslash\{\}\textbackslash\{\}orange\{" + piFraction((A\_ANGLE\_NUMERATOR - B\_ANGLE\_NUMERATOR ) * PI * 2 / DENOMINATOR, true) + "\}"]].
+                    
+                    
+                        The angle [["\textbackslash\{\}\textbackslash\{\}orange\{" + piFraction((A\_ANGLE\_NUMERATOR - B\_ANGLE\_NUMERATOR ) * PI * 2 / DENOMINATOR, true) + "\}"]] is negative.
+                        A complex number goes a full circle if its angle is increased by 2 \textbackslash\{\}pi, so it goes back to itself.
+                        Because of that, angles of complex numbers are convenient to keep between 0 and 2 \textbackslash\{\}pi.
+                    
+                    
+                        [["\textbackslash\{\}\textbackslash\{\}orange\{" + piFraction((A\_ANGLE\_NUMERATOR - B\_ANGLE\_NUMERATOR ) * PI * 2 / DENOMINATOR, true) + "\}"]] + 2 \textbackslash\{\}pi = [["\textbackslash\{\}\textbackslash\{\}orange\{" + piFraction(ANSWER\_ANGLE, true) + "\}"]]
+  \item The angle of the result is [["\textbackslash\{\}\textbackslash\{\}blue\{" + piFraction(A\_ANGLE, true) + "\}"]] - [["\textbackslash\{\}\textbackslash\{\}green\{" + piFraction(B\_ANGLE) + "\}"]] = [["\textbackslash\{\}\textbackslash\{\}orange\{" + piFraction(ANSWER\_ANGLE, true) + "\}"]].
+  \item The radius of the result is \textbackslash\{\}orange\{7\}
+                    and the angle of the result is [["\textbackslash\{\}\textbackslash\{\}orange\{" + piFraction(ANSWER\_ANGLE, true) + "\}"]].
+\end{itemize}
+\end{document}

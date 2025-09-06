@@ -1,0 +1,29 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Converting decimals to fractions 1}
+\textbf{Question.} Express [[localeToFixed(D, 1)]] as a fraction.
+
+\textbf{Answer.} [[D]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The number [[T]] is in the tenths place,
+                    so we have [[cardinalThrough20(T)]] [[plural\_form(decimalPlaceNames[1], T)]].
+  \item [[CardinalThrough20(T)]] [[plural\_form(decimalPlaceNames[1], T)]]
+                    can be written as [[fraction(T, 10)]].
+  \item The number [[H]] is in the hundredths place,
+                    so we have [[cardinalThrough20(H)]] [[plural\_form(decimalPlaceNames[2], H)]].
+  \item [[CardinalThrough20(H)]] [[plural\_form(decimalPlaceNames[2], H)]]
+                    can be written as [[fraction(H, 100)]].
+  \item Add the two parts together.
+                    [[fraction( T, 10 )]] + [[fraction( H, 100 )]]
+  \item = [[fraction( T * 10, 100 )]] + [[fraction( H, 100 )]]
+                    = [[fraction( T * 10 + H, 100 )]]
+\end{itemize}
+\end{document}

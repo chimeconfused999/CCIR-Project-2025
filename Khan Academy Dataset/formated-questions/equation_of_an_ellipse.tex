@@ -1,0 +1,25 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Equation of an ellipse}
+\textbf{Question.} The equation of an ellipse E is [[rand(2) === 1 ? expr(["+", Y2T, X2T]) : expr(["+", X2T, Y2T])]] = 1.
+
+                What are its center (h, k) and its  major and minor radius?
+
+\textbf{Answer.} (h, k) = ([[H]], [[K]])
+                Major radius = [[MAJ]]
+                Minor radius = [[MIN]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The equation of an ellipse with center (h, k) is  $\frac{(x - h)^2}{a^2}$ + $\frac{(y - k)^2}{b^2}$ = 1.
+  \item We can rewrite the given equation as $\frac{(x - [[negParens(H)]])^2}{[[A*A]]}$ + $\frac{(y - [[negParens(K)]])^2}{[[B*B]]}$ = 1 .
+  \item Thus, the center (h, k) = ([[H]], [[K]]).
+  \item [[MAJ*MAJ]] is bigger than [[MIN*MIN]] so the major radius is $\sqrt{[[MAJ*MAJ]]}$ = [[MAJ]] and the minor radius is $\sqrt{[[MIN*MIN]]}$ = [[MIN]].
+\end{itemize}
+\end{document}

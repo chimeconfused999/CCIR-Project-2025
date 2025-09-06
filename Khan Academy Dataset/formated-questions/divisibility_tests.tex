@@ -1,0 +1,153 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Divisibility tests}
+\textbf{Question.} Is \textbackslash\{\}large\{272575\} divisible by
+        10?
+
+\textbf{Answer.} Yes
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Any even number is divisible by 2.
+  \item 272575 is even, so it is
+                    divisible by 2.
+  \item 272575 is odd, so it is
+                    not divisible by 2.
+  \item A number is divisible by 10
+                        if the sum of its digits is divisible by
+                        10.
+                        [Why?]
+                    
+                    
+                        
+                            First, we can break the number up by place value:
+                        
+                        
+                            \textbackslash\{\}qquad$\begin{aligned}
+                            \blue{272575}=
+                            &&\blue{2}$\textbackslash\{\}cdot$100000+ \\&&\blue{7}$\textbackslash\{\}cdot$10000+ \\&&\blue{2}$\textbackslash\{\}cdot$1000+ \\&&\blue{5}$\textbackslash\{\}cdot$100+ \\&&\blue{7}$\textbackslash\{\}cdot$10+ \\&&\blue{5}$\textbackslash\{\}cdot$1
+                            \end{aligned}$
+                        
+                        
+                            Next, we can rewrite each of the place values as
+                            1 plus a bunch of 9s:
+                        
+                        
+                            \textbackslash\{\}qquad$\begin{aligned}
+                            \blue{272575}=
+                            &&\blue{2}(99999+1)+ \\&&\blue{7}(9999+1)+ \\&&\blue{2}(999+1)+ \\&&\blue{5}(99+1)+ \\&&\blue{7}(9+1)+ \\&&\blue{5}
+                            \end{aligned}$
+                        
+                        
+                            Now if we distribute and rearrange, we get this:
+                        
+                        
+                            \textbackslash\{\}qquad$\begin{aligned}
+                            \blue{272575}=
+                            &&\gray{2$\textbackslash\{\}cdot$99999}+ \\&&\gray{7$\textbackslash\{\}cdot$9999}+ \\&&\gray{2$\textbackslash\{\}cdot$999}+ \\&&\gray{5$\textbackslash\{\}cdot$99}+ \\&&\gray{7$\textbackslash\{\}cdot$9}+ \\&&
+                            \blue{2}+\blue{7}+\blue{2}+\blue{5}+\blue{7}+\blue{5}
+                            \end{aligned}$
+                        
+                        
+                            Any number consisting only of 9s is
+                            a multiple of 10, so
+                            the first [[cardinalThrough20(integerToDigits(NUMBER)
+                            .length - 1)]] terms must all be multiples of
+                            10.
+                        
+                        
+                            That means that to figure out whether the original
+                            number is divisible by 10
+                            , all we need to do is add up the digits
+                            and see if the sum is divisible by
+                            10. In other words,
+                            \textbackslash\{\}blue\{272575\} is divisible
+                            by 10 if \textbackslash\{\}blue\{
+                            2\}+\textbackslash\{\}blue\{7\}+\textbackslash\{\}blue\{2\}+\textbackslash\{\}blue\{5\}+\textbackslash\{\}blue\{7\}+\textbackslash\{\}blue\{5\} is divisible by
+                            10!
+  \item Add the digits of [[STEP.num]]:
+                    
+                        [[STEP.digits.join("+")]] =
+                        [[STEP.sum]]
+                    
+                    
+                        If [[STEP.sum]] is
+                        divisible by 10, then
+                        [[STEP.num]] must also be
+                        divisible by 10.
+  \item [[\_.last(STEPS).sum]] is divisible
+                    by 10, therefore
+                    \textbackslash\{\}blue\{272575\}
+                    must also be divisible by 10.
+  \item [[\_.last(STEPS).sum]] is not divisible
+                    by 10, therefore
+                    \textbackslash\{\}blue\{272575\}
+                    must not be divisible by 10.
+  \item A number is divisible by 4 if the last
+                        two digits are divisible by 4.
+                        [Why?]
+                    
+                    
+                        
+                            We can rewrite the number as a multiple of
+                            100 plus the last two digits:
+                        
+                        \textbackslash\{\}qquad
+                        \textbackslash\{\}gray\{2725\}
+                        \textbackslash\{\}blue\{75\} =
+                        \textbackslash\{\}gray\{2725\}
+                        \textbackslash\{\}gray\{00\} +
+                        \textbackslash\{\}blue\{75\}
+                        
+                        
+                            Because 272500 is a multiple of 100,
+                            it is also a multiple of 4.
+                        
+                        
+                            So as long as the value of the last two digits,
+                            \textbackslash\{\}blue\{75\},
+                            is divisible by 4, the original
+                            number must also be divisible by 4!
+  \item Is the value of the last two digits,
+                    75,
+                    divisible by 4?
+  \item Yes,
+                    \textbackslash\{\}blue\{75 \textbackslash\{\}div 4 =
+                    18.75\}, so
+                    272575 must also be divisible by
+                    4.
+  \item No, 75 is not
+                    divisible by 4, so
+                    272575 is also not divisible by
+                    4.
+  \item A number is divisible by 5 if the last
+                    digit is a 0 or a 5.
+  \item The last digit of 272575 is
+                    5, so yes
+                    272575 is divisible by
+                    5.
+  \item The last digit of 272575 is
+                    5, so no
+                    272575 is not divisible by
+                    5.
+  \item A number is divisible by 10 if the last
+                    digit is a 0.
+  \item The last digit of 272575 is
+                    5, so yes
+                    272575 is divisible by
+                    10.
+  \item The last digit of 272575 is
+                    5, so no
+                    272575 is not divisible by
+                    10.
+  \item 272575 is divisible by
+            10 if it can be divided by
+            10 without leaving a remainder.
+\end{itemize}
+\end{document}

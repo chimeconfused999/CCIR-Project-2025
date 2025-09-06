@@ -1,0 +1,47 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Permutations}
+\textbf{Question.} How many unique ways are there to arrange the letters in the word FEAT?
+
+\textbf{Answer.} [[factorial(NUM\_NAMES) / factorial(NUM\_NAMES - SLOTS)]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Let's try building the re-arrangements (or permutations) letter by letter.
+                            The word is 4 letters long:
+                        \_ \_ \_ \_ 
+                        For the first blank, we have 4 choices of letters.
+  \item After we put in the first letter, let's say it's \textbackslash\{\}text\{C\},
+                            we have 3 blanks left.
+                        
+                        \textbackslash\{\}text\{C\} \_ \_ \_ 
+                        
+                            For the second blank, we only have 3 choices of letters left.
+                            So far, there are 4 $\cdot$ 3 unique choices we can make.
+  \item We can continue in this fashion to put in a third letter, and so on.
+                        At each step, we have one fewer unique choice to make, until we get to the last letter, and there's only one we can put in.
+  \item So, the total number of unique re-arrangements must be
+                        4$\cdot$3$\cdot$2$\cdot$1.
+                        Another way of writing this is 4!,
+                        or 4 factorial, which is [[factorial(NUM\_NAMES) / factorial(NUM\_NAMES - SLOTS)]].
+  \item We can build our line of reindeer one by one: there are 3 slots,
+                        and we have 5 different reindeer we can put in the first slot.
+  \item Once we fill the first slot, we only have 4 reindeer left,
+                        so we only have 4 choices for the second slot.
+                        So far, there are 5 $\cdot$ 4 = 20
+                        unique choices we can make.
+  \item We can continue in this way for the third reindeer, where we will have 3 choices.
+  \item We can continue in this way for the third reindeer, and so on, until we reach the last slot, where we will
+                        have 3 choices for the last reindeer.
+  \item So, the total number of unique choices we could make to get to an arrangement of reindeer is
+                        5$\cdot$4$\cdot$3.
+                        Another way of writing this is
+                        $\frac{5!}{(5-3)!}$ = [[factorial(NUM\_NAMES) / factorial(NUM\_NAMES - SLOTS)]]
+\end{itemize}
+\end{document}

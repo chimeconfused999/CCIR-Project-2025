@@ -1,0 +1,21 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Composite numbers}
+\textbf{Question.} Which of these numbers is composite?
+
+\textbf{Answer.} [[rand( 5 ) === 0 ? getEvenComposite() : getOddComposite()]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item A composite number is a number that has more than two factors (including 1 and itself).
+  \item [[toSentence( \_.filter( CHOICES, function( p ) \{ return p !== COMPOSITE; \} ) )]] each have only two factors.
+  \item The factors of [[rand( 5 ) === 0 ? getEvenComposite() : getOddComposite()]] are [[toSentence( getFactors( COMPOSITE ) )]].
+  \item Thus, [[rand( 5 ) === 0 ? getEvenComposite() : getOddComposite()]] is the composite number.
+\end{itemize}
+\end{document}

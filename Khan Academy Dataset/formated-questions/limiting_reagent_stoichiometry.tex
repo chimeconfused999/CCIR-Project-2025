@@ -1,0 +1,132 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Limiting reagent stoichiometry}
+\textbf{Question.} How many grams of \textbackslash\{\}text\{NaCl\} will be produced from
+        1 \textbackslash\{\}text\{g\} of \textbackslash\{\}text\{Na\} and
+        [[randRange(1, 40 * (R2\_RATIO * R2\_MOLAR\_MASS) / (R1\_RATIO * R1\_MOLAR\_MASS))]] \textbackslash\{\}text\{g\} of \textbackslash\{\}text\{Cl\}\_2?
+
+\textbf{Answer.} [[roundTo(3, P1\_MOL * P1\_MOLAR\_MASS)]] grams (you can round to the nearest gram)
+
+\textbf{Hints.}
+\begin{itemize}
+  \item \textbackslash\{\}dfrac\{1 \textbackslash\{\}cancel\{\textbackslash\{\}text\{g\}\}\}\{[[roundTo(3, molarMass("Na"))]] \textbackslash\{\}cancel\{\textbackslash\{\}text\{g\}\} / \textbackslash\{\}text\{mol\}\} =
+                \textbackslash\{\}blue\{\textbackslash\{\}text\{ [[roundTo(3, R1\_MASS / R1\_MOLAR\_MASS)]] [[plural\_form(MOLE, R1\_MOL)]]\}\} \textbackslash\{\}text\{ of \}\textbackslash\{\}text\{Na\}
+            
+            [Explain]
+            
+                
+                    First we want to convert the given amount of \textbackslash\{\}text\{Na\} from grams to moles. To do this, we divide
+                    the given amount of \textbackslash\{\}text\{Na\} by the molar mass of \textbackslash\{\}text\{Na\}.
+                
+                     \textbackslash\{\}dfrac\{\textbackslash\{\}text\{grams of \}\textbackslash\{\}text\{Na\}\}\{\textbackslash\{\}text\{molar mass of \}\textbackslash\{\}text\{Na\}\} = \textbackslash\{\}text\{moles of \}\textbackslash\{\}text\{Na\}
+                
+                    To find the molar mass of \textbackslash\{\}text\{Na\}, we look up the atomic weight of each atom in a molecule of
+                    \textbackslash\{\}text\{Na\} in the periodic table and add them together.
+                    In this case, it's [[roundTo(3, molarMass("Na"))]] \textbackslash\{\}text\{g/mol\}.
+                
+                    Dividing the given 1 \textbackslash\{\}text\{g\} of \textbackslash\{\}text\{Na\} by the molar mass of
+                    [[roundTo(3, molarMass("Na"))]] \textbackslash\{\}text\{g/mol\} tells us we're starting with
+                    [[roundTo(3, R1\_MASS / R1\_MOLAR\_MASS)]]\textbackslash\{\}text\{ [[plural\_form(MOLE, R1\_MOL)]] of \}\textbackslash\{\}text\{Na\}.
+  \item \textbackslash\{\}dfrac\{[[randRange(1, 40 * (R2\_RATIO * R2\_MOLAR\_MASS) / (R1\_RATIO * R1\_MOLAR\_MASS))]] \textbackslash\{\}cancel\{\textbackslash\{\}text\{g\}\}\}\{[[roundTo(3, molarMass("Cl") * 2)]] \textbackslash\{\}cancel\{\textbackslash\{\}text\{g\}\} / \textbackslash\{\}text\{mol\}\} =
+                \textbackslash\{\}green\{\textbackslash\{\}text\{ [[plural(R2\_MOL, "mole")]]\}\} \textbackslash\{\}text\{ of \}\textbackslash\{\}text\{Cl\}\_2
+            
+            [Explain]
+            
+                
+                    We want to convert the given amount of \textbackslash\{\}text\{Cl\}\_2 from grams to moles. To do this, we divide
+                    the given amount of \textbackslash\{\}text\{Cl\}\_2 by the molar mass of \textbackslash\{\}text\{Cl\}\_2.
+                
+                     \textbackslash\{\}dfrac\{\textbackslash\{\}text\{grams of \}\textbackslash\{\}text\{Cl\}\_2\}\{\textbackslash\{\}text\{molar mass of \}\textbackslash\{\}text\{Cl\}\_2\} = \textbackslash\{\}text\{moles of \}\textbackslash\{\}text\{Cl\}\_2
+                
+                    To find the molar mass of \textbackslash\{\}text\{Cl\}\_2, we look up the atomic weight of each atom in a molecule of
+                    \textbackslash\{\}text\{Cl\}\_2 in the periodic table and add them together.
+                    In this case, it's [[roundTo(3, molarMass("Cl") * 2)]] \textbackslash\{\}text\{g/mol\}.
+                
+                    Dividing the given [[randRange(1, 40 * (R2\_RATIO * R2\_MOLAR\_MASS) / (R1\_RATIO * R1\_MOLAR\_MASS))]] \textbackslash\{\}text\{g\} of \textbackslash\{\}text\{Cl\}\_2 by the molar mass of
+                    [[roundTo(3, molarMass("Cl") * 2)]] \textbackslash\{\}text\{g/mol\} tells us we're starting with
+                    \textbackslash\{\}text\{ [[roundTo(3, R2\_MASS / R2\_MOLAR\_MASS)]] [[plural\_form(MOLE, R2\_MOL)]]\} \textbackslash\{\}text\{ of \}\textbackslash\{\}text\{Cl\}\_2.
+  \item The mole ratio of \textbackslash\{\}dfrac\{\textbackslash\{\}text\{Na\}\}\{\textbackslash\{\}text\{Cl\}\_2\} in the reaction is
+                    $\frac{2}{1}$.
+                    [Explain]
+                
+                
+                    
+                        The reaction is \textbackslash\{\}blue\{2\}\textbackslash\{\}text\{Na\} +
+                        \textbackslash\{\}red\{1\}\textbackslash\{\}text\{Cl\}\_2 \textbackslash\{\}rightarrow
+                        2\textbackslash\{\}text\{NaCl\}.
+                        The coefficients in front of each molecule tell us in what ratios the molecules react. In this case
+                        [[cardinalThrough20(R1\_RATIO)]] \textbackslash\{\}text\{Na\} for every
+                        [[cardinalThrough20(R2\_RATIO)]] \textbackslash\{\}text\{Cl\}\_2 molecule.
+                    
+                        The reaction is \textbackslash\{\}blue\{2\}\textbackslash\{\}text\{Na\} +
+                        \textbackslash\{\}red\{1\}\textbackslash\{\}text\{Cl\}\_2 \textbackslash\{\}rightarrow
+                        2\textbackslash\{\}text\{NaCl\}.
+                        The coefficients in front of each molecule tell us in what ratios the molecules react. In this case
+                        [[cardinalThrough20(R1\_RATIO)]] \textbackslash\{\}text\{Na\} for every
+                        [[cardinalThrough20(R2\_RATIO)]] \textbackslash\{\}text\{Cl\}\_2 molecules.
+                    
+                
+                \textbackslash\{\}qquad
+                    \textbackslash\{\}dfrac\{\textbackslash\{\}text\{Na\}\}\{\textbackslash\{\}text\{Cl\}\_2\} = $\frac{2}{1}$ =
+                    $\frac{x}{\green{\text{ [[roundTo(3, R2_MASS / R2_MOLAR_MASS)]] [[plural_form(MOLE, R2_MOL)]]}$\}\}
+                \textbackslash\{\}qquad
+                
+                [Show alternate approach]
+                
+                
+                    
+                        
+                        \textbackslash\{\}dfrac\{\textbackslash\{\}text\{Na\}\}\{\textbackslash\{\}text\{Cl\}\_2\} = $\frac{2}{1}$ =
+                        \textbackslash\{\}dfrac\{\textbackslash\{\}blue\{\textbackslash\{\}text\{ [[roundTo(3, R1\_MASS / R1\_MOLAR\_MASS)]] [[plural\_form(MOLE, R1\_MOL)]]\}\}\}\{x\}
+                        
+                    
+                    
+                        Instead of finding out how much \textbackslash\{\}text\{Na\} we need to react with all of our \textbackslash\{\}text\{Cl\}\_2, we could
+                        figure out how much \textbackslash\{\}text\{Cl\}\_2 we need to react with all of our \textbackslash\{\}text\{Na\}. In this case,
+                        x = \textbackslash\{\}text\{ [[roundTo(3, R1\_MOL * R2\_RATIO / R1\_RATIO)]] [[plural\_form(MOLE, roundTo(3, R1\_MOL * R2\_RATIO / R1\_RATIO))]]\} of
+                        \textbackslash\{\}text\{Cl\}\_2 needed, which
+                        is more than we have. Therefore \textbackslash\{\}text\{Cl\}\_2 is the limiting reagent.
+                    
+                
+                
+                    x = \textbackslash\{\}text\{ [[roundTo(3, R2\_MOL * R1\_RATIO / R2\_RATIO)]] [[plural\_form(MOLE, roundTo(3, R2\_MOL * R1\_RATIO / R2\_RATIO))]]\} of
+                    \textbackslash\{\}text\{Na\} needed.
+                    We have \textbackslash\{\}text\{ [[roundTo(3, R1\_MASS / R1\_MOLAR\_MASS)]] [[plural\_form(MOLE, R1\_MOL)]]\} of \textbackslash\{\}text\{Na\}, which is more
+                    than we need. Therefore \textbackslash\{\}text\{Cl\}\_2 is the limiting reagent.
+                
+            
+
+            
+                
+                    The mole ratio of \textbackslash\{\}dfrac\{\textbackslash\{\}text\{Cl\}\_2\}\{\textbackslash\{\}text\{NaCl\}\} in the reaction is
+                    $\frac{1}{2}$.
+                    [Explain]
+                
+                
+                    
+                        The reaction is 2\textbackslash\{\}text\{Na\} +
+                        \textbackslash\{\}blue\{1\}\textbackslash\{\}text\{Cl\}\_2 \textbackslash\{\}rightarrow
+                        \textbackslash\{\}red\{2\}\textbackslash\{\}text\{NaCl\}
+                        .
+                        The coefficients in front of each molecule tell us in what ratios the molecules react. In this case
+                        [[cardinalThrough20(R2\_RATIO)]] \textbackslash\{\}text\{Cl\}\_2 for every
+                        [[cardinalThrough20(P1\_RATIO)]] \textbackslash\{\}text\{NaCl\} molecules.
+                    
+                
+                \textbackslash\{\}qquad
+                    \textbackslash\{\}dfrac\{\textbackslash\{\}text\{Cl\}\_2\}\{\textbackslash\{\}text\{NaCl\}\} = $\frac{1}{2}$ =
+                    \textbackslash\{\}dfrac\{\textbackslash\{\}green\{\textbackslash\{\}text\{ [[roundTo(3, R2\_MASS / R2\_MOLAR\_MASS)]] [[plural\_form(MOLE, R2\_MOL)]]\}\}\}\{x\}
+                
+                
+                    x = \textbackslash\{\}text\{ [[roundTo(3, R1\_LIMIT ? R1\_MOL * P1\_RATIO / R1\_RATIO : R2\_MOL * P1\_RATIO / R2\_RATIO)]] [[plural\_form(MOLE, P1\_MOL)]]\} of \textbackslash\{\}text\{NaCl\} produced.
+  \item \textbackslash\{\}cancel\{\textbackslash\{\}text\{[[roundTo(3, R1\_LIMIT ? R1\_MOL * P1\_RATIO / R1\_RATIO : R2\_MOL * P1\_RATIO / R2\_RATIO)]] [[plural\_form(MOLE, P1\_MOL)]]\}\}
+            \textbackslash\{\}text\{NaCl\} $\times$ \textbackslash\{\}dfrac\{[[roundTo(3, molarMass("Na") + molarMass("Cl"))]] \textbackslash\{\}text\{g\}\}\{\textbackslash\{\}cancel\{\textbackslash\{\}text\{[[plural\_form(MOLE, 1)]]\}\}\} =
+            \textbackslash\{\}text\{ [[roundTo(3, P1\_MOL * P1\_MOLAR\_MASS)]] [[plural\_form(GRAM, P1\_MASS)]]\} \textbackslash\{\}text\{ of \}\textbackslash\{\}text\{NaCl\}
+\end{itemize}
+\end{document}

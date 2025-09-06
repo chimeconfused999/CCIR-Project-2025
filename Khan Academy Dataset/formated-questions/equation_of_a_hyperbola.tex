@@ -1,0 +1,35 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Equation of a hyperbola}
+\textbf{Question.} The equation of hyperbola H is [[WHICH\_NEG === 1 ? expr(["-", Y2T, X2T]) : expr(["-", X2T, Y2T])]] = 1.
+                What are the asymptotes?
+
+\textbf{Answer.} y = $\pm$ [[B/A]]
+                (x + [[-H]]) + [[K]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item We want to rewrite the equation in terms of y, so start off by moving the y terms to one side:
+            [[Y2T]] = [[Y\_MINUS]] 1 [[X\_MINUS]] [[X2T]]
+  \item Multiply both sides of the equation by [[B2]].
+            [[Y]] = \{[[Y\_MINUS]] [[B2]] [[X\_MINUS]] $\frac{[[X]] $\textbackslash\{\}cdot$ [[B2]]}{[[A2]]}$\}
+  \item Take the square root of both sides.
+            $\sqrt{[[Y]]}$ = $\sqrt{[[Y_MINUS]] [[B2]] [[X_MINUS]] $\textbackslash\{\}frac\{[[X]] $\cdot$ [[B2]]\}${[[A2]]}$\}
+            [[plus("y", -K)]] = $\pm$ $\sqrt{[[Y_MINUS]] [[B2]] [[X_MINUS]] $\textbackslash\{\}frac\{[[X]] $\cdot$ [[B2]]\}${[[A2]]}$\}
+  \item As x approaches positive or negative infinity, the constant term in the square root matters less and less, so we can just ignore it.
+            [[plus("y", -K)]] \textbackslash\{\}approx $\pm$ $\sqrt{$\textbackslash\{\}frac\{[[X]] $\cdot$ [[B2]]\}${[[A2]]}$\}
+            [[plus("y", -K)]] \textbackslash\{\}approx $\pm$ \textbackslash\{\}left($\frac{[[B]] $\textbackslash\{\}cdot$ ([[plus("x", -H)]])}{[[A]]}$\textbackslash\{\}right)
+  \item Add [[K]] to both sides and rewrite
+                Subtract [[-K]] from both sides and rewrite
+                Rewrite
+                as an equality in terms of y to get the equation of the asymptotes:
+            
+            y = $\pm$ [[fractionReduce(B, A)]]([[plus( "x", -H )]])[[K >= 0 ? "+" : ""]] [[K]]
+\end{itemize}
+\end{document}

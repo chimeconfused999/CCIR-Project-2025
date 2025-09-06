@@ -1,0 +1,72 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Exploring mean and median}
+\textbf{Question.} Arrange the 10 orange points on the
+                    number line so the arithmetic mean
+                    is 0 and the
+                    median is
+                    0.
+                    The distance between adjacent tick marks is 1.
+
+\textbf{Answer.} $.map(graph.points, function(el) {
+                            return el.coord[0];
+                        })
+                    
+                        if (roundTo(1, mean(guess)) === MEAN &&
+                                roundTo(1, median(guess)) === MEDIAN) {
+                            return true;
+                        } else if (graph.moved) {
+                            return false;
+                        } else {
+                            return "";
+                        }
+                    
+                    
+                        $.each(guess, function(i, x) \{
+                            onMovePoint(graph.points[i], x, 0);
+                        \});
+                        updateMeanAndMedian();
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The median is the middle number. In other words there
+                        are always as many points to the right of the median
+                        as to the left.
+  \item Try dragging the points so that half of them are to
+                        the left of 
+                        0 and half of them
+                        are to the right of 
+                        0.
+                        
+                            The two points in the middle should be the same
+                            distance from 
+                            0.
+                        
+                        
+                            The middle point should be at
+                            
+                            0.
+                        
+                        
+                            Show me an example
+  \item As long as there are as many points to the left and to
+                        the right of the median, the median will stay the same.
+                        But the arithmetic mean is calculated using the value
+                        of every point. Try moving the points on either side
+                        of the median closer and further from the median to
+                        see how the mean is affected.
+  \item There are a number of different ways to arrange the
+                        points so the mean is 
+                        0 and the median is
+                        
+                        0.
+                        
+                            Show me an example
+\end{itemize}
+\end{document}

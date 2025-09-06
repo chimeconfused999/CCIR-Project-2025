@@ -1,0 +1,29 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Arithmetic series}
+\textbf{Question.} The arithmetic sequence (a\_i) is defined by the formula:
+                a\_i = [[A]] + [[D]](i - 1)
+                
+                    What is the sum of the first [[N]] terms in the series, starting with a\_1?
+
+\textbf{Answer.} [[SUM]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The sum of an arithmetic series is the number of terms in the series times the average of the first and last terms.
+  \item To find the sum of the first [[N]] terms,
+                    we'll need the first and [[ordinalThrough20(N)]] terms of the series.
+  \item a\_1 = [[A]] + [[D]] (1 - 1) = [[A]]
+                    a\_\{[[N]]\} = [[A]] + [[D]] ([[N]] - 1) = [[A + D * (N - 1)]]
+  \item Therefore, the sum of the first [[N]] terms is
+                    \textbackslash\{\}qquad n\textbackslash\{\}left(\textbackslash\{\}dfrac\{a\_1 + a\_\{[[N]]\}\}\{2\}\textbackslash\{\}right) = [[N]] \textbackslash\{\}left($\frac{[[A]] + [[A + D * (N - 1)]]}{2}$\textbackslash\{\}right) = [[SUM]].
+  \item First, let's find the explicit formula for the terms of the arithmetic series. We can see that the first term is [[A]] and the common difference is [[D]].
+                    Thus, the explicit formula for this sequence is a\_i = [[A]] + [[D]](i - 1).
+\end{itemize}
+\end{document}

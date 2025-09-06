@@ -1,0 +1,51 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Weighted average of three points}
+\textbf{Question.} What is the average of the points \textbackslash\{\}blue\{A\}, \textbackslash\{\}pink\{B\} and \textbackslash\{\}green\{C\} with weights
+                    \textbackslash\{\}blue\{4\}, \textbackslash\{\}pink\{1\} and \textbackslash\{\}green\{1\} respectively?
+
+\textbf{Answer.} (6.166666666666667, -4.5)
+
+\textbf{Hints.}
+\begin{itemize}
+  \item For a weighted average, each value is multiplied by a weight, then the results are summed and divided by the sum of the weights.
+  \item First find the sum of the weights.
+                        
+                            \textbackslash\{\}blue\{4\} + \textbackslash\{\}pink\{1\} + \textbackslash\{\}green\{1\} = 6
+  \item So the weighted average of the three points, call it \textbackslash\{\}purple\{M\}, is:
+                        
+                            \textbackslash\{\}purple\{M\} = \textbackslash\{\}dfrac\{\textbackslash\{\}blue\{4A\} + \textbackslash\{\}pink\{1B\} + \textbackslash\{\}green\{1C\}\}
+                            \{6\}
+  \item The x coordinate of \textbackslash\{\}purple\{M\} is the weighted average of the x coordinates.
+                        
+                            \textbackslash\{\}purple\{M\_x\} = $\frac{1}{6}$\textbackslash\{\}bigl(
+                            \textbackslash\{\}blue\{4 $\cdot$ A\_x\} + 
+                            \textbackslash\{\}pink\{1 $\cdot$ B\_x\} + 
+                            \textbackslash\{\}green\{1 $\cdot$ C\_x\}\textbackslash\{\}bigr)
+  \item \textbackslash\{\}purple\{M\_x\} = $\frac{1}{6}$\textbackslash\{\}bigl(
+                        \textbackslash\{\}blue\{4 $\cdot$ [[negParens(XA)]]\} + 
+                        \textbackslash\{\}pink\{1 $\cdot$ [[negParens(XB)]]\} + 
+                        \textbackslash\{\}green\{1 $\cdot$ [[negParens(XC)]]\}\textbackslash\{\}bigr)
+  \item \textbackslash\{\}purple\{M\_x\} = $\frac{1}{6}$(37)
+  \item \textbackslash\{\}purple\{M\_x = 37, 6\}
+  \item The y coordinate of \textbackslash\{\}purple\{M\} is the weighted average of the y coordinates.
+                        
+                            \textbackslash\{\}purple\{M\_y\} = $\frac{1}{6}$\textbackslash\{\}bigl(
+                            \textbackslash\{\}blue\{4 $\cdot$ A\_y\} + 
+                            \textbackslash\{\}pink\{1 $\cdot$ B\_y\} + 
+                            \textbackslash\{\}green\{1 $\cdot$ C\_y\}\textbackslash\{\}bigr)
+  \item \textbackslash\{\}purple\{M\_y\} = $\frac{1}{6}$\textbackslash\{\}bigl(
+                        \textbackslash\{\}blue\{4 $\cdot$ [[negParens(YA)]]\} + 
+                        \textbackslash\{\}pink\{1 $\cdot$ [[negParens(YB)]]\} + 
+                        \textbackslash\{\}green\{1 $\cdot$ [[negParens(YC)]]\}\textbackslash\{\}bigr)
+  \item \textbackslash\{\}purple\{M\_y\} = $\frac{1}{6}$(-27)
+  \item \textbackslash\{\}purple\{M\_y = -9, 2\}
+  \item \textbackslash\{\}purple\{M\} = (\textbackslash\{\}purple\{M\_x\}, \textbackslash\{\}purple\{M\_y\}) = \textbackslash\{\}left(\textbackslash\{\}purple\{37, 6\}, \textbackslash\{\}purple\{-9, 2\}\textbackslash\{\}right)
+\end{itemize}
+\end{document}

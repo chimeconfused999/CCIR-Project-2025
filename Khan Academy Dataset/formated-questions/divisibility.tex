@@ -1,0 +1,24 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Divisibility}
+\textbf{Question.} All numbers divisible by both [[A]] and [[B]] are also divisible by which of the following?
+
+\textbf{Answer.} [[ANSWER]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item A number is divisible by another number (a divisor) if its prime factorization contains the prime factorization of the divisor.
+  \item The prime factorization of [[A]] is [[getPrimeFactorization( A ).join( "\textbackslash\{\}$\times$" )]].
+  \item The prime factorization of [[B]] is [[getPrimeFactorization( B ).join( "\textbackslash\{\}$\times$" )]].
+  \item So, any number divisible by both must have [[LCM\_FACTORIZATION.join( "\textbackslash\{\}$\times$" )]] as part of its prime factorization.
+  \item All numbers which divide such a number will have a factorization which is part of [[LCM\_FACTORIZATION.join( "\textbackslash\{\}$\times$" )]].
+  \item The prime factorization of [[ANSWER]] is [[getPrimeFactorization( ANSWER ).join( "\textbackslash\{\}$\times$" )]].
+  \item Since [[getPrimeFactorization( ANSWER ).join( "\textbackslash\{\}$\times$" )]] is part of [[LCM\_FACTORIZATION.join( "\textbackslash\{\}$\times$" )]], all numbers which are divisible by [[A]] and [[B]] are also divisible by [[ANSWER]].
+\end{itemize}
+\end{document}

@@ -1,0 +1,31 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Estimation with decimals}
+\textbf{Question.} Estimate how much he [ in total by first rounding each amount to the nearest whole number and then summing all the rounded amounts.
+
+\textbf{Answer.} [[sum($.map(VALUES, function(pair) {
+                    return round(pair[0]);
+                }))]] [[plural_form(TYPES[2], ANSWER)]]$
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Round all the numbers to the nearest [[plural\_form(TYPES[2], 1)]] and add them up.
+  \item Day
+                    Amount
+                    Rounded
+                    Running total
+  \item [[i+1]]
+                    [[localeToFixed(pair[0], pair[1])]]
+                    [[round(pair[0])]]
+                    [[ACC += round(pair[0])]]
+  \item Therefore the estimate is [[sum($.map(VALUES, function(pair) {
+                    return round(pair[0]);
+                }))]] [[plural_form(TYPES[2], ANSWER)]].$
+\end{itemize}
+\end{document}

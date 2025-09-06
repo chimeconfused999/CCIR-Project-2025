@@ -1,0 +1,93 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Defined and undefined matrix operations}
+\textbf{Question.} Is [[PRETTY\_MAT\_1\_ID + OPERATION + PRETTY\_MAT\_2\_ID]] defined?
+
+\textbf{Answer.} [[ANSWER]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item In order for addition of two matrices to be
+                            defined, the matrices must have the same
+                            dimensions.
+                        
+                        
+                            If [[PRETTY\_MAT\_1\_ID]] is of
+                            dimension (\textbackslash\{\}blue m $\times$ \textbackslash\{\}red n) and
+                            [[PRETTY\_MAT\_2\_ID]] is of
+                            dimension (\textbackslash\{\}blue p $\times$ \textbackslash\{\}red q),
+                            then for their sum to be defined:
+                        
+                    
+                        
+                            In order for subtraction of two matrices to be
+                            defined, the matrices must have the same
+                            dimensions.
+                        
+                        
+                            If [[PRETTY\_MAT\_1\_ID]] is of
+                            dimension (\textbackslash\{\}blue m $\times$ \textbackslash\{\}red n) and
+                            [[PRETTY\_MAT\_2\_ID]] is of
+                            dimension (\textbackslash\{\}blue p $\times$ \textbackslash\{\}red q),
+                            then for their difference to be defined:
+                        
+                    
+                    
+                        1. \textbackslash\{\}blue m (number of rows in [[PRETTY\_MAT\_1\_ID]]) must equal \textbackslash\{\}blue p (number of rows in [[PRETTY\_MAT\_2\_ID]]) and
+                    
+                    
+                        2. \textbackslash\{\}red n (number of columns in [[PRETTY\_MAT\_1\_ID]]) must equal \textbackslash\{\}red q (number of columns in [[PRETTY\_MAT\_2\_ID]])
+  \item Do [[PRETTY\_MAT\_1\_ID]] and [[PRETTY\_MAT\_2\_ID]] have the same number of rows?
+                    
+                    [[DIM\_1 === DIM\_3 ? YES : NO]]
+                    
+                        [[YES]]
+                        [[NO]]
+  \item Do [[PRETTY\_MAT\_1\_ID]] and [[PRETTY\_MAT\_2\_ID]] have the same number of columns?
+                    
+                    [[DIM\_2 === DIM\_4 ? YES : NO]]
+                    
+                        [[YES]]
+                        [[NO]]
+  \item Since [[PRETTY\_MAT\_1\_ID]] has
+                        the same dimensions
+                        ([[DIM\_1 + "\textbackslash\{\}$\times$" + DIM\_2]]) as
+                        [[PRETTY\_MAT\_2\_ID]] ([[DIM\_3 + "\textbackslash\{\}$\times$" + DIM\_4]]),
+                        [[PRETTY\_MAT\_1\_ID + OPERATION + PRETTY\_MAT\_2\_ID]]
+                        is defined.
+                    
+                        Since [[PRETTY\_MAT\_1\_ID]] has
+                        different dimensions
+                        ([[DIM\_1 + "\textbackslash\{\}$\times$" + DIM\_2]]) from
+                        [[PRETTY\_MAT\_2\_ID]] ([[DIM\_3 + "\textbackslash\{\}$\times$" + DIM\_4]]),
+                        [[PRETTY\_MAT\_1\_ID + OPERATION + PRETTY\_MAT\_2\_ID]]
+                        is not defined.
+  \item In order for multiplication of two matrices to be defined, the two inner dimensions must be equal.
+  \item If the two matrices have dimensions (\textbackslash\{\}blue m $\times$ \textbackslash\{\}red n) and (\textbackslash\{\}red p $\times$ \textbackslash\{\}green q), then \textbackslash\{\}red n (number of columns in the first matrix) must equal \textbackslash\{\}red p (number of rows in the second matrix) for their product to be defined.
+  \item How many columns does the first matrix, [[PRETTY\_MAT\_1\_ID]], have?
+                    
+                    [[DIM\_2]]
+  \item How many rows does the second matrix, [[PRETTY\_MAT\_2\_ID]], have?
+                    
+                    [[DIM\_3]]
+  \item Since [[PRETTY\_MAT\_1\_ID]] has the same
+                    number of columns ([[DIM\_2]]) as
+                    [[PRETTY\_MAT\_2\_ID]] has rows
+                    ([[DIM\_3]]),
+                    [[PRETTY\_MAT\_1\_ID + PRETTY\_MAT\_2\_ID]]
+                    is defined.
+  \item Since [[PRETTY\_MAT\_1\_ID]] has a
+                    different number of columns
+                    ([[DIM\_2]]) than
+                    [[PRETTY\_MAT\_2\_ID]] has rows
+                    ([[DIM\_3]]),
+                    [[PRETTY\_MAT\_1\_ID + PRETTY\_MAT\_2\_ID]]
+                    is not defined.
+\end{itemize}
+\end{document}

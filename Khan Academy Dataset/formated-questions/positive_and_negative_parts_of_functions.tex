@@ -1,0 +1,51 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Positive and negative parts of functions}
+\textbf{Question.} 
+
+\textbf{Answer.} Move the orange window to select part of the function.
+        
+        
+            graph.slidingWindow.getX()
+        
+        
+            var correct = \_.reduce(\_.range(guess, guess + 1, 0.02), function(correct, x) \{
+                return correct \&\& PREDICATE(x);
+            \}, true);
+            if (!graph.moved \&\& !correct) \{
+                return ""
+            \}
+            return correct;
+        
+        
+            graph.slidingWindow.moveTo(guess, 0);
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The function f(x) is greater than 0
+                    wherever it's positive.
+  \item The intervals
+                        where f(x) is positive
+                        are
+                        highlighted above.
+  \item Select any part of the function that's highlighted.
+  \item The function f(x) is less than 0
+                    wherever it's negative.
+  \item The interval
+                        where f(x) is negative
+                        is
+                        highlighted above.
+                    
+                        The intervals
+                        where f(x) is negative
+                        are
+                        highlighted above.
+  \item Select any part of the function that's highlighted.
+\end{itemize}
+\end{document}

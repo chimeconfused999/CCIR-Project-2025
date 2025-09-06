@@ -1,0 +1,39 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Exploring standard deviation 1}
+\textbf{Question.} Arrange the 19 orange sample points in this dot plot so the
+                        sample standard deviation is approximately 0.99763115748444.
+
+\textbf{Answer.} $.map( graph.points, function( el ) { return el.coord[0]; } )
+                    
+                        if ( roundTo( 1, stdDev( guess ) ) === STDDEV ) {
+                            return true;
+                        } else if ( graph.moved ) {
+                            return false;
+                        } else {
+                            return "";
+                        }
+                    
+                    
+                        $.each( guess, function( i, x ) \{
+                            onMovePoint( graph.points[i], x, 0 );
+                        \});
+                        updateMeanAndStddev();
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The standard deviation is smaller if the points are closer to the mean.
+                        The standard deviation is larger if the points are more spread out.
+                        Try moving a point closer to and further away from the
+                        sample mean (\textbackslash\{\}bar\{x\}) to see how the
+                        sample standard deviation (s) is affected.
+  \item There are many ways to arrange the points so the sample standard deviation is
+                        0.99763115748444.
+\end{itemize}
+\end{document}

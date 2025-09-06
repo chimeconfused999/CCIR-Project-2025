@@ -1,0 +1,50 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Complex plane operations}
+\textbf{Question.} Plot a + b by dragging the point.
+
+\textbf{Answer.} graph.guessPoint.coord
+                
+                    if (guess[0] === ANSWER[0] \&\& guess[1] === ANSWER[1]) \{
+                        return true;
+                    \} else \{
+                        return false;
+                    \}
+                
+                
+                    graph.guessPoint.setCoord(guess);
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Sum the real and imaginary components separately.
+                            
+                                a + b =
+                                (\textbackslash\{\}purple\{5\} + \textbackslash\{\}pink\{[[coefficient(COMPLEX1)]]i\}) +
+                                (\textbackslash\{\}purple\{4\} + \textbackslash\{\}pink\{[[coefficient(COMPLEX2)]]i\})
+  \item \textbackslash\{\}hphantom\{a + b\} =
+                                \textbackslash\{\}purple\{(5 + 4)\} +
+                                \textbackslash\{\}pink\{(-1 + -5)i\}
+  \item \textbackslash\{\}hphantom\{a + b\} =
+                                \textbackslash\{\}purple\{9\}
+                                
+                                \textbackslash\{\}pink\{[[coefficient(COMPLEX1 + COMPLEX2)]]i\}
+  \item Subtract the real and imaginary components separately.
+                            
+                                a - b =
+                                (\textbackslash\{\}purple\{5\} + \textbackslash\{\}pink\{[[coefficient(COMPLEX1)]]i\}) -
+                                (\textbackslash\{\}purple\{4\} + \textbackslash\{\}pink\{[[coefficient(COMPLEX2)]]i\})
+  \item \textbackslash\{\}hphantom\{a - b\} =
+                                \textbackslash\{\}purple\{(5 - 4)\} +
+                                \textbackslash\{\}pink\{(-1 - -5)i\}
+  \item \textbackslash\{\}hphantom\{a - b\} =
+                                \textbackslash\{\}purple\{1\}
+                                +
+                                \textbackslash\{\}pink\{[[coefficient(COMPLEX1 - COMPLEX2)]]i\}
+\end{itemize}
+\end{document}

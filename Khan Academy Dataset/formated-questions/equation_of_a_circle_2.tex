@@ -1,0 +1,32 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Equation of a circle in non-factored form}
+\textbf{Question.} The equation of a circle C is
+                    [[expr(["+",
+                        "x\textasciicircum{}2",
+                        "y\textasciicircum{}2",
+                        D === 0 ? null : ["*", D, "x"],
+                        E === 0 ? null : ["*", E, "y"],
+                        F === 0 ? null : F
+                    ])]] = 0.
+
+                What is its center (h, k) and its radius r?
+
+\textbf{Answer.} (h, k) = ([[H]], [[K]])
+                r = \{\}[[R]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item To find the equation in standard form, complete the square.
+  \item ([[expr(["+", "x\textasciicircum{}2", ["*", D, "x"]])]]) + ([[expr(["+", "y\textasciicircum{}2", ["*", E, "y"]])]]) = [[-F]]
+  \item ([[expr(["+", "x\textasciicircum{}2", ["*", D, "x"], H * H])]]) + ([[expr(["+", "y\textasciicircum{}2", ["*", E, "y"], K * K])]]) = [[-F]] + [[H * H]] + [[K * K]]
+  \item [[X2T]] + [[Y2T]] = [[R * R]] = [[R]]\textasciicircum{}2
+  \item Thus, (h, k) = ([[H]], [[K]]) and r = [[R]].
+\end{itemize}
+\end{document}

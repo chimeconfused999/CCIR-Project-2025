@@ -1,0 +1,43 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Ordering negative numbers}
+\textbf{Question.} Order the following integers from least to greatest:
+                    
+                        
+                            [[NUM]]
+                            [[NUM]]
+                        
+                    
+                    [[SORTER.init("sortable")]]
+
+\textbf{Answer.} SORTER.getContent()
+                    
+                        if (SORTER.hasAttempted) \{
+                            return guess.join(",") === NUMS\_SORT.join(",");
+                        \} else \{
+                            return "";
+                        \}
+                    
+                    
+                        SORTER.setContent(guess);
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Let's use different colors for each number.
+                        [[$.map(NUMS, function(n) {
+                return "\\color{" + NUM_COLORS[n] + "}{" + n + "}";
+            } ).join( "," )]]$
+  \item Plot these numbers on a number line. Then we can see which ones are lower and which ones are higher.
+  \item Now just read the numbers from left to right on the number line.
+                        The leftmost numbers are least, and the rightmost numbers are greatest.
+  \item [[$.map(NUMS_SORT, function(n) {
+                return "\\color{" + NUM_COLORS[n] + "}{" + n + "}";
+            } ).join( "," )]]$
+\end{itemize}
+\end{document}

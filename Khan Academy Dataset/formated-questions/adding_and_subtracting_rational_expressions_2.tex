@@ -1,0 +1,31 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Adding and subtracting rational expressions 2}
+\textbf{Question.} $\frac{[[new Term(NUMERATOR1)]]}{[[new Term(DENOMINATOR1, X)]]}$+
+            $\frac{[[new Term(NUMERATOR2)]]}{[[new Term(DENOMINATOR2, X)]]}$
+
+\textbf{Answer.} ([[NUMERATOR.divide(FACTOR)]])/([[DENOMINATOR.divide(FACTOR)]])
+
+\textbf{Hints.}
+\begin{itemize}
+  \item In order to addsubtract expressions,
+                they must have a common denominator.
+  \item The smallest common denominator is the least common multiple of [[new Term(DENOMINATOR1, X)]] and [[new Term(DENOMINATOR2, X)]].
+  \item \textbackslash\{\}lcm([[new Term(DENOMINATOR1, X)]], [[new Term(DENOMINATOR2, X)]]) = [[new Term(DENOMINATORCOEFF, X)]]
+  \item $\frac{5}{5}$ $\cdot$ $\frac{[[new Term(NUMERATOR1)]]}{[[new Term(DENOMINATOR1, X)]]}$+
+                $\frac{6}{6}$ $\cdot$ $\frac{[[new Term(NUMERATOR2)]]}{[[new Term(DENOMINATOR2, X)]]}$
+  \item $\frac{[[N1.multiply(F1)]]}{[[new Term(DENOMINATORCOEFF, X)]]}$+
+                $\frac{[[N2.multiply(F2)]]}{[[new Term(DENOMINATORCOEFF, X)]]}$
+  \item $\frac{[[N1.multiply(F1)]]+
+                [[N2.multiply(F2)]]}{[[new Term(DENOMINATORCOEFF, X)]]}$
+  \item $\frac{[[new Term(NUMERATORCOEFF)]]}{[[new Term(DENOMINATORCOEFF, X)]]}$
+  \item Simplify the expression by dividing the numerator and denominator by [[getGCD(NUMERATORCOEFF, DENOMINATORCOEFF)]]:
+                $\frac{[[NUMERATOR.divide(FACTOR)]]}{[[DENOMINATOR.divide(FACTOR)]]}$
+\end{itemize}
+\end{document}

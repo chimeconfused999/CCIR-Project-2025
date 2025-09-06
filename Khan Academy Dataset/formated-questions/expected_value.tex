@@ -1,0 +1,148 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Expected value}
+\textbf{Question.} How much money do you expect to make (or lose) per game?
+
+\textbf{Answer.} $
+                12$
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The expected value is a weighted average of the possible values with
+                    the weights determined by the probability of observing that value.
+  \item There are two events that can happen in this game: either
+                    you roll an even number, 5, or you don't. So, the
+                    expected value will look like this:
+                    
+                    E = 
+                    (money gained when you roll an even number, 5)
+                    $\cdot$
+                    (probability of rolling an even number, 5)
+                    +
+                    (money gained when you don't roll an even number, 5)
+                    $\cdot$
+                    (probability of not rolling an even number, 5).
+  \item The money you gain when you win is $10.
+                    The probability of winning is the probability
+                    that you roll an even number, 5.$
+  \item This probability is the number of winning outcomes
+                    divided by the total number of
+                    outcomes, NaN.
+  \item The money you gain when you lose is -$[[MAKE_COUNT * MAKE - LOSE_COUNT * LOSE]]
+                    (since you actually lose money). The probability that
+                    you lose is the probability that you don't roll
+                    an even number, 5.$
+  \item This probability must be
+                    1 - NaN = 8.
+  \item So, if we take the average of the amount of money you make
+                    on each outcome, weighted by how probable each outcome is,
+                    we get the expected amount of money you will make:
+                    (10\textbackslash\{\}cdotNaN) +
+                        (-[[MAKE\_COUNT * MAKE - LOSE\_COUNT * LOSE]]$\cdot$8) =
+                        Yes, the expected value is positive. = 
+                        $12.00.$
+  \item The expected value is a weighted average of the possible values with
+                    the weights determined by the probability of observing that value.
+  \item In this case, there are [[(function()\{
+                        if(SIDES < 7) \{
+                            return \_.map(\_.range(SIDES), function(i)\{
+                                    return "\textbackslash\{\}$\frac{"+(i+1)+"}{"+SIDES+"}$"; \})
+                                    .join("+");
+                        \}
+
+                        first = \_.map(\_.range(3), function(i)\{
+                                return "\textbackslash\{\}$\frac{"+(i+1)+"}{"+SIDES+"}$"; \})
+                                .join("+");
+                        last = \_.map(\_.range(3), function(i)\{
+                                return "\textbackslash\{\}$\frac{"+(SIDES-2+i)+"}{"+SIDES+"}$"; \}).join("+");
+                        return [first,"\textbackslash\{\}\textbackslash\{\}cdots",last].join("+");
+                    \})()]] outcomes:
+                    the first outcome is rolling a 1, the second outcome is
+                    rolling a 2, and so on. The value of each of these outcomes
+                    is just the number you roll.
+  \item So, the value of the first outcome is 1, and its
+                    probability is $\frac{1}{[[(function(){
+                        if(SIDES < 7) {
+                            return _.map(_.range(SIDES), function(i){
+                                    return "\\dfrac{"+(i+1)+"}$\{"+SIDES+"\}"; \})
+                                    .join("+");
+                        \}
+
+                        first = \_.map(\_.range(3), function(i)\{
+                                return "\textbackslash\{\}$\frac{"+(i+1)+"}{"+SIDES+"}$"; \})
+                                .join("+");
+                        last = \_.map(\_.range(3), function(i)\{
+                                return "\textbackslash\{\}$\frac{"+(SIDES-2+i)+"}{"+SIDES+"}$"; \}).join("+");
+                        return [first,"\textbackslash\{\}\textbackslash\{\}cdots",last].join("+");
+                    \})()]]\}.
+  \item The value of the second outcome is 2, the value of
+                    the third outcome is 3, and so on. There are
+                    [[(function()\{
+                        if(SIDES < 7) \{
+                            return \_.map(\_.range(SIDES), function(i)\{
+                                    return "\textbackslash\{\}$\frac{"+(i+1)+"}{"+SIDES+"}$"; \})
+                                    .join("+");
+                        \}
+
+                        first = \_.map(\_.range(3), function(i)\{
+                                return "\textbackslash\{\}$\frac{"+(i+1)+"}{"+SIDES+"}$"; \})
+                                .join("+");
+                        last = \_.map(\_.range(3), function(i)\{
+                                return "\textbackslash\{\}$\frac{"+(SIDES-2+i)+"}{"+SIDES+"}$"; \}).join("+");
+                        return [first,"\textbackslash\{\}\textbackslash\{\}cdots",last].join("+");
+                    \})()]] outcomes altogether, and each of them
+                    occurs with probability
+                    $\frac{1}{[[(function(){
+                        if(SIDES < 7) {
+                            return _.map(_.range(SIDES), function(i){
+                                    return "\\dfrac{"+(i+1)+"}$\{"+SIDES+"\}"; \})
+                                    .join("+");
+                        \}
+
+                        first = \_.map(\_.range(3), function(i)\{
+                                return "\textbackslash\{\}$\frac{"+(i+1)+"}{"+SIDES+"}$"; \})
+                                .join("+");
+                        last = \_.map(\_.range(3), function(i)\{
+                                return "\textbackslash\{\}$\frac{"+(SIDES-2+i)+"}{"+SIDES+"}$"; \}).join("+");
+                        return [first,"\textbackslash\{\}\textbackslash\{\}cdots",last].join("+");
+                    \})()]]\}.
+  \item So, if we average the values of each of these outcomes,
+                    we get the expected value we will roll, which is
+                    0 =
+                        [[mixedFractionFromImproper(ANS\_N,SIDES,true,true)]].
+  \item The expected value is a weighted average of the possible values with
+                    the weights determined by the probability of observing that value.
+  \item This means the expected value, considering both the price
+                    of the ticket and the possible winnings is
+                    E =  (money gained when you win)
+                    $\cdot$ (probability of winning) +
+                    (money gained when you lose)
+                    $\cdot$ (probability of losing).
+  \item Let's figure out each of these terms one at a time. The
+                    money you gain when you win is
+                    $\frac{1}{NaN} and from the question, we
+                    know the probability of winning is
+                    [[ODD_F]].$
+  \item When you lose, you gain no money, or
+                    $0, and the probability of losing is 1
+                    - [[ODD_F]].$
+  \item Putting it all together, the expected value is
+                    E = ($\frac{1}{NaN})
+                    ([[ODD_F]]) + ($0) (1 - [[ODD\_F]]) =
+                    $ $\textbackslash\{\}frac\{\textbackslash\{\}frac\{1\}\{NaN\}$}{[[BUY ?
+                    COST*ODDS + randRange(1,3)*100 :
+                    COST*ODDS - randRange(1,3)*100]]} =
+                    $\textbackslash\{\}frac\{NaN\}\{NaN\}.
+  \item $\frac{NaN}{NaN} -
+                    $300 is negative.
+                    
+                    So, we expect to lose money by buying a lottery ticket, because
+                    the expected value is negative.
+\end{itemize}
+\end{document}

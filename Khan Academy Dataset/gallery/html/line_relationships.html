@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>line_relationships</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<h1 class="unnumbered"
+id="equations-of-parallel-and-perpendicular-lines">Equations of parallel
+and perpendicular lines</h1>
+<p><strong>Question.</strong> Find the slope and y-intercept of the line
+that is \{}green{\{}text{[[LINE_TYPE]]}} to \{}blue{y = [[M_FRAC]]
+[[M_SIGN]]x + [[B]]} and passes through the point \{}red{([[X]],
+[[Y]])}.</p>
+<p><strong>Answer.</strong> m = [[-1 / M]] b = [[Y - ( -1 / M * X
+)]]</p>
+<p><strong>Hints.</strong></p>
+<ul>
+<li><p>Lines are considered perpendicular if their slopes are negative
+reciprocals of each other.</p></li>
+<li><p>The slope of the blue line is \{}blue{[[M_FRAC]]}, and its
+negative reciprocal is \{}green{[[M_PERP_FRAC]]}. Thus, the equation of
+our perpendicular line will be of the form \{}green{y =
+[[M_PERP_FRAC]][[M_PERP_SIGN]]x + b}.</p></li>
+<li><p>We can plug our point, ([[X]], [[Y]]), into this equation to
+solve for \{}green{b}, the y-intercept. [[Y]] =
+\{}green{[[M_PERP_FRAC]][[M_PERP_SIGN]]}([[X]]) + \{}green{b}</p></li>
+<li><p>] = [[decimalFraction( -1 / M * X, "true", "true" )]] +
+\{}green{b} [[Y]] - [[decimalFraction( -1 / M * X, "true", "true" )]] =
+\{}green{b} = [[decimalFraction( Y - ( -1 / M * X ), "true", "true"
+)]]</p></li>
+<li><p>The equation of the perpendicular line is \{}green{y =
+[[M_PERP_FRAC]] [[M_PERP_SIGN]]x + [[decimalFraction( Y - ( -1 / M * X
+), "true", "true" )]]}.</p>
+<p>So \{}green{m = [[decimalFraction( -1 / M, "true", "true" )]]} and
+\{}green{b = [[decimalFraction( Y - ( -1 / M * X ), "true", "true"
+)]]}.</p></li>
+<li><p>Parallel lines have the same slope. The slope of the blue line is
+\{}blue{[[M_FRAC]]}, so the equation of our parallel line will be of the
+form \{}green{y = [[M_FRAC]][[M_SIGN]]x + b}.</p></li>
+<li><p>We can plug our point, ([[X]], [[Y]]), into this equation to
+solve for \{}green{b}, the y-intercept. [[Y]] =
+\{}green{[[M_FRAC]][[M_SIGN]]}([[X]]) + \{}green{b}</p></li>
+<li><p>] = [[decimalFraction( M * X, "true", "true" )]] + \{}green{b}
+[[Y]] - [[decimalFraction( M * X, "true", "true" )]] = \{}green{b} =
+[[decimalFraction( Y - M * X, "true", "true" )]]</p></li>
+<li><p>The equation of the parallel line is \{}green{y = [[M_FRAC]]
+[[M_SIGN]]x + [[decimalFraction( Y - M * X, "true", "true" )]]}.</p>
+<p>So \{}green{m = [[decimalFraction( M, "true", "true" )]]} and
+\{}green{b = [[decimalFraction( Y - M * X, "true", "true" )]]}.</p></li>
+<li><p>Putting the first equation in y = mx + b form gives: [[expr(["+",
+["*", A1, "x"], ["*", B1, "y"]]) + " = " + C1]] [[expr(["*", B1, "y"]) +
+" = " + expr(["+", ["*", (-1 * A1), "x"], C1])]] [["y = " +
+fractionReduce( -A1, B1 ) + "x + " + fractionReduce( C1, B1 )]]</p></li>
+<li><p>Putting the second equation in y = mx + b form gives:
+[[expr(["+", ["*", A2, "x"], ["*", B2, "y"]]) + " = " + C2]]
+[[expr(["*", B2, "y"]) + " = " + expr(["+", ["*", (-1 * A2), "x"],
+C2])]] [["y = " + fractionReduce( -A2, B2 ) + "x + " + fractionReduce(
+C2, B2 )]]</p></li>
+<li><p>The slopes are not the same, so the lines are not equal or
+parallel. The slopes are not negative inverses of each other, so the
+lines are not perpendicular. The correct answer is none of the
+above.</p></li>
+<li><p>So the two equations describe equal lines.</p></li>
+<li><p>The slopes are equal, and the y-intercepts are different, so the
+lines are parallel.</p></li>
+<li><p>The slopes are negative inverses of each other, so the lines are
+perpendicular.</p></li>
+</ul>
+</body>
+</html>

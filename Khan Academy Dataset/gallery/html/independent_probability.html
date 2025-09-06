@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>independent_probability</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+</head>
+<body>
+<h1 class="unnumbered" id="independent-probability">Independent
+probability</h1>
+<p><strong>Question.</strong> If you flip a coin and roll a 6-sided die,
+what is the probability that you will flip a [[HT]] and roll
+[[RESULT_DESC]]?</p>
+<p><strong>Answer.</strong> [[0.5 * RESULT_POSSIBLE.length / 6]]</p>
+<p><strong>Hints.</strong></p>
+<ul>
+<li><p>Flipping a [[HT]] and rolling [[RESULT_DESC]] are independent
+events: they don’t affect each other. So, to get the probability of both
+happening, we just need to multiply the probability of one by the
+probability of the other.</p></li>
+<li><p>The probability of flipping a [[HT]] is <span
+class="math inline">\frac{1}{2}</span>.</p></li>
+<li><p>The probability of rolling [[RESULT_DESC]] is <span
+class="math inline">\frac{[[RESULT_POSSIBLE.length]]}{6}</span>, since
+there is [[RESULT_POSSIBLE.length]] outcome which satisfy our condition
+(namely, [[toSentence(RESULT_POSSIBLE)]]), and 6 total possible
+outcomes.</p>
+<p>The probability of rolling [[RESULT_DESC]] is <span
+class="math inline">\frac{[[RESULT_POSSIBLE.length]]}{6}</span>, since
+there are [[RESULT_POSSIBLE.length]] outcomes which satisfy our
+condition (namely, [[toSentence(RESULT_POSSIBLE)]]), and 6 total
+possible outcomes.</p></li>
+<li><p>The probability of rolling [[RESULT_DESC]] is <span
+class="math inline">\frac{[[RESULT_POSSIBLE.length]]}{6}</span>, since
+there is [[RESULT_POSSIBLE.length]] outcome which satisfies our
+condition (namely, [[toSentence(RESULT_POSSIBLE)]]), and 6 total
+possible outcomes.</p>
+<p>The probability of rolling [[RESULT_DESC]] is <span
+class="math inline">\frac{[[RESULT_POSSIBLE.length]]}{6}</span>, since
+there are [[RESULT_POSSIBLE.length]] outcomes which satisfies our
+condition (namely, [[toSentence(RESULT_POSSIBLE)]]), and 6 total
+possible outcomes.</p></li>
+<li><p>So, the probability of both these events happening is <span
+class="math inline">\frac{1}{2}</span> <span
+class="math inline">\cdot</span> <span
+class="math inline">\frac{[[RESULT_POSSIBLE.length]]}{6}</span> = <span
+class="math inline">\frac{[[PRETTY_N]]}{[[PRETTY_D]]}</span>.</p></li>
+<li><p>We know that \{}blue{[[SINGLE_PCT]] \{}%} of the time, he’ll make
+his first shot.</p>
+<p>Then [[SINGLE_PCT]] \{}% of the time he makes his first shot, he will
+also make his second shot, and [[localeToFixed((1-PROB)*100, 0)]] \{}%
+of the time he makes his first shot, he will miss his second shot.</p>
+<p>Notice how we can completely ignore the rightmost section of the line
+now, because those were the times that he missed the first free throw,
+and we only care about if he makes the first and the second. So the
+chance of making two free throws in a row is [[SINGLE_PCT]]\{}% of the
+times that he made the first shot, which happens [[SINGLE_PCT]]\{}% of
+the time in general.</p>
+<p>This is [[SINGLE_PCT]]\{}% <span class="math inline">\cdot</span>
+[[SINGLE_PCT]]\{}%, or [[localeToFixed(PROB, 2)]] <span
+class="math inline">\cdot</span> [[localeToFixed(PROB, 2)]] \{}approx
+[[localeToFixed(PROB*PROB, 3)]].</p>
+<p>We can repeat this process again to get the probability of making
+three free throws in a row. We simply take [[SINGLE_PCT]]\{}% of
+probability that he makes two in a row, which we know from the previous
+step is [[localeToFixed(PROB*PROB, 3)]] \{}approx
+\{}purple{[[TWO_PCT]]\{}%}.</p>
+<p>[[SINGLE_PCT]]\{}% of \{}purple{[[TWO_PCT]]\{}%} is
+[[localeToFixed(PROB, 2)]] <span class="math inline">\cdot</span>
+[[localeToFixed(PROB * PROB, 3)]] \{}approx [[localeToFixed(PROB_CUBED,
+3)]], or about \{}green{[[THREE_PCT]]\{}%}:</p>
+<p>There is a pattern here: the chance of making two free throws in a
+row was [[localeToFixed(PROB, 2)]] <span
+class="math inline">\cdot</span> [[localeToFixed(PROB, 2)]], and the
+probability of making three in a row was [[localeToFixed(PROB, 2)]]
+<span class="math inline">\cdot</span> [[localeToFixed(PROB * PROB, 3)]]
+= [[localeToFixed(PROB, 2)]] <span class="math inline">\cdot</span>
+([[localeToFixed(PROB, 2)]] <span class="math inline">\cdot</span>
+[[localeToFixed(PROB, 2)]]) = [[localeToFixed(PROB, 2)]]^3.</p>
+<p>In general, you can continue in this way to find the probability of
+making any number of shots.</p>
+<p>The probability of making [[STREAK]] free throws in a row is
+[[localeToFixed(PROB, 2)]] ^ [[STREAK]].</p></li>
+<li><p>We know that \{}blue{[[SINGLE_PCT]] \{}%} of the time, he’ll miss
+his first shot (100 \{}% - [[localeToFixed(PR*100, 0)]] \{}% =
+[[SINGLE_PCT]] \{}%).</p>
+<p>Then [[SINGLE_PCT]] \{}% of the time he misses his first shot, he
+will also miss his second shot, and [[localeToFixed((1-PROB)*100, 0)]]
+\{}% of the time he misses his first shot, he will make his second
+shot.</p>
+<p>Notice how we can completely ignore the rightmost section of the line
+now, because those were the times that he made the first free throw, and
+we only care about if he misses the first and the second. So the chance
+of missing two free throws in a row is [[SINGLE_PCT]]\{}% of the times
+that he missed the first shot, which happens [[SINGLE_PCT]]\{}% of the
+time in general.</p>
+<p>This is [[SINGLE_PCT]]\{}% <span class="math inline">\cdot</span>
+[[SINGLE_PCT]]\{}%, or [[localeToFixed(PROB, 2)]] <span
+class="math inline">\cdot</span> [[localeToFixed(PROB, 2)]] \{}approx
+[[localeToFixed(PROB * PROB, 3)]].</p>
+<p>We can repeat this process again to get the probability of missing
+three free throws in a row. We simply take [[SINGLE_PCT]]\{}% of
+probability that he misses two in a row, which we know from the previous
+step is [[localeToFixed(PROB*PROB, 3)]] \{}approx
+\{}purple{[[TWO_PCT]]\{}%}.</p>
+<p>[[SINGLE_PCT]]\{}% of \{}purple{[[TWO_PCT]]\{}%} is
+[[localeToFixed(PROB, 2)]] <span class="math inline">\cdot</span>
+[[localeToFixed(PROB*PROB, 3)]] \{}approx [[localeToFixed(PROB_CUBED,
+3)]], or about \{}green{[[THREE_PCT]]\{}%}:</p>
+<p>There is a pattern here: the chance of missing two free throws in a
+row was [[localeToFixed(PROB, 2)]] <span
+class="math inline">\cdot</span> [[localeToFixed(PROB, 2)]], and the
+probability of missing three in a row was [[localeToFixed(PROB, 2)]]
+<span class="math inline">\cdot</span> [[localeToFixed(PROB*PROB, 3)]] =
+[[localeToFixed(PROB, 2)]] <span class="math inline">\cdot</span>
+([[localeToFixed(PROB, 2)]] <span class="math inline">\cdot</span>
+[[localeToFixed(PROB, 2)]]) = [[localeToFixed(PROB, 2)]]^3.</p>
+<p>In general, you can continue in this way to find the probability of
+missing any number of shots.</p>
+<p>The probability of missing [[STREAK]] free throws in a row is
+[[localeToFixed(PROB, 2)]] ^ [[STREAK]] = [[ANS]].</p></li>
+<li><p>If the Captain hits the pirate ship, it won’t affect whether he’s
+also hit by the pirate’s cannons (and vice-versa), because they both
+fired at the same time. So, these events are independent.</p></li>
+<li><p>If the Captain hits the pirate ship, it won’t affect whether
+she’s also hit by the pirate’s cannons (and vice-versa), because they
+both fired at the same time. So, these events are independent.</p></li>
+<li><p>Since they are independent, in order to get the probability that
+[[QUESTION]], we just need to multiply together the probability that the
+captain hits and the probability that the pirate hits.</p>
+<p>Since they are independent, in order to get the probability that
+[[QUESTION]], we just need to multiply together the probability that the
+captain hits and the probability that the pirate misses.</p>
+<p>Since they are independent, in order to get the probability that
+[[QUESTION]], we just need to multiply together the probability that the
+captain misses and the probability that the pirate hits.</p>
+<p>Since they are independent, in order to get the probability that
+[[QUESTION]], we just need to multiply together the probability that the
+captain misses and the probability that the pirate misses.</p></li>
+<li><p>The probability that the Captain hits is
+[[C_HIT_PRETTY]].</p></li>
+<li><p>The probability that the Captain misses is 1 - (the probability
+the Captain hits), which is 1 - [[C_HIT_PRETTY]] =
+[[C_MISS_PRETTY]].</p></li>
+<li><p>The probability that the pirate hits is
+[[P_HIT_PRETTY]].</p></li>
+<li><p>The probability that the pirate misses is 1 - (the probability
+the pirate hits), which is 1 - [[P_HIT_PRETTY]] =
+[[P_MISS_PRETTY]].</p></li>
+<li><p>So, the probability that [[QUESTION]] is [[C ? C_HIT_PRETTY :
+C_MISS_PRETTY]] <span class="math inline">\cdot</span> [[P ?
+P_HIT_PRETTY : P_MISS_PRETTY]] = <span
+class="math inline">\frac{[[ANS_N/getGCD(ANS_N,ANS_D)]]}{[[ANS_D/getGCD(ANS_N,ANS_D)]]}</span>.</p></li>
+</ul>
+</body>
+</html>

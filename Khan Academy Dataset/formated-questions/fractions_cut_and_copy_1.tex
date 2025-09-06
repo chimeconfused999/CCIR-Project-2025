@@ -1,0 +1,73 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Fractions cut and copy 1}
+\textbf{Question.} The starting block below is [[CODE\_PARENT]] unit long.
+                    
+                        The starting block below is [[CODE\_PARENT]] units long.
+                    
+                    
+                        Use the tools below to convert the starting block into the goal block that is [[CODE\_OFFSPRING]] unit long.
+                    
+                        Use the tools below to convert the starting block into the goal block that is [[CODE\_OFFSPRING]] units long.
+                    
+                    The current block shows your progress.
+
+\textbf{Answer.} Cut into: 1 piece
+                            
+                                
+                                
+                            
+                        
+                        
+                            Copy: 1 time
+                            
+                                
+                                
+                            
+                        
+                    
+
+                    
+                        [pieces, times['current\_block']]
+                    
+                    
+                        return roundTo(3, guess[1] / guess[0]) === roundTo(3, ANSWER);
+                    
+                    
+                        pieces = guess[0];
+                        times['current\_block'] = guess[1];
+                        updateGraphAndAnswer();
+                    
+                    
+                        $('#pieces').text(plural(guess[0], 'piece'));
+                        $('\#current\_block\_times').text(plural(guess[1], 'time'));
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The starting block has a length of [[CODE\_PARENT]], which can be rewritten as:
+                        \textbackslash\{\}qquad[[PARENT\_EXPANSION]]
+                             + [[fraction(N\_PARENT - D, D\_PARENT)]] = 
+                            [[fraction(N\_PARENT\_EXPANDED, D)]]
+  \item The goal block has a length of [[CODE\_OFFSPRING]], which can be rewritten as:
+                        \textbackslash\{\}qquad
+                            
+                                [[OFFSPRING\_EXPANSION]]
+                                 + [[fraction(N\_OFFSPRING - D, D\_OFFSPRING)]] = 
+                            
+                            [[fraction(N\_OFFSPRING\_EXPANDED, D)]]
+  \item [[fraction(N\_PARENT\_EXPANDED, D)]] is the same thing as
+                        [[N\_PARENT\_EXPANDED]] $\times$ [[fraction(1, D)]].
+  \item Therefore, if we cut the starting block into [[N\_PARENT\_EXPANDED]] equal pieces,
+                        each piece will have a length of [[fraction(1, D)]] units.
+  \item If we copy a piece [[N\_OFFSPRING\_EXPANDED]] times, we will get a length of
+                        [[N\_OFFSPRING\_EXPANDED]] $\times$ [[fraction(1, D)]] = [[fraction(N\_OFFSPRING\_EXPANDED, D)]] units.
+  \item Therefore the solution is to cut the starting block into [[N\_PARENT\_EXPANDED]] pieces
+                        and copy the resulting block [[N\_OFFSPRING\_EXPANDED]] times.
+\end{itemize}
+\end{document}

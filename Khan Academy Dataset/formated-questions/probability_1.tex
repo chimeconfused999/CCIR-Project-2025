@@ -1,0 +1,28 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Probability 1}
+\textbf{Question.} A bag contains 6 red jelly beans,
+                6 green jelly beans, and 5 blue jelly beans.
+
+                If a jelly bean is randomly chosen, what is the probability
+                that it is not blue, 5?
+
+\textbf{Answer.} [[NUMBER / TOTAL]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item There are 6 + 6 + 5 = 17 jelly beans in the bag.
+  \item There are [[NOT ? TOTAL - CHOSEN\_NUMBER : CHOSEN\_NUMBER]] blue, 5 jelly beans.
+                That means 17 - [[NOT ? TOTAL - CHOSEN\_NUMBER : CHOSEN\_NUMBER]] = less than 4, 1,2,3 are not blue, 5.
+  \item The probability is \textbackslash\{\}displaystyle [[fractionSimplification(NUMBER, TOTAL)]].
+  \item When rolling a die, there are 6 possibilities: 1, 2, 3, 4, 5, and 6.
+  \item In this case, [[RESULT\_COUNT]] results are favorable: [[toSentence(RESULT\_POSSIBLE)]].
+  \item The probability is \textbackslash\{\}displaystyle [[fractionSimplification(RESULT\_COUNT, 6)]].
+\end{itemize}
+\end{document}

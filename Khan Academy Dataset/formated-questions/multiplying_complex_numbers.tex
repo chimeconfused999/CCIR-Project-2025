@@ -1,0 +1,39 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Multiplying complex numbers}
+\textbf{Question.} Multiply and simplify the following complex numbers:
+
+\textbf{Answer.} 14 + -8i
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Complex numbers are multiplied like any two binomials.
+  \item First use the distributive property:
+                    
+                        \textbackslash\{\}qquad (\textbackslash\{\}pink\{3-1i\}) $\cdot$ (\textbackslash\{\}blue\{5-1i\}) = 
+                        
+                            \textbackslash\{\}qquad \textbackslash\{\}qquad
+                            (\textbackslash\{\}pink\{3\} $\cdot$ \textbackslash\{\}blue\{5\}) + (\textbackslash\{\}pink\{3\} $\cdot$ [["\textbackslash\{\}\textbackslash\{\}blue\{" + coefficient(B\_IMAG) + "i\}"]]) +
+                            ([["\textbackslash\{\}\textbackslash\{\}pink\{" + coefficient(A\_IMAG) + "i\}"]] $\cdot$ \textbackslash\{\}blue\{5\}) + ([["\textbackslash\{\}\textbackslash\{\}pink\{" + coefficient(A\_IMAG) + "i\}"]] $\cdot$ [["\textbackslash\{\}\textbackslash\{\}blue\{" + coefficient(B\_IMAG) + "i\}"]])
+  \item Then simplify the terms:
+                    
+                        \textbackslash\{\}qquad (15) + ([[coefficient(A\_REAL * B\_IMAG)]]i) +
+                        ([[coefficient(A\_IMAG * B\_REAL)]]i) + ([[coefficient(A\_IMAG * B\_IMAG)]]i\textasciicircum{}2)
+  \item Imaginary unit multiples can be grouped together.
+                    
+                        \textbackslash\{\}qquad
+                        15 + (-3 + -5)i + [[coefficient(A\_IMAG * B\_IMAG)]] i\textasciicircum{}2
+  \item After we plug in i\textasciicircum{}2 = -1, the result becomes
+                    
+                        15 + (-3 + -5)i - [[negParens( A\_IMAG * B\_IMAG )]]
+  \item The result is simplified:
+                    
+                        (15 - 1) + (-8i) = 14-8i
+\end{itemize}
+\end{document}

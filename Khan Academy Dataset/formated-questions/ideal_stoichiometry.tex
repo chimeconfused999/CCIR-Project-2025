@@ -1,0 +1,55 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Ideal stoichiometry}
+\textbf{Question.} How many moles of \textbackslash\{\}text\{KCl\} will be produced from
+        58 \textbackslash\{\}text\{g\} of \textbackslash\{\}text\{KClO\}\_3?
+
+\textbf{Answer.} [[roundTo(3, GIVEN\_MOL * P1\_RATIO / GIVEN\_RATIO)]] moles (you can round to the nearest tenth of a mole)
+
+\textbf{Hints.}
+\begin{itemize}
+  \item \textbackslash\{\}dfrac\{58 \textbackslash\{\}cancel\{\textbackslash\{\}text\{g\}\}\}\{[[roundTo(3, molarMass("K") + molarMass("Cl") + molarMass("O") * 3)]] \textbackslash\{\}cancel\{\textbackslash\{\}text\{g\}\} / \textbackslash\{\}text\{mol\}\} =
+                \textbackslash\{\}text\{ [[plural(GIVEN\_MOL, "mole")]]\} \textbackslash\{\}text\{ of \}\textbackslash\{\}text\{KClO\}\_3
+            
+            [Explain]
+            
+                
+                    First we want to convert the given amount of \textbackslash\{\}text\{KClO\}\_3 from grams to moles. To do this, we divide
+                    the given amount of \textbackslash\{\}text\{KClO\}\_3 by the molar mass of \textbackslash\{\}text\{KClO\}\_3.
+                
+                     \textbackslash\{\}dfrac\{\textbackslash\{\}text\{grams of \}\textbackslash\{\}text\{KClO\}\_3\}\{\textbackslash\{\}text\{molar mass of \}\textbackslash\{\}text\{KClO\}\_3\} = \textbackslash\{\}text\{moles of \}\textbackslash\{\}text\{KClO\}\_3
+                
+                    To find the molar mass of \textbackslash\{\}text\{KClO\}\_3, we look up the atomic weight of each atom in a molecule of
+                    \textbackslash\{\}text\{KClO\}\_3 in the periodic table and add them together.
+                    In this case, it's [[roundTo(3, molarMass("K") + molarMass("Cl") + molarMass("O") * 3)]] \textbackslash\{\}text\{g/mol\}.
+                
+                    Dividing the given 58 \textbackslash\{\}text\{g\} of \textbackslash\{\}text\{KClO\}\_3 by the molar mass of
+                    [[roundTo(3, molarMass("K") + molarMass("Cl") + molarMass("O") * 3)]] \textbackslash\{\}text\{g/mol\} tells us we're starting with
+                    \textbackslash\{\}text\{[[roundTo(3, GIVEN\_MASS / GIVEN\_MOLAR\_MASS)]] [[plural\_form(MOLE, GIVEN\_MOL)]]\} of \textbackslash\{\}text\{KClO\}\_3.
+  \item The mole ratio of \textbackslash\{\}dfrac\{\textbackslash\{\}text\{KClO\}\_3\}\{\textbackslash\{\}text\{KCl\}\} in the reaction is
+                $\frac{2}{2}$.
+                [Explain]
+            
+            
+                
+                    The reaction is \textbackslash\{\}blue\{2\}\textbackslash\{\}text\{KClO\}\_3
+                     \textbackslash\{\}rightarrow
+                    \textbackslash\{\}red\{2\}\textbackslash\{\}text\{KCl\}
+                     + 3\textbackslash\{\}text\{O\}\_2.
+                    The coefficients in front of each molecule tell us in what ratios the molecules react. In this case
+                    [[cardinalThrough20(GIVEN\_RATIO)]] \textbackslash\{\}text\{KClO\}\_3 for every
+                    [[cardinalThrough20(P1\_RATIO)]] \textbackslash\{\}text\{KCl\} molecules.
+                
+            
+            \textbackslash\{\}qquad
+                \textbackslash\{\}dfrac\{\textbackslash\{\}text\{KClO\}\_3\}\{\textbackslash\{\}text\{KCl\}\} = $\frac{2}{2}$ =
+                \textbackslash\{\}dfrac\{\textbackslash\{\}text\{ [[plural(GIVEN\_MOL, "mole")]]\}\}\{x\}
+  \item x = \textbackslash\{\}text\{ [[roundTo(3, GIVEN\_MOL * P1\_RATIO / GIVEN\_RATIO)]] [[plural\_form(MOLE, P1\_MOL)]]\} of \textbackslash\{\}text\{KCl\} produced.
+\end{itemize}
+\end{document}

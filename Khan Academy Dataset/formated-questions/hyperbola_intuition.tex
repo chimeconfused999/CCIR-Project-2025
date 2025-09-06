@@ -1,0 +1,97 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Hyperbola and ellipse intuition}
+\textbf{Question.} The equation of a north-south opening hyperbola is :
+                        \textbackslash\{\}qquad $\frac{(x - x_1)^2}{b^2}$ - $\frac{(y - y_1)^2}{a^2}$ = 1.
+                    
+                    
+                        Find the foci of the hyperbola below by moving the orange points to their correct positions.
+                        Then use that information to find the values of y\_1, x\_1, a and b.
+
+\textbf{Answer.} [graph.focus1.coord, graph.focus2.coord]
+                        
+                            if (\_.isEqual(guess, [[-2, 2], [2, 2]])) \{
+                                return "";
+                            \}
+
+                            return guess[0][0] === H \&\& guess[1][0] === H \&\&
+                                (guess[0][1] === K - C \&\& guess[1][1] === K + C) ||
+                                (guess[0][1] === K + C \&\& guess[1][1] === K - C)
+                        
+                        
+                            graph.focus1.setCoord(guess[0]);
+                            graph.focus2.setCoord(guess[1]);
+                        
+                    
+
+                    
+                        Equation of the hyperbola:
+                        
+                            
+                                y\_1 = 
+                                [[K]]
+                            
+                            
+                                x\_1 = 
+                                [[H]]
+                            
+                            
+                                a = 
+                                [[A]]
+                            
+                            
+                                b = 
+                                [[B]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item For all points on a hyperbola, the absolute value of the distance from one focus minus the distance to the other focus is equal.
+                        There is only one way to arrange the two foci such that this is true.
+                        Show me
+  \item One focus is ([[H]], [[K + C]]) and the other is ([[H]], [[K - C]]).
+  \item x\_1 and y\_1 are the coordinates of the center of the hyperbola.
+  \item The center of a hyperbola is at the midpoint of its two foci.
+                        \textbackslash\{\}left($\frac{[[H]] + [[H]]}{2}$, $\frac{[[K+C]] + [[K-C]]}{2}$\textbackslash\{\}right) = ([[H]], [[K]])
+  \item The absolute value of the distance from one focus minus the distance to the other focus is equal to 2a
+  \item \textbackslash\{\}qquad\textbackslash\{\}begin\{align*\}
+                            2a \&= [[2 * A]] \textbackslash\{\}\textbackslash\{\}
+                            a \&= [[A]]\textbackslash\{\}end\{align*\}
+  \item The focal distance, c is the distance between the center of the hyperbola to either focus.
+                        \textbackslash\{\}qquad\textbackslash\{\}begin\{align*\}
+                            c\textasciicircum{}2 \&= a\textasciicircum{}2 + b\textasciicircum{}2 \textbackslash\{\}\textbackslash\{\}
+                            b\textasciicircum{}2 \&= c\textasciicircum{}2 - a\textasciicircum{}2 \textbackslash\{\}\textbackslash\{\}
+                            b \&= $\sqrt{c^2 - a^2}$ \textbackslash\{\}\textbackslash\{\}
+                            b \&= $\sqrt{[[C]]^2 - [[A]]^2}$ \textbackslash\{\}\textbackslash\{\}
+                            b \&= $\sqrt{[[C * C - A * A]]}$ \textbackslash\{\}\textbackslash\{\}
+                            b \&= [[B]]\textbackslash\{\}end\{align*\}
+  \item So the equation of the hyperbola is
+                        $\frac{(y - [[K]])^2}{[[A]]^2}$ - $\frac{(x - [[H]])^2}{[[B]]^2}$ = 1.
+  \item For all points on a hyperbola, the absolute value of the distance from one focus minus the distance to the other focus is equal.
+                        There is only one way to arrange the two foci such that this is true.
+                        Show me
+  \item One focus is ([[K - C]], [[H]]) and the other is ([[K + C]], [[H]]).
+  \item x\_1 and y\_1 are the coordinates of the center of the hyperbola.
+  \item The center of a hyperbola is at the midpoint of its two foci.
+                        \textbackslash\{\}left($\frac{[[K - C]] + [[K + C]]}{2}$, $\frac{[[H]] + [[H]]}{2}$\textbackslash\{\}right) = ([[K]], [[H]])
+  \item The absolute value of the distance from one focus minus the distance to the other focus is equal to 2a
+  \item \textbackslash\{\}qquad\textbackslash\{\}begin\{align*\}
+                            2a \&= [[2 * A]] \textbackslash\{\}\textbackslash\{\}
+                            a \&= [[A]]\textbackslash\{\}end\{align*\}
+  \item The focal distance, c is the distance between the center of the hyperbola to either focus.
+                        \textbackslash\{\}qquad\textbackslash\{\}begin\{align*\}
+                            c\textasciicircum{}2 \&= a\textasciicircum{}2 + b\textasciicircum{}2 \textbackslash\{\}\textbackslash\{\}
+                            b\textasciicircum{}2 \&= c\textasciicircum{}2 - a\textasciicircum{}2 \textbackslash\{\}\textbackslash\{\}
+                            b \&= $\sqrt{c^2 - a^2}$ \textbackslash\{\}\textbackslash\{\}
+                            b \&= $\sqrt{[[C]]^2 - [[A]]^2}$ \textbackslash\{\}\textbackslash\{\}
+                            b \&= $\sqrt{[[C * C - A * A]]}$ \textbackslash\{\}\textbackslash\{\}
+                            b \&= [[B]]\textbackslash\{\}end\{align*\}
+  \item So the equation of the hyperbola is
+                        $\frac{(x - [[H]])^2}{[[B]]^2}$ + $\frac{(y - [[K]])^2}{[[A]]^2}$ = 1.
+\end{itemize}
+\end{document}

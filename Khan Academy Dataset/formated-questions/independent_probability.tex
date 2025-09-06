@@ -1,0 +1,165 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Independent probability}
+\textbf{Question.} If you flip a coin and roll a 6-sided die, what is the probability that you will flip a [[HT]] and roll [[RESULT\_DESC]]?
+
+\textbf{Answer.} [[0.5 * RESULT\_POSSIBLE.length / 6]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Flipping a [[HT]] and rolling [[RESULT\_DESC]] are independent events: they don't affect each other. So, to get the
+                    probability of both happening, we just need to multiply the probability of one by the probability of the other.
+  \item The probability of flipping a [[HT]] is $\frac{1}{2}$.
+  \item The probability of rolling [[RESULT\_DESC]] is $\frac{[[RESULT_POSSIBLE.length]]}{6}$, since there
+                    is [[RESULT\_POSSIBLE.length]] outcome
+                    which satisfy our condition
+                    (namely, [[toSentence(RESULT\_POSSIBLE)]]), and 6 total possible outcomes.
+                
+                    The probability of rolling [[RESULT\_DESC]] is $\frac{[[RESULT_POSSIBLE.length]]}{6}$, since there
+                    are [[RESULT\_POSSIBLE.length]] outcomes
+                    which satisfy our condition
+                    (namely, [[toSentence(RESULT\_POSSIBLE)]]), and 6 total possible outcomes.
+  \item The probability of rolling [[RESULT\_DESC]] is $\frac{[[RESULT_POSSIBLE.length]]}{6}$, since there
+                    is [[RESULT\_POSSIBLE.length]] outcome
+                    which satisfies our condition
+                    (namely, [[toSentence(RESULT\_POSSIBLE)]]), and 6 total possible outcomes.
+                
+                    The probability of rolling [[RESULT\_DESC]] is $\frac{[[RESULT_POSSIBLE.length]]}{6}$, since there
+                    are [[RESULT\_POSSIBLE.length]] outcomes
+                    which satisfies our condition
+                    (namely, [[toSentence(RESULT\_POSSIBLE)]]), and 6 total possible outcomes.
+  \item So, the probability of both these events happening is $\frac{1}{2}$ $\cdot$ $\frac{[[RESULT_POSSIBLE.length]]}{6}$
+                    = $\frac{[[PRETTY_N]]}{[[PRETTY_D]]}$.
+  \item We know that \textbackslash\{\}blue\{[[SINGLE\_PCT]] \textbackslash\{\}\%\} of the time, he'll make
+                    his first shot.
+                    
+                    Then [[SINGLE\_PCT]] \textbackslash\{\}\% of
+                    the time he makes his first shot, he will also make his second shot, and
+                    [[localeToFixed((1-PROB)*100, 0)]] \textbackslash\{\}\% of the time he makes his
+                    first shot, he will miss his second shot.
+                    
+                
+                
+                    Notice how we can completely ignore the rightmost section of the line now, because those were the times that
+                    he missed the first free throw, and we only care about if he makes the first and the second.
+                    So the chance of making two free throws in a row is [[SINGLE\_PCT]]\textbackslash\{\}\% of the times
+                    that he made the first shot, which happens [[SINGLE\_PCT]]\textbackslash\{\}\% of the time in general.
+                
+                
+                    This is [[SINGLE\_PCT]]\textbackslash\{\}\% $\cdot$ [[SINGLE\_PCT]]\textbackslash\{\}\%, or
+                    [[localeToFixed(PROB, 2)]] $\cdot$ [[localeToFixed(PROB, 2)]] \textbackslash\{\}approx [[localeToFixed(PROB*PROB, 3)]].
+                
+                
+                    
+                        We can repeat this process again to get the probability of making three free throws in a row. We simply take
+                        [[SINGLE\_PCT]]\textbackslash\{\}\% of probability that he makes two in a row, which we know from the previous step is
+                        [[localeToFixed(PROB*PROB, 3)]] \textbackslash\{\}approx \textbackslash\{\}purple\{[[TWO\_PCT]]\textbackslash\{\}\%\}.
+                    
+                    
+                    
+                        [[SINGLE\_PCT]]\textbackslash\{\}\% of \textbackslash\{\}purple\{[[TWO\_PCT]]\textbackslash\{\}\%\} is
+                        [[localeToFixed(PROB, 2)]] $\cdot$ [[localeToFixed(PROB * PROB, 3)]] \textbackslash\{\}approx 
+                        [[localeToFixed(PROB\_CUBED, 3)]], or
+                        about \textbackslash\{\}green\{[[THREE\_PCT]]\textbackslash\{\}\%\}:
+                    
+                    
+                
+                
+                    There is a pattern here: the chance of making two free throws in a row was
+                    [[localeToFixed(PROB, 2)]] $\cdot$ [[localeToFixed(PROB, 2)]], and the probability of making
+                    three in a row was [[localeToFixed(PROB, 2)]] $\cdot$ [[localeToFixed(PROB * PROB, 3)]] =
+                    [[localeToFixed(PROB, 2)]] $\cdot$ ([[localeToFixed(PROB, 2)]] $\cdot$ [[localeToFixed(PROB, 2)]])
+                    = [[localeToFixed(PROB, 2)]]\textasciicircum{}3.
+                
+                
+                    In general, you can continue in this way to find the probability of making any number of shots.
+                
+                
+                    The probability of making [[STREAK]] free throws in a row is [[localeToFixed(PROB, 2)]] \textasciicircum{} [[STREAK]].
+  \item We know that \textbackslash\{\}blue\{[[SINGLE\_PCT]] \textbackslash\{\}\%\} of the time, he'll miss
+                    his first shot
+                    (100 \textbackslash\{\}\% - [[localeToFixed(PR*100, 0)]] \textbackslash\{\}\% = [[SINGLE\_PCT]] \textbackslash\{\}\%).
+                    
+                    
+                        Then [[SINGLE\_PCT]] \textbackslash\{\}\% of
+                        the time he misses his first shot, he will also miss his second shot, and
+                        [[localeToFixed((1-PROB)*100, 0)]] \textbackslash\{\}\% of the time he misses his
+                        first shot, he will make his second shot.
+                    
+                    
+                
+                
+                    Notice how we can completely ignore the rightmost section of the line now, because those were the times that
+                    he made the first free throw, and we only care about if he misses the first and the second.
+                    So the chance of missing two free throws in a row is [[SINGLE\_PCT]]\textbackslash\{\}\% of the times
+                    that he missed the first shot, which happens [[SINGLE\_PCT]]\textbackslash\{\}\% of the time in general.
+                
+                
+                    This is [[SINGLE\_PCT]]\textbackslash\{\}\% $\cdot$ [[SINGLE\_PCT]]\textbackslash\{\}\%, or
+                    [[localeToFixed(PROB, 2)]] $\cdot$ [[localeToFixed(PROB, 2)]] \textbackslash\{\}approx
+                    [[localeToFixed(PROB * PROB, 3)]].
+                
+                
+                    
+                        We can repeat this process again to get the probability of missing three free throws in a row. We simply take
+                        [[SINGLE\_PCT]]\textbackslash\{\}\% of probability that he misses two in a row, which we know from the previous step is
+                        [[localeToFixed(PROB*PROB, 3)]] \textbackslash\{\}approx \textbackslash\{\}purple\{[[TWO\_PCT]]\textbackslash\{\}\%\}.
+                    
+                    
+                    [[SINGLE\_PCT]]\textbackslash\{\}\% of \textbackslash\{\}purple\{[[TWO\_PCT]]\textbackslash\{\}\%\} is
+                    [[localeToFixed(PROB, 2)]] $\cdot$ [[localeToFixed(PROB*PROB, 3)]] \textbackslash\{\}approx [[localeToFixed(PROB\_CUBED, 3)]], or
+                    about \textbackslash\{\}green\{[[THREE\_PCT]]\textbackslash\{\}\%\}:
+                    
+                
+                
+                    There is a pattern here: the chance of missing two free throws in a row was
+                    [[localeToFixed(PROB, 2)]] $\cdot$ [[localeToFixed(PROB, 2)]], and the probability of missing
+                    three in a row was [[localeToFixed(PROB, 2)]] $\cdot$ [[localeToFixed(PROB*PROB, 3)]] =
+                    [[localeToFixed(PROB, 2)]] $\cdot$ ([[localeToFixed(PROB, 2)]] $\cdot$ [[localeToFixed(PROB, 2)]])
+                    = [[localeToFixed(PROB, 2)]]\textasciicircum{}3.
+                
+                
+                    In general, you can continue in this way to find the probability of missing any number of shots.
+                
+                
+                    The probability of missing [[STREAK]] free throws in a row is
+                    [[localeToFixed(PROB, 2)]] \textasciicircum{} [[STREAK]] = [[ANS]].
+  \item If the Captain hits the pirate ship, it won't affect whether he's
+                    also hit by the pirate's cannons (and vice-versa), because they both fired at the same time.
+                    So, these events are independent.
+  \item If the Captain hits the pirate ship, it won't affect whether she's
+                    also hit by the pirate's cannons (and vice-versa), because they both fired at the same time.
+                    So, these events are independent.
+  \item Since they are independent, in order to get the probability that [[QUESTION]], we just need to multiply together
+                    the probability that the captain hits and the probability that
+                    the pirate hits.
+                    
+                        Since they are independent, in order to get the probability that [[QUESTION]], we just need to multiply together
+                    the probability that the captain hits and the probability that
+                    the pirate misses.
+                    
+                    
+                        Since they are independent, in order to get the probability that [[QUESTION]], we just need to multiply together
+                    the probability that the captain misses and the probability that
+                    the pirate hits.
+                    
+                        Since they are independent, in order to get the probability that [[QUESTION]], we just need to multiply together
+                    the probability that the captain misses and the probability that
+                    the pirate misses.
+  \item The probability that the Captain hits is [[C\_HIT\_PRETTY]].
+  \item The probability that the Captain misses is 1 -  (the probability the Captain
+                    hits), which is 1 - [[C\_HIT\_PRETTY]] = [[C\_MISS\_PRETTY]].
+  \item The probability that the pirate hits is [[P\_HIT\_PRETTY]].
+  \item The probability that the pirate misses is 1 -  (the probability the pirate
+                    hits), which is 1 - [[P\_HIT\_PRETTY]] = [[P\_MISS\_PRETTY]].
+  \item So, the probability that [[QUESTION]] is
+                    [[C ? C\_HIT\_PRETTY : C\_MISS\_PRETTY]] $\cdot$ [[P ? P\_HIT\_PRETTY : P\_MISS\_PRETTY]] =
+                    $\frac{[[ANS_N/getGCD(ANS_N,ANS_D)]]}{[[ANS_D/getGCD(ANS_N,ANS_D)]]}$.
+\end{itemize}
+\end{document}

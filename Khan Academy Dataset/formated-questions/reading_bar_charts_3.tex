@@ -1,0 +1,76 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Reading bar charts 3}
+\textbf{Question.} What was the average student score for the midterm?
+
+\textbf{Answer.} [[COLUMN === 0 ? mean( MIDTERM ) : mean( FINAL )]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Use the key to figure out which of the two bars shows the scores for the midterm.
+  \item Find each of the midterm scores represented by the blueorange bars.
+  \item To find the average student score, add up the individual scores and divide by the number of students.
+  \item $\frac{[[plus.apply( null, COLUMN === 0 ? MIDTERM : FINAL )]]}{5}$ =
+                            $\frac{[[sum( COLUMN === 0 ? MIDTERM :  FINAL )]]}{5}$ =
+                            [[COLUMN === 0 ? mean( MIDTERM ) : mean( FINAL )]]
+  \item The average student score on the midterm was [[COLUMN === 0 ? mean( MIDTERM ) : mean( FINAL )]].
+  \item Find each of the midterm scores represented by the blue bars.
+  \item To find the average student score on the midterm, add up the individual scores and divide by the number of students.
+  \item $\frac{[[plus.apply( null, MIDTERM )]]}{5}$ =
+                            $\frac{[[sum( MIDTERM )]]}{5}$ =
+                            [[mean( MIDTERM )]]
+                        
+                        The average student score on the midterm was [[mean( MIDTERM )]].
+  \item Find each of the final exam scores represented by the orange bars.
+  \item To find the average student score on the final exam, add up the individual scores and divide by the number of students.
+  \item $\frac{[[plus.apply( null, FINAL )]]}{5}$ =
+                            $\frac{[[sum( FINAL )]]}{5}$ =
+                            [[mean( FINAL )]]
+                        
+                        The average student score on the final exam was [[mean( FINAL )]].
+  \item The average student score was higher on the midterm
+                        than on the final exam.
+  \item The average student score was higher on the final exam
+                        than the midterm.
+  \item The average student score was the same on both the midterm
+                        and the final exam.
+  \item Use the key to figure out which of the two bars shows the scores for the midterm.
+  \item Find each of the midterm scores represented by the blueorange bars.
+                        \textbackslash\{\}qquad\textbackslash\{\}large\{[[( COLUMN === 0 ? MIDTERM : FINAL ).join(", ")]]\}
+  \item Put the midterm scores in order from least to greatest.
+                        \textbackslash\{\}qquad\textbackslash\{\}large\{[, [, $, ., m, a, p, (,  , n, e, w,  , A, r, r, a, y, (,  , N, U, M, _, S, T, U, D, E, N, T, S,  , ), ,,  , f, u, n, c, t, i, o, n, (, ),  , {,  , r, e, t, u, r, n,  , r, a, n, d, R, a, n, g, e, (,  , 0,  , 1, 2, ,,  , ),  , *,  , 5, ;,  , },  , 2, ), ], ]}$
+  \item Since there are an odd number of scores, the median score is just the middle score.
+  \item Since there are an even number of scores, the median score is the average of the two middle scores.
+                        
+                            
+                                $\frac{
+                                [[COLUMN === 0 ? sortNumbers( MIDTERM )[ NUM_STUDENTS / 2 - 1 ] : sortNumbers( FINAL )[ NUM_STUDENTS / 2 - 1 ]]] +
+                                [[COLUMN === 0 ? sortNumbers( MIDTERM )[ NUM_STUDENTS / 2 ] : sortNumbers( FINAL )[ NUM_STUDENTS / 2 ]]]
+                                }{2}$ = [[COLUMN === 0 ? median( MIDTERM ) : median( FINAL )]]
+  \item The median score on the midterm was [[COLUMN === 0 ? median( MIDTERM ) : median( FINAL )]].
+  \item Use the key to figure out which of the two bars shows the scores for the midterm.
+  \item Find each of the midterm scores represented by the blueorange bars.
+  \item The mode is the most frequently occurring score.
+  \item [[COLUMN === 0 ? mode( MIDTERM ) : mode( FINAL )]] is the most frequently occurring score.
+  \item The range is the difference between the largest value and the smallest value.
+  \item Use the key to figure out which of the two bars shows the scores for the midterm.
+  \item Find the largest and smallest midterm scores represented by the blueorange bars.
+  \item The smallest midterm score is [[COLUMN === 0 ? Math.min.apply( null, MIDTERM ) : Math.min.apply( null, FINAL )]]. The largest midterm score is [[COLUMN === 0 ? Math.max.apply( null, MIDTERM ) : Math.max.apply( null, FINAL )]].
+  \item Find the range by subtracting the smallest score from the largest score.
+                        \textbackslash\{\}qquad [[COLUMN === 0 ? Math.max.apply( null, MIDTERM ) : Math.max.apply( null, FINAL )]] - [[COLUMN === 0 ? Math.min.apply( null, MIDTERM ) : Math.min.apply( null, FINAL )]] = [[MAX - MIN]]
+  \item The range of midterm scores is [[MAX - MIN]].
+  \item The midrange is halfway between the largest value and the smallest value.
+  \item Use the key to figure out which of the two bars shows the scores for the midterm.
+  \item Find the largest and smallest midterm scores represented by the blueorange bars.
+  \item The smallest midterm score is [[COLUMN === 0 ? Math.min.apply( null, MIDTERM ) : Math.min.apply( null, FINAL )]]. The largest midterm score is [[COLUMN === 0 ? Math.max.apply( null, MIDTERM ) : Math.max.apply( null, FINAL )]].
+  \item Find the midrange by averaging the smallest and largest scores.
+                        \textbackslash\{\}qquad $\frac{[[COLUMN === 0 ? Math.min.apply( null, MIDTERM ) : Math.min.apply( null, FINAL )]] + [[COLUMN === 0 ? Math.max.apply( null, MIDTERM ) : Math.max.apply( null, FINAL )]]}{2}$ = [[(MAX + MIN) / 2]]
+  \item The midrange of midterm scores is [[(MAX + MIN) / 2]].
+\end{itemize}
+\end{document}

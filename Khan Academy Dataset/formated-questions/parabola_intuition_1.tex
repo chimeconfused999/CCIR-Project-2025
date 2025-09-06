@@ -1,0 +1,47 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Parabola intuition 1}
+\textbf{Question.} Adjust the leading coefficient and vertex coordinates to make the blue parabola match the orange parabola.
+
+\textbf{Answer.} y - 0 = 1(x - 0)\textasciicircum{}\{2\}
+
+                        
+                            
+                            
+                            
+                        
+                    
+
+                    [A, X1, Y1]
+                    
+                        var parab = graph.currParabola;
+                        return parab.getLeadingCoefficient() === A \&\&
+                               parab.getVertexX() === X1 \&\&
+                               parab.getVertexY() === Y1;
+                    
+                    
+                        guess = guess.length ? guess : [1, 0, 0];
+                        var parab = graph.currParabola;
+                        parab.update.apply(parab, guess);
+                        redrawParabola(false);
+                    
+                    
+                        guess = guess.length ? guess : [1, 0, 0];
+                        var a = guess[0],
+                            x = guess[1],
+                            y = guess[2];
+                        var equation = "y - " + y + "=" + a + "(x - " + x + ")\textasciicircum{}\{2\}";
+                        equation = cleanMath(equation);
+                        $("#equation-label").html("<code>" + equation + "</code>").tex();$
+
+\textbf{Hints.}
+\begin{itemize}
+
+\end{itemize}
+\end{document}

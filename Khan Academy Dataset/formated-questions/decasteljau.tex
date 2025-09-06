@@ -1,0 +1,47 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{De Casteljau algorithm}
+\textbf{Question.} What is the coordinate of a point, P, if it is 3, 8 of the way along the parabola,
+                    from A to C?
+
+\textbf{Answer.} P = (
+                        1.125,
+                        -4.125
+                        )
+
+\textbf{Hints.}
+\begin{itemize}
+  \item First find a point, \textbackslash\{\}pink\{Q\}, 3, 8 of the way along \textbackslash\{\}blue\{\textbackslash\{\}overline\{AB\}\}.
+  \item \textbackslash\{\}pink\{Q\} = \textbackslash\{\}left(1 - 3, 8\textbackslash\{\}right)\textbackslash\{\}blue\{A\} + \textbackslash\{\}left(3, 8\textbackslash\{\}right)\textbackslash\{\}blue\{B\}
+  \item $\begin{aligned} \pink{Q_x}
+                        &=& \left(5, 8\right)\blue{A_x} +
+                        \left(3, 8\right)\blue{B_x} \\
+                        &=& \left(5, 8\right)\blue{[[negParens(AX)]]} + 
+                        \left(3, 8\right)\blue{[[negParens(BX)]]} \\
+                        &=& 15, 4 + -3, 4
+                        = \pink{3}
+                        \end{aligned}$
+  \item $\begin{aligned} \pink{Q_y}
+                        &=& \left(5, 8\right)\blue{A_y} +
+                        \left(3, 8\right)\blue{B_y} \\
+                        &=& \left(5, 8\right)\blue{[[negParens(AY)]]} + 
+                        \left(3, 8\right)\blue{[[negParens(BY)]]} \\
+                        &=& -45, 8 + -3, 8
+                        = \pink{-6}
+                        \end{aligned}$
+  \item So \textbackslash\{\}pink\{Q\} is at (\textbackslash\{\}pink\{3\}, \textbackslash\{\}pink\{-6\}).
+  \item Find a point, \textbackslash\{\}pink\{R\}, 3, 8 of the way along \textbackslash\{\}blue\{\textbackslash\{\}overline\{BC\}\},
+                        using the same method.
+  \item \textbackslash\{\}pink\{R\} = \textbackslash\{\}left(1 - 3, 8\textbackslash\{\}right)\textbackslash\{\}blue\{B\} + \textbackslash\{\}left(3, 8\textbackslash\{\}right)\textbackslash\{\}blue\{C\}
+  \item \textbackslash\{\}pink\{R\} is at (\textbackslash\{\}pink\{-2\}, \textbackslash\{\}pink\{-1\}).
+  \item \textbackslash\{\}green\{P\} is 3, 8 of the way along \textbackslash\{\}pink\{\textbackslash\{\}overline\{QR\}\}.
+  \item \textbackslash\{\}green\{P\} = \textbackslash\{\}left(1 - 3, 8\textbackslash\{\}right)\textbackslash\{\}pink\{Q\} + \textbackslash\{\}left(3, 8\textbackslash\{\}right)\textbackslash\{\}pink\{R\}
+  \item \textbackslash\{\}green\{P\} is at \textbackslash\{\}left(\textbackslash\{\}green\{9, 8\}, \textbackslash\{\}green\{-33, 8\}\textbackslash\{\}right).
+\end{itemize}
+\end{document}

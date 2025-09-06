@@ -1,0 +1,117 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Partial fraction expansion}
+\textbf{Question.} Expand
+                $\frac{[[NUMER]]}{[[DENOM]]}$
+                using partial fractions.
+
+\textbf{Answer.} [[A]]
+                    [[B]]
+                    [[C]]
+                    [[D]]
+                
+                
+                    [[B]]
+                    [[A]]
+                    [[D]]
+                    [[C]]
+                
+                
+                    
+                        
+                            
+                                
+                                    a
+                                
+                                
+                                    +
+                                
+                                
+                                    a
+                                
+                            
+                            
+                                
+                                    x-a
+                                
+                                
+                                    x-a
+
+\textbf{Hints.}
+\begin{itemize}
+  \item First, factor the denominator to find the denominators of
+                    the two fractions we will split our fraction into.
+  \item [[DENOM]] =
+                        ([[ADENOM]])([[BDENOM]])
+  \item Because the original denominator can be factored into these
+                    two parts, we can write out our original fraction as the
+                    sum of two fractions whose denominators are the two factors
+                    we just found.
+  \item $\frac{[[NUMER]]}{
+                            ([[ADENOM]])([[BDENOM]])
+                        }$ =
+                        $\frac{?}{[[ADENOM]]}$ +
+                        $\frac{?}{[[BDENOM]]}$
+  \item Now, we replace the numerators with polynomials of a
+                        degree one less than the degree of the polynomial in
+                        the denominator.
+                    
+                    
+                        In our case, both of the denominators have a degree of
+                        1, so we replace our numerators with
+                        polynomials of degree 0, or constants. We
+                        will use the constants A and
+                        B.
+  \item $\frac{[[NUMER]]}{
+                            ([[ADENOM]])([[BDENOM]])
+                        }$ =
+                        $\frac{A}{[[ADENOM]]}$ +
+                        $\frac{B}{[[BDENOM]]}$
+  \item Now, to get rid of the fractions, we multiply by the common
+                    denominator,
+                    ([[ADENOM]])([[BDENOM]]).
+  \item [[NUMER]] =
+                        A([[BDENOM]]) + B([[ADENOM]])
+  \item Now we can solve for A and B. An
+                    easy way to do this is to try to choose values for
+                    x that will get one of A or
+                    B to cancel out, and then solve for the other
+                    one.
+  \item Let's try to cancel out B. We see that if
+                        we plug in [[C]] for
+                        x, the term with B cancels
+                        out, and we are left with:
+                    
+                    
+                        
+                            [[expr(["+", E * C, F])]] =
+                            A([[expr(["+", C, -D])]])
+  \item [[E * C + F]] =
+                        [[expr(["*", C - D, "A"])]]
+  \item A=[[A]]
+  \item We can do the same thing to solve for B,
+                        but instead plugging in [[D]] for
+                        x:
+                    
+                    
+                        
+                            [[expr(["+", E * D, F])]] =
+                            B([[expr(["+", D, -C])]])
+  \item [[E * D + F]] =
+                        [[expr(["*", D - C, "B"])]]
+  \item B=[[B]]
+  \item Now, we plug back in to our fractions, and get:
+                    
+                    
+                        
+                            $\frac{[[NUMER]]}{[[DENOM]]}$ =
+                            $\frac{[[A]]}{[[ADENOM]]}$ +
+                            $\frac{[[B]]}{[[BDENOM]]}$
+\end{itemize}
+\end{document}

@@ -1,0 +1,134 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Probability with permutations and combinations}
+\textbf{Question.} If the teacher picks a group of 3 at random, what is the probability that 
+                    everyone in the group is a boy?
+                 
+                    If the teacher picks a group of 3 at random, what is the probability that 
+                    everyone in the group is a girl?
+
+\textbf{Answer.} [[(factorial(NUM\_B)*factorial(STUDENTS-GROUP))/(factorial(STUDENTS)*factorial(NUM\_B-GROUP))]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item One way to solve this problem is to figure out how many different groups
+                        there are of only boys, then divide this
+                        by the total number of groups you could choose. Since every group is chosen
+                        with equal probability, this will be the probability that a group of all 
+                        boys is chosen.
+  \item One way to solve this problem is to figure out how many different groups
+                        there are of only girls, then divide this
+                        by the total number of groups you could choose. Since every group is chosen
+                        with equal probability, this will be the probability that a group of all 
+                        girls is chosen.
+  \item We know two ways to count the number of groups we can choose: we use permutations if order matters,
+                        and combinations if it doesn't. Does the order the students are picked matter in this case?
+  \item It doesn't matter if we pick John then 
+                            Ben or Ben then 
+                            John, 
+                            so order must not matter. So, the number of ways
+                            to pick a group of 3 students out of 7 is
+                             $\frac{7!}{(7-3)!3!}$ = 
+                            \textbackslash\{\}binom\{7\}\{3\}.
+                            [Show me why]
+                        
+                            It doesn't matter if we pick Julia then 
+                            Beatrice or Beatrice then 
+                            Julia, 
+                            so order must not matter. So, the number of ways
+                            to pick a group of 3 students out of 7 is
+                             $\frac{7!}{(7-3)!3!}$ = 
+                            \textbackslash\{\}binom\{7\}\{3\}.
+                            [Show me why]
+                        
+                        
+                            
+                                Remember that the
+                                7! \textbackslash\{\}; and (7-3)! \textbackslash\{\}; terms come from when we
+                                fill up the group, making 7
+                                choices for the first slot, then 6 choices for the
+                                second, and so on. In this way, we end up making 
+                                7$\cdot$6$\cdot$5 
+                                = $\frac{7!}{(7-3)!}$ \textbackslash\{\};.
+                                The 3! \textbackslash\{\}; term comes from the number of times we've counted
+                                a group as different because we chose the students in a different order.
+                                There are 3! \textbackslash\{\}; 
+                                ways to order a group of 3, so for every group, we've overcounted exactly
+                                that many times.
+  \item We can use the same logic to count the number of groups that only have boys.
+  \item We can use the same logic to count the number of groups that only have girls.
+  \item Specifically, the number of ways to pick a group of 3 students out of
+                        2 is
+                         $\frac{2!}{(2-3)!3!}$ = 
+                        \textbackslash\{\}binom\{2\}\{3\}.
+  \item So, the probability that the teacher picks a group of all boys is the number of 
+                        groups with only boys divided by the number of total groups the teacher could pick.
+  \item So, the probability that the teacher picks a group of all girls is the number of 
+                        groups with only girls divided by the number of total groups the teacher could pick.
+  \item This is  \textbackslash\{\}displaystyle $\frac{\frac{2!}{(2-3)!\cancel{3!}$\}\}
+                        \{$\frac{7!}{(7-3)!\cancel{3!}$\}\} = 
+                        $\frac{\frac{2!}{-1!}$\}\{$\frac{7!}{4!}$\}
+  \item We can re-arrange the terms to make simplification easier
+                        \textbackslash\{\}left($\frac{2!}{-1!}$\textbackslash\{\}right)
+                        \textbackslash\{\}left($\frac{4!}{7!}$\textbackslash\{\}right) =
+                        \textbackslash\{\}left($\frac{2!}{7!}$\textbackslash\{\}right)
+                        \textbackslash\{\}left($\frac{4!}{-1!}$\textbackslash\{\}right)
+  \item Simplifying, we get  
+                        \textbackslash\{\}left(\textbackslash\{\}dfrac\{\textbackslash\{\}cancel\{2!\}\}\{7$\cdot$6$\cdot$5$\cdot$4$\cdot$3 $\cdot$ \textbackslash\{\}cancel\{2!\}\}\textbackslash\{\}right)
+                        \textbackslash\{\}left(\textbackslash\{\}dfrac\{4$\cdot$3$\cdot$2$\cdot$1$\cdot$0 $\cdot$ \textbackslash\{\}cancel\{-1!\}\}\{\textbackslash\{\}cancel\{-1!\}\}\textbackslash\{\}right) = 
+                        \textbackslash\{\}left($\frac{1}{[[factorial(STUDENTS)/factorial(NUM_B)]]}$\textbackslash\{\}right)
+                        \textbackslash\{\}left([[factorial(STUDENTS-GROUP)/factorial(NUM\_B-GROUP)]]\textbackslash\{\}right) =
+                        $\frac{[[factorial(NUM_B)*factorial(STUDENTS-GROUP)/GCD]]}{[[factorial(STUDENTS)*factorial(NUM_B-GROUP)/GCD]]}$
+  \item One way to solve this problem is to figure out how many ways you can get exactly 5 tails, then
+                        divide this by the total number of outcomes you could have gotten. Since every outcome has equal probability, this will be the 
+                        probability that you will get exactly 
+                        5 tails.
+  \item How many outcomes are there where you get exactly 5 tails? Try thinking of each outcome as 
+                        a 7-letter word, where the first letter is "H" if the first coin toss was heads and "T" 
+                        if it was tails, and so on.
+  \item So, the number of outcomes with exactly 5 tails 
+                        is the same as the number of these words which have
+                        5 T's and 2 H's.
+  \item How many of these are there? If we treat all the letters as unique,
+                            we'll find that there are 7! different arrangements, overcounting 5!
+                            times for every time we only switch the T's around, and 2!
+                            times for every time we only switch the H's around.
+                            [Show me why]
+                        
+                        
+                            Let's say we toss a coin 5 times, and get tails three times. How many different re-arrangements are there of the
+                            letters "HHTTT"? Well, we have five choices for the first slot, four for the second slot, and so on, resulting in
+                            5$\cdot$4$\cdot$3$\cdot$2$\cdot$1 = 5! = 120 \textbackslash\{\}; different re-arrangements. But, this treats all the letters
+                            as unique, when 
+                            HTHTT 
+                            is the same as 
+                            HTHTT,
+                            and 
+                            HTHTT,
+                            
+                            and so on. So really, we need to replace all these different re-arrangements
+                            where we only move the tails around with one re-arrangement, HTHTT. There are 3! of these multi-
+                            colored arrangements for every normal one, so that means dividing
+                            our first guess of 5! by 3!. By the exact same logic, we need to divide by 2! to
+                            avoid overcounting every permutation where we just move the heads around. So, the number of re-arrangements is 
+                            $\frac{5!}{3!2!}$ = \textbackslash\{\}binom\{5\}\{3\}.
+  \item So, there are $\frac{7!}{5!2!}$ = [[factorial(COINS)/(factorial(NUM)*factorial(COINS-NUM))]] different 
+                            outcomes where you get exactly 5 tails.
+                            [How many total outcomes are there?]
+                        
+                        
+                            Well, if you only flip one coin, there are two outcomes, if you flip two there are four outcomes, if you flip three there
+                            are eight. Each time you flip another coin, you double the number of possible outcomes.
+  \item Altogether, there are 2\textasciicircum{}\{7\} = 32 total possible outcomes.
+  \item So, the probability that you will get exactly 5 tails is
+                        $\frac{[[factorial(COINS)/(factorial(NUM)*factorial(COINS-NUM))]]}{32}$ = $\frac{[[NUM_RIGHT/GCD]]}{[[NUM_ALL/GCD]]}$.
+  \item So, the probability that you will get exactly 5 tails is
+                        $\frac{[[factorial(COINS)/(factorial(NUM)*factorial(COINS-NUM))]]}{32}$.
+\end{itemize}
+\end{document}

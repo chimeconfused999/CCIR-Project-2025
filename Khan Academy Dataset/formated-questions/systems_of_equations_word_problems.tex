@@ -1,0 +1,145 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Systems of equations word problems}
+\textbf{Question.} [[PROBLEM\_1]]. Tickets cost $[[localeToFixed(A1, 2)]] each for adults and $[[localeToFixed(B1, 2)]] each for kids, and the group paid $[[localeToFixed(C1, 2)]] in total. There were [[abs(C2)]] fewer adults than kids in the group.
+                        [[PROBLEM_2]].
+                    
+                    
+                        [[C1]] people attended a baseball game. Everyone there was a fan of either the home team or the away team.
+                        The number of home team fans was [[abs(C2)]] less than [[abs(B2)]] times the number of away team fans.
+                        How many home team and away team fans attended the game?$
+
+\textbf{Answer.} \# of [[UNIT\_1]] = [[X]]
+                    \# of [[UNIT\_2]] = [[Y]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Let x equal the number of [[UNIT\_1]] and y equal the number of [[UNIT\_2]].
+  \item The system of equations is then:
+                        \textbackslash\{\}blue\{[[expr(["+", ["*", A1, "x"], ["*", B1, "y"]])]] = [[C1]]\}
+                        \textbackslash\{\}green\{x = [[expr(["+", ["*", -B2, "y"], C2])]]\}
+                        Solve for x and y using substitution.
+  \item Since x has already been solved for, substitute \textbackslash\{\}green\{[[expr(["+", ["*", -B2, "y"], C2])]]\} for x in the first equation.
+                        \textbackslash\{\}blue\{[[A1]]-\}\textbackslash\{\}green\{([[expr(["+", ["*", -B2, "y"], C2])]])\}\textbackslash\{\}blue\{+ [[expr(["*", B1, "y"])]] = [[C1]]\}
+  \item Simplify and solve for y.
+                        
+                            [[expr(["+", ["*", roundTo(8, A1 * -B2), "y"], roundTo(8, A1 * C2)])]] + [[expr(["*", B1, "y"])]] = [[C1]]
+                        
+                        
+                            [[expr(["+", ["*", roundTo(8, A1 * -B2 + B1), "y"], roundTo(8, A1 * C2)])]] = [[C1]]
+                        
+                        
+                            [[expr(["*", roundTo(8, A1 * -B2 + B1), "y"])]] = [[roundTo(8, C1 - A1 * C2)]]
+                        
+                        
+                            y = $\frac{[[roundTo(8, C1 - A1 * C2)]]}{[[roundTo( 8, A1 * -B2 + B1 )]]}$
+                        
+                        \textbackslash\{\}orange\{y = [[Y]]\}
+  \item Now that you know \textbackslash\{\}orange\{y = [[Y]]\}, plug it back into \textbackslash\{\}green\{x = [[expr(["+", ["*", -B2, "y"], C2])]]\} to find x.
+  \item \textbackslash\{\}green\{x = [[-B2]]-\}\textbackslash\{\}orange\{([[Y]])\}\textbackslash\{\}green\{ + [[C2]]\}
+                        x = [[-B2 * Y]] + [[C2]]
+                        \textbackslash\{\}red\{x = [[X]]\}
+  \item You can also plug \textbackslash\{\}orange\{y = [[Y]]\} into \textbackslash\{\}blue\{[[expr(["+", ["*", A1, "x"], ["*", B1, "y"]])]] = [[C1]]\} and get the same answer for x:
+                        \textbackslash\{\}blue\{[[expr(["*", A1, "x"])]] + [[B1]]-\}\textbackslash\{\}orange\{([[Y]])\}\textbackslash\{\}blue\{= [[C1]]\}
+                        \textbackslash\{\}red\{x = [[X]]\}
+  \item There were [[X]] [[UNIT\_1]] and [[Y]] [[UNIT\_2]].
+  \item Let x equal the number of [[UNIT\_1]] and y equal the number of [[UNIT\_2]].
+  \item Let x equal the measure of [[UNIT\_1]] and y equal the measure of [[UNIT\_2]].
+  \item The system of equations is then:
+                        \textbackslash\{\}blue\{[[expr(["+", ["*", A1, "x"], ["*", B1, "y"]])]] = [[C1]]\}
+                        \textbackslash\{\}green\{y = [[expr(["+", ["*", -A2, "x"], C2])]]\}
+  \item Since we already have solved for y in terms of x, we can use substitution to solve for x and y.
+  \item Substitute \textbackslash\{\}green\{[[expr(["+", ["*", -A2, "x"], C2])]]\} for y in the first equation.
+                        \textbackslash\{\}blue\{[[expr(["*", A1, "x"])]] + [[B1]]-\}\textbackslash\{\}green\{([[expr(["+", ["*", -A2, "x"], C2])]])\}\textbackslash\{\}blue\{= [[C1]]\}
+  \item Simplify and solve for x.
+                        
+                            [[expr(["+", ["*", A1, "x"], ["*", roundTo(8, B1 * -A2), "x"]])]] + [[roundTo(8, B1 * C2)]] = [[C1]]
+                        
+                        
+                            [[expr(["+", ["*", roundTo(8, A1 + B1 * -A2), "x"], roundTo(8, B1 * C2)])]] = [[C1]]
+                        
+                        
+                            [[expr(["*", roundTo(8, A1 + B1 * -A2), "x"])]] = [[roundTo(8, C1 - B1 * C2)]]
+                        
+                        
+                            x = $\frac{[[roundTo( 8, C1 - B1 * C2 )]]}{[[roundTo(8, A1 + B1 * -A2)]]}$
+                        
+                        \textbackslash\{\}red\{x = [[X]]\}
+  \item Now that you know \textbackslash\{\}red\{x = [[X]]\}, plug it back into  \textbackslash\{\}green\{y = [[expr(["+", ["*", -A2, "x"], C2])]]\} to find y.
+  \item \textbackslash\{\}green\{y = [[-A2]]-\}\textbackslash\{\}red\{([[X]])\}\textbackslash\{\}green\{ + [[C2]]\}
+                        y = [[roundTo(8, -A2 * X)]] + [[C2]]
+                        \textbackslash\{\}orange\{y = [[Y]]\}
+  \item You can also plug \textbackslash\{\}red\{x = [[X]]\} into  \textbackslash\{\}blue\{[[expr(["+", ["*", A1, "x"], ["*", B1, "y"]])]] = [[C1]]\} and get the same answer for y:
+                        \textbackslash\{\}blue\{[[A1]]-\}\textbackslash\{\}red\{([[X]])\}\textbackslash\{\}blue\{ + [[expr(["*", B1, "y"])]] = [[C1]]\}
+                        \textbackslash\{\}orange\{y = [[Y]]\}
+  \item [[X]] bags of candy and [[Y]] bags of cookies were sold.
+  \item The measure of angle 1 is [[X]]\textasciicircum{}\textbackslash\{\}circ and the measure of angle 2 is [[Y]]\textasciicircum{}\textbackslash\{\}circ.
+  \item Let x equal the number of teachers and y equal the number of students.
+  \item The system of equations is:
+                        \textbackslash\{\}blue\{[[expr(["+", ["*", A1, "x"], ["*", B1, "y"]])]] = [[C1]]\}
+                        \textbackslash\{\}green\{[[expr(["+", ["*", A2, "x"], ["*", B2, "y"]])]] = [[C2]]\}
+                        Solve for x and y using elimination.
+  \item Multiply the bottom equation by [[MULT2]].
+                        
+                            Multiply the top equation by [[MULT1]] and the bottom equation by [[MULT2]].
+                        
+                            Multiply the top equation by [[MULT1]].
+                        
+                        \textbackslash\{\}blue\{[[expr(["+", ["*", A1 * MULT1, "x"], ["*", B1 * MULT1, "y"]])]] = [[C1 * MULT1]]\}
+                        \textbackslash\{\}green\{[[expr(["+", ["*", A2 * MULT2, "x"], ["*", B2 * MULT2, "y"]])]] = [[C2 * MULT2]]\}
+  \item Add the top and bottom equations together.
+                        
+                            [[expr(["*", roundTo(8, B1 * MULT1 + B2 * MULT2), "y"])]] = [[roundTo(8, C1 * MULT1 + C2 * MULT2)]]
+                        
+                        
+                            y = $\frac{[[roundTo(8, C1 * MULT1 + C2 * MULT2)]]}{[[roundTo(8, B1 * MULT1 + B2 * MULT2)]]}$
+                        \textbackslash\{\}orange\{y = [[Y]]\}
+  \item Now that you know \textbackslash\{\}orange\{y = [[Y]]\}, plug it back into  \textbackslash\{\}blue\{[[expr(["+", ["*", A1, "x"], ["*", B1, "y"]])]] = [[C1]]\} to find x.
+  \item \textbackslash\{\}blue\{[[expr(["*", A1, "x"])]] + [[B1]]-\}\textbackslash\{\}orange\{([[Y]])\}\textbackslash\{\}blue\{= [[C1]]\}
+                        [[expr(["+", ["*", A1, "x"], B1 * Y])]] = [[C1]]
+                        [[expr(["*", A1, "x"])]] = [[roundTo(8, C1 - B1 * Y)]]
+                        x = $\frac{[[roundTo( 8, C1 - B1 * Y )]]}{[[A1]]}$
+                        \textbackslash\{\}red\{x = [[X]]\}
+  \item You can also plug \textbackslash\{\}orange\{y = [[Y]]\} into  \textbackslash\{\}green\{[[expr(["+", ["*", A2, "x"], ["*", B2, "y"]])]] = [[C2]]\} and get the same answer for x:
+                        \textbackslash\{\}green\{[[expr(["*", A2, "x"])]] + [[B2]]-\}\textbackslash\{\}orange\{([[Y]])\}\textbackslash\{\}green\{= [[C2]]\}
+                        \textbackslash\{\}red\{x = [[X]]\}
+  \item There were [[X]] teachers and [[Y]] students on the field trips.
+  \item Let x be the first number, and let y be the second number.
+  \item The system of equations is:
+                        \textbackslash\{\}blue\{[[expr(["+", ["*", A1, "x"], ["*", B1, "y"]])]] = [[C1]]\}
+                        \textbackslash\{\}green\{[[expr(["+", ["*", A2, "x"], ["*", B2, "y"]])]] = [[C2]]\}
+                        Solve for x and y using elimination.
+  \item Multiply the bottom equation by [[MULT2]].
+                        
+                            Multiply the top equation by [[MULT1]] and the bottom equation by [[MULT2]].
+                        
+                            Multiply the top equation by [[MULT1]].
+                        
+                        \textbackslash\{\}blue\{[[expr(["+", ["*", A1 * MULT1, "x"], ["*", B1 * MULT1, "y"]])]] = [[C1 * MULT1]]\}
+                        \textbackslash\{\}green\{[[expr(["+", ["*", A2 * MULT2, "x"], ["*", B2 * MULT2, "y"]])]] = [[C2 * MULT2]]\}
+  \item Add the top and bottom equations together.
+                        
+                            [[expr(["*", roundTo(8, A1 * MULT1 + A2 * MULT2), "x"])]] = [[roundTo(8, C1 * MULT1 + C2 * MULT2)]]
+                        
+                        
+                            x = $\frac{[[roundTo(8, C1 * MULT1 + C2 * MULT2)]]}{[[roundTo( 8, A1 * MULT1 + A2 * MULT2 )]]}$
+                        
+                        \textbackslash\{\}red\{x = [[X]]\}
+  \item Now that you know \textbackslash\{\}red\{x = [[X]]\}, plug it back into  \textbackslash\{\}blue\{[[expr(["+", ["*", A1, "x"], ["*", B1, "y"]])]] = [[C1]]\} to find y.
+  \item \textbackslash\{\}blue\{[[A1]]-\}\textbackslash\{\}red\{([[X]])\}\textbackslash\{\}blue\{ + [[expr(["*", B1, "y"])]] = [[C1]]\}
+                        [[expr(["+", A1 * X, ["*", B1, "y"]])]] = [[C1]]
+                        [[expr(["*", B1, "y"])]] = [[roundTo( 8, C1 - A1 * X )]]
+                        $\frac{[[expr(["*", B1, "y"])]]}{\blue{[[B1]]}$\} = $\frac{[[roundTo( 8, C1 - A1 * X )]]}{\blue{[[B1]]}$\}
+                        \textbackslash\{\}orange\{y = [[Y]]\}
+  \item You can also plug \textbackslash\{\}red\{x = [[X]]\} into  \textbackslash\{\}green\{[[expr(["+", ["*", A2, "x"], ["*", B2, "y"]])]] = [[C2]]\} and get the same answer for y:
+                        \textbackslash\{\}green\{[[A2]]-\}\textbackslash\{\}red\{([[X]])\}\textbackslash\{\}green\{ + [[expr(["*", B2, "y"])]] = [[C2]]\}
+                        \textbackslash\{\}orange\{y = [[Y]]\}
+  \item Therefore, the larger number is [[LARGER]], and the smaller number is [[SMALLER]].
+\end{itemize}
+\end{document}

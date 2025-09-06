@@ -1,0 +1,21 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Fractional exponents 2}
+\textbf{Question.} \textbackslash\{\}Large\{[[fracParens( BASE\_N, BASE\_D )]]\textasciicircum{}\{[[fracSmall( ( EXP\_NEG ? -1 : 1 ) * EXP\_N, EXP\_D )]]\} = \{?\}\}
+
+\textbf{Answer.} [[SOL\_N / SOL\_D]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item = [[fracParens( BASEF\_N, BASEF\_D )]]\textasciicircum{}\{[[fracSmall( EXP\_N, EXP\_D )]]\}
+  \item To simplify [[fracParens( BASEF\_N, BASEF\_D )]]\textasciicircum{}\{[[fracSmall( 1, EXP\_D )]]\}, figure out what goes in the blank: \textbackslash\{\}left(? \textbackslash\{\}right)\textasciicircum{}\{[[abs( EXP\_D )]]\}=[[frac( BASEF\_N, BASEF\_D )]]
+  \item To simplify [[fracParens( BASEF\_N, BASEF\_D )]]\textasciicircum{}\{[[fracSmall( 1, EXP\_D )]]\}, figure out what goes in the blank: \textbackslash\{\}left(\textbackslash\{\}color\{blue\}\{[[frac( ROOT\_N, ROOT\_D )]]\}\textbackslash\{\}right)\textasciicircum{}\{[[abs( EXP\_D )]]\}=[[frac( BASEF\_N, BASEF\_D )]]
+  \item so \textbackslash\{\}quad[[fracParens( BASEF\_N, BASEF\_D )]]\textasciicircum{}\{[[fracSmall( 1, EXP\_D )]]\}=[[frac( ROOT\_N, ROOT\_D )]]
+\end{itemize}
+\end{document}

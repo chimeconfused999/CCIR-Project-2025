@@ -1,0 +1,38 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Place value}
+\textbf{Question.} What is the place value of 7 in [[digitsToInteger( DIGITS )]]?
+
+\textbf{Answer.} [[capitalize(SOLUTION)]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item [[digitsToInteger( DIGITS )]] can be represented as follows.
+                        = [[(function() \{
+                            var maxPower = DIGITS.length - 1;
+                            var products = $.map( DIGITS, function( digit, index ){
+                                return "(" + digit + "\$\textbackslash\{\}times$" + pow(10, maxPower - index) + ")";
+                            });
+                            return products.join( "+" );
+                        })()]]$
+  \item =  [[(function() \{
+                            var maxPower = DIGITS.length - 1;
+                            var words = $.map( DIGITS, function( digit, index ) {
+                                var value = powerToPlace( maxPower - index );
+                                return "<code>" + digit + "</code> " + 
+                                       KhanUtil.plural(value, digit);
+                            });
+                            return words.join(" <code>+</code> ");
+                        })()]]$
+  \item Thus, 7 is in the [ place.
+  \item [[hint]]
+  \item Add all these parts up:
+  \item = [[digitsToInteger( DIGITS )]]
+\end{itemize}
+\end{document}

@@ -1,0 +1,29 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Converting decimals to fractions 2}
+\textbf{Question.} Express [[localeToFixed(D, 4)]] as a fraction.
+
+\textbf{Answer.} [[D]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item [[localeToFixed(D, 4)]] can be represented as follows.
+                    
+                        = 0 + 
+                        [[fraction(floor(NUMERATOR / 1000 \% 10), 10)]] + 
+                        [[fraction(floor(NUMERATOR / 100 \% 10), 100)]] + 
+                        [[fraction(floor(NUMERATOR / 10 \% 10), 1000)]] + 
+                        [[fraction(floor(NUMERATOR \% 10), 10000)]]
+                    
+                    = [[fraction(NUMERATOR, 10000)]]
+  \item [[FIXED]] can be represented as follows:
+                    = [[W]] + [[fraction(floor(D / 10), 10)]] + [[fraction(D \% 10, 100)]]
+  \item = [[W  + fraction(D, 100)]]
+\end{itemize}
+\end{document}

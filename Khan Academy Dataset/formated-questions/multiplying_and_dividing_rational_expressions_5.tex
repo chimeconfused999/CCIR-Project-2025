@@ -1,0 +1,73 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Multiplying and dividing rational expressions 5}
+\textbf{Question.} 
+
+\textbf{Answer.} ([[NUMERSOL.toString()]])/([[DENOMSOL.toString()]])
+                ([[NUMERSOL.toStringFactored()]])/([[DENOMSOL.toString()]])
+                ([[NUMERSOL.toString()]])/([[DENOMSOL.toStringFactored()]])
+                ([[NUMERSOL.toStringFactored()]])/([[DENOMSOL.toStringFactored()]])
+            
+            
+                [[-B]]
+                [[-A]]
+                
+                    [[X]] \textbackslash\{\}neq \textbackslash\{\}space
+                    [[X]] \textbackslash\{\}neq \textbackslash\{\}space
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Dividing by an expression is the same as multiplying by its inverse.
+                \textbackslash\{\}qquad
+                    $\frac{[[NUMERATORS[ORDER[0]]]]}{[[DENOMINATORS[ORDER[1]]]]}$ $\times$
+                    $\frac{[[NUMERATORS[1 - ORDER[0]]]]}{[[DENOMINATORS[1 - ORDER[1]]]]}$
+  \item First factor out any common factors.
+                \textbackslash\{\}qquad
+                    $\frac{[[NUMERATORS[ORDER[0]].toStringFactored()]]}{[[DENOMINATORS[ORDER[1]].toStringFactored()]]}$ $\times$
+                    $\frac{[[NUMERATORS[1 - ORDER[0]].toStringFactored()]]}{[[DENOMINATORS[1 - ORDER[1]].toStringFactored()]]}$
+  \item Then factor the quadratic expressions.
+                \textbackslash\{\}qquad \textbackslash\{\}dfrac
+                    \{[[NUMERATORS[1].toStringFactored()]][[NUMER\_QUADRATIC]]\}
+                    \{[[DENOMINATORS[1].toStringFactored()]][[DENOM\_QUADRATIC]]\}
+                    $\times$ \textbackslash\{\}dfrac
+                    \{[[NUMER\_QUADRATIC]][[NUMERATORS[1].toStringFactored()]]\}
+                    \{[[DENOM\_QUADRATIC]][[DENOMINATORS[1].toStringFactored()]]\}
+  \item Then multiply the two numerators and multiply the two denominators.
+                \textbackslash\{\}qquad \textbackslash\{\}dfrac
+                    \{[[NUMERATORS[1].toStringFactored(true)]] $\times$ [[NUMER\_QUADRATIC]]
+                     [[NUMER\_QUADRATIC]] $\times$ [[NUMERATORS[1].toStringFactored(true)]]\}
+                    \{[[DENOMINATORS[1].toStringFactored(true)]] $\times$ [[DENOM\_QUADRATIC]]
+                     [[DENOM\_QUADRATIC]] $\times$ [[DENOMINATORS[1].toStringFactored(true)]]\}
+                
+
+                \textbackslash\{\}qquad = \textbackslash\{\}dfrac
+                    \{[[getProduct(NUMER\_PRODUCT[0], NUMER\_PRODUCT[1])]]\}
+                    \{[[getProduct(DENOM\_PRODUCT[0], DENOM\_PRODUCT[1])]]\}
+  \item Notice that ([[TERM\_A]]) and ([[TERM\_B]]) appear in both the numerator and denominator so we can cancel them.
+  \item \textbackslash\{\}qquad = \textbackslash\{\}dfrac
+                    \{[[getProduct(NUMER\_PRODUCT[0], NUMER\_PRODUCT[1], CANCEL\_ORDER[0].slice(0, 1))]]\}
+                    \{[[getProduct(DENOM\_PRODUCT[0], DENOM\_PRODUCT[1], CANCEL\_ORDER[1].slice(0, 1))]]\}
+                
+
+                We are dividing by [[TERM\_A]], so [[TERM\_A]] \textbackslash\{\}neq 0.
+                Therefore, [[X]] \textbackslash\{\}neq [[-A]].
+  \item \textbackslash\{\}qquad \textbackslash\{\}dfrac
+                    \{[[getProduct(NUMER\_PRODUCT[0], NUMER\_PRODUCT[1], CANCEL\_ORDER[0])]]\}
+                    \{[[getProduct(DENOM\_PRODUCT[0], DENOM\_PRODUCT[1], CANCEL\_ORDER[1])]]\}
+                
+
+                We are dividing by [[TERM\_B]], so [[TERM\_B]] \textbackslash\{\}neq 0.
+                Therefore, [[X]] \textbackslash\{\}neq [[-B]].
+  \item \textbackslash\{\}qquad \textbackslash\{\}dfrac
+                    \{[[NUMERSOL.multiply(COMMON\_FACTOR).toStringFactored()]]\}
+                    \{[[DENOMSOL.multiply(COMMON\_FACTOR).toStringFactored()]]\}
+  \item $\frac{[[NUMERSOL.toStringFactored()]]}{[[DENOMSOL.toStringFactored()]]}$;
+                [[X]] \textbackslash\{\}neq [[-A]]; [[X]] \textbackslash\{\}neq [[-B]]
+\end{itemize}
+\end{document}

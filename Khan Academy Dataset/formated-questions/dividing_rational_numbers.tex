@@ -1,0 +1,127 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Dividing rational numbers}
+\textbf{Question.} [[fraction(N1, D1)]] \textbackslash\{\}div [[fraction(N2, D2)]]
+                    \textbackslash\{\}left([[fraction(N1, D1)]] \textbackslash\{\}div [[fraction(N2, D2)]]\textbackslash\{\}right) \textbackslash\{\}div [[fraction(N3, D3)]]
+                    [[fraction(N1, D1)]] \textbackslash\{\}div \textbackslash\{\}left([[fraction(N2, D2)]] \textbackslash\{\}div [[fraction(N3, D3)]]\textbackslash\{\}right) = \{?\}
+
+\textbf{Answer.} [[NUMERATOR / DENOMINATOR]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item First, we can simplify the problem:
+                        
+                            [[fractionReduce(N1, D1)]] \textbackslash\{\}div [[fractionReduce(N2, D2)]]
+                            
+                                \textbackslash\{\}left([[fractionReduce(N1, D1)]] \textbackslash\{\}div [[fractionReduce(N2, D2)]]\textbackslash\{\}right) \textbackslash\{\}div [[fractionReduce(N3, D3)]]
+                            
+                            
+                                [[fractionReduce(N1, D1)]] \textbackslash\{\}div \textbackslash\{\}left([[fractionReduce(N2, D2)]] \textbackslash\{\}div [[fractionReduce(N3, D3)]]\textbackslash\{\}right)
+                             = \{?\}
+  \item Dividing by a fraction is the same as multiply by the reciprocal of that fraction.
+  \item \textbackslash\{\}qquad =
+                        [[fractionReduce(N1, D1)]] $\times$ [[fractionReduce(D2, N2)]]
+                        
+                            \textbackslash\{\}left([[fractionReduce(N1, D1)]] $\times$ [[fractionReduce(D2, N2)]]\textbackslash\{\}right) \textbackslash\{\}div [[fractionReduce(N3, D3)]]
+                        
+                        
+                            [[fractionReduce(N1, D1)]] \textbackslash\{\}div \textbackslash\{\}left([[fractionReduce(N2, D2)]] $\times$ [[fractionReduce(D3, N3)]]\textbackslash\{\}right)
+  \item \textbackslash\{\}qquad =
+                        
+                            \textbackslash\{\}dfrac\{[[N1 / F1]] $\times$
+                            [[D2 / F2]][[-D2 / F2]]\}
+                            \{[[D1 / F1]] $\times$ [[abs(N2) / F2]]\}
+                        
+                            \textbackslash\{\}left(\textbackslash\{\}dfrac\{[[N1 / F1]] $\times$
+                            [[D2 / F2]][[-D2 / F2]]\}
+                            \{[[D1 / F1]] $\times$ [[abs(N2) / F2]]\}\textbackslash\{\}right) \textbackslash\{\}div [[fractionReduce(N3, D3)]]
+                        
+                        
+                            [[fractionReduce(N1, D1)]] \textbackslash\{\}div
+                            \textbackslash\{\}left(\textbackslash\{\}dfrac\{[[N2 / F2]] $\times$
+                            [[D3 / F3]][[-D3 / F3]]\}
+                            \{[[D2 / F2]] $\times$ [[abs(N3) / F3]]\}\textbackslash\{\}right)
+  \item \textbackslash\{\}qquad =
+                            [[fraction(SUB\_N, SUB\_D)]] \textbackslash\{\}div [[fractionReduce(N3, D3)]]
+                            [[fractionReduce(N1, D1)]] \textbackslash\{\}div [[fraction(SUB\_N, SUB\_D)]]
+                        
+
+                        \textbackslash\{\}qquad =
+                            [[fraction(SUB\_N, SUB\_D)]] $\times$ [[fractionReduce(D3, N3)]]
+                            [[fractionReduce(N1, D1)]] $\times$ [[fraction(SUB\_D, SUB\_N)]]
+                        
+
+                        \textbackslash\{\}qquad =
+                            
+                                $\frac{[[SUB_N]] $\textbackslash\{\}times$ [[D3 / F3]]}{[[SUB_D]] $\textbackslash\{\}times$ [[N3 / F3]]}$
+                            
+                            
+                                $\frac{[[N1 / F1]] $\textbackslash\{\}times$ [[SUB_D]]}{[[D1 / F1]] $\textbackslash\{\}times$ [[SUB_N]]}$
+  \item \textbackslash\{\}qquad = [[fraction(NUMERATOR, DENOMINATOR)]]
+  \item Simplify:
+                        \textbackslash\{\}qquad = [[fractionReduce(NUMERATOR, DENOMINATOR)]]
+  \item \textbackslash\{\}qquad = [[D1]] $\times$ ([[D3]] \textbackslash\{\}div [[D2]])
+                        \textbackslash\{\}qquad = ([[D1]] $\times$ [[D3]]) \textbackslash\{\}div [[D2]]
+                        \textbackslash\{\}qquad = [[roundTo(4, D1 * D3)]] \textbackslash\{\}div [[D2]]
+  \item \textbackslash\{\}qquad = [[D1]] \textbackslash\{\}div ([[D2]] $\times$ [[D3]])
+                        \textbackslash\{\}qquad = [[D1]] \textbackslash\{\}div [[roundTo(4, D2 * D3)]]
+  \item Since both [[DIVIDEND\_D]] and [[DIVISOR\_D]] are negative, the result is positive.
+                        
+                        
+                            A positive number divided by a negative number is a negative number.
+                        
+                        
+                            A negative number divided by a positive number is a negative number.
+                        
+                        [[DIVIDEND\_D]] \textbackslash\{\}div [[DIVISOR\_D]] = [[SOLUTION]]
+  \item Convert each percentage into a decimal dividing by 100.
+                        
+                            [[D1]] \textbackslash\{\}div [[D2]]
+                            ([[D1]] \textbackslash\{\}div [[D2]]) \textbackslash\{\}div [[D3]]
+                            [[D1]] \textbackslash\{\}div ([[D2]] \textbackslash\{\}div [[D3]])
+  \item \textbackslash\{\}qquad = [[D1]] $\times$ ([[D3]] \textbackslash\{\}div [[D2]])
+                        \textbackslash\{\}qquad = ([[D1]] $\times$ [[D3]]) \textbackslash\{\}div [[D2]]
+                        \textbackslash\{\}qquad = [[roundTo(4, D1 * D3)]] \textbackslash\{\}div [[D2]]
+  \item \textbackslash\{\}qquad = [[D1]] \textbackslash\{\}div ([[D2]] $\times$ [[D3]])
+                        \textbackslash\{\}qquad = [[D1]] \textbackslash\{\}div [[roundTo(4, D2 * D3)]]
+  \item Since both [[DIVIDEND\_D]] and [[DIVISOR\_D]] are negative, the result is positive.
+                        
+                        
+                            A positive number divided by a negative number is a negative number.
+                        
+                        
+                            A negative number divided by a positive number is a negative number.
+                        
+                        [[DIVIDEND\_D]] \textbackslash\{\}div [[DIVISOR\_D]] = [[SOLUTION]]
+  \item Convert the decimal into a percentage by multiplying by 100.
+                        [[SOLUTION]] = [[roundTo(10, SOLUTION * 100)]]\textbackslash\{\}\%
+  \item First convert the repeating decimals to fractions.
+  \item \textbackslash\{\}begin\{align*\}
+                            [[pow(10, DIGITS[i])]][[LETTERS[i]]] \&= [[floorTo(4, DECIMALS[i] * pow(10, DIGITS[i]))]]...\textbackslash\{\}\textbackslash\{\}
+                            [[LETTERS[i]]] \&= [[floorTo(4, DECIMALS[i])]]...\textbackslash\{\}end\{align*\}
+                        
+                        \textbackslash\{\}begin\{align*\}
+                            [[DENOMINATORS[i]]][[LETTERS[i]]] \&= [[NUMERATORS[i]]] \textbackslash\{\}\textbackslash\{\}
+                            [[LETTERS[i]]] \&= [[fraction(NUMERATORS[i], DENOMINATORS[i])]]\textbackslash\{\}end\{align*\}
+  \item So, the problem becomes:
+                        
+                            [[fraction(NUMERATORS[0], DENOMINATORS[0])]] \textbackslash\{\}div [[fraction(NUMERATORS[1], DENOMINATORS[1])]] = \{?\}
+  \item Dividing by a fraction is the same as multiply by the reciprocal of that fraction.
+  \item [[fraction(NUMERATORS[0], DENOMINATORS[0])]] $\times$ [[fraction(DENOMINATORS[1], NUMERATORS[1])]] = \{?\}
+  \item \textbackslash\{\}phantom\{[[fraction(NUMERATORS[0], DENOMINATORS[0])]] $\times$ [[fraction(NUMERATORS[1], DENOMINATORS[1])]]\}
+                        = $\frac{[[NUMERATORS[0]]] $\textbackslash\{\}times$ [[DENOMINATORS[1]]]}{[[DENOMINATORS[0]]] $\textbackslash\{\}times$ [[NUMERATORS[1]]]}$
+  \item \textbackslash\{\}phantom\{[[fraction(NUMERATORS[0], DENOMINATORS[0])]] $\times$ [[fraction(NUMERATORS[1], DENOMINATORS[1])]]\}
+                        = \textbackslash\{\}dfrac\{[[NUMERATORS[0]]] $\times$ \textbackslash\{\}cancel\{[[DENOMINATORS[1]]]\}[[F2]]\}
+                        \{\textbackslash\{\}cancel\{[[DENOMINATORS[0]]]\}[[F1]] $\times$ [[NUMERATORS[1]]]\}
+  \item \textbackslash\{\}phantom\{[[fraction(NUMERATORS[0], DENOMINATORS[0])]] $\times$ [[fraction(NUMERATORS[1], DENOMINATORS[1])]]\}
+                        = [[fraction(NUMERATOR, DENOMINATOR)]]
+  \item Simplify:
+                        \textbackslash\{\}large\{= [[fractionReduce(NUMERATOR / GCD, DENOMINATOR / GCD)]]\}
+\end{itemize}
+\end{document}

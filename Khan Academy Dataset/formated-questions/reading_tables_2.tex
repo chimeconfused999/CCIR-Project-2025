@@ -1,0 +1,34 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Reading tables 2}
+\textbf{Question.} What number should go in the empty cell?
+
+\textbf{Answer.} [[ANSWER]] [[UNIT]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The table is missing [[HINT1]].
+  \item The table accounts for [[ENROLLMENTS[ ROW\_INDEX ].slice( 0, COL\_INDEX ).join( "+" )]] [[UNIT]].
+                        
+                    
+                    
+                        [[HINT2]] is simply the sum, or [[ANSWER]].
+  \item [[HINT2]] is [[ENROLLMENTS[ ROW\_INDEX ][ COLUMNS.length - 1 ]]].
+                    
+                
+                
+                    The table already accounts for [[ENROLLMENTS[ ROW\_INDEX ].slice( 0, COL\_INDEX ).concat( ENROLLMENTS[ ROW\_INDEX ].slice( COL\_INDEX + 1, COLUMNS.length - 1 ) ).join( "+" )]] =
+                    [[ENROLLMENTS[ ROW\_INDEX ][ COLUMNS.length - 1 ] - ANSWER]] [[UNIT]].
+                    
+                
+                The missing number must be the difference between [[HINT2.slice( 0, 1 ).toLowerCase() + HINT2.slice( 1 )]], [[ENROLLMENTS[ ROW\_INDEX ][ COLUMNS.length - 1 ]]], and the values already accounted for, [[ENROLLMENTS[ ROW\_INDEX ][ COLUMNS.length - 1 ] - ANSWER]].
+                
+                    [[ENROLLMENTS[ ROW\_INDEX ][ COLUMNS.length - 1 ]]] - [[ENROLLMENTS[ ROW\_INDEX ][ COLUMNS.length - 1 ] - ANSWER]] = [[ANSWER]]
+\end{itemize}
+\end{document}

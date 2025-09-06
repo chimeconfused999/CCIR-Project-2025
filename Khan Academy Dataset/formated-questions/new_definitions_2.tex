@@ -1,0 +1,31 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{New operator definitions 2}
+\textbf{Question.} If [[TEXTS]], find [[X]] [[binop(1)]] ([[Y]] [[binop(2)]] [[Z]]).
+
+\textbf{Answer.} [[VALU1]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Now, find [[X]] [[binop(1)]] [[VALU2]]:
+  \item Find [[X]] [[binop(1)]] y:
+  \item \textbackslash\{\}qquad [[X]] [[binop(1)]] [[NEED\_VALU1 ? VALU2 : "y"]] = [[SUBS1]]
+  \item \textbackslash\{\}qquad \textbackslash\{\}hphantom\{[[X]] [[binop(1)]] [[VALU2]]\} = [[VALU1]].
+  \item \textbackslash\{\}qquad \textbackslash\{\}hphantom\{[[X]] [[binop(1)]] y\} = [[VALU1]].
+  \item Now, find [[VALU2]] [[binop(1)]] [[X]]:
+  \item Find x [[binop(1)]] [[X]]:
+  \item \textbackslash\{\}qquad [[NEED\_VALU1 ? VALU2 : "x"]] [[binop(1)]] [[X]] = [[SUBS1]]
+  \item \textbackslash\{\}qquad \textbackslash\{\}hphantom\{[[VALU2]] [[binop(1)]] [[X]]\} = [[VALU1]].
+  \item \textbackslash\{\}qquad \textbackslash\{\}hphantom\{x [[binop(1)]] [[X]]\} = [[VALU1]].
+  \item First, find [[Y]] [[binop(2)]] [[Z]]:
+            \textbackslash\{\}qquad [[Y]] [[binop(2)]] [[Z]] = [[SUBS2]]
+            \textbackslash\{\}qquad \textbackslash\{\}hphantom\{[[Y]] [[binop(2)]] [[Z]]\} = [[VALU2]].
+  \item We don't need to find [[Y]] [[binop(2)]] [[Z]] because x [[binop(1)]] y depends only on the [[NEED\_VALU1\_ONLY]] operand.
+\end{itemize}
+\end{document}

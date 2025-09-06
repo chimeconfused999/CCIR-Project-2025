@@ -1,0 +1,38 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Caesar cipher frequency analysis}
+\textbf{Question.} You intercept the following message, which you know to be encrypted with a Caesar cipher:
+                    [[applyCaesar(M,SHIFT)]]
+                    What shift was applied to the original message?
+
+                    
+
+                    You can use the graph and slider below to help solve this problem.
+                    Slide the orange dot to adjust the left shift of this message.
+
+\textbf{Answer.} 5
+
+\textbf{Hints.}
+\begin{itemize}
+  \item The letter frequency of the shifted cipher message should
+            be similar to the letter frequency of English in the graph.
+  \item Since the original message was shifted right by some value, we want to shift the
+                cipher message frequency
+                to the left, until the frequencies are similarly matched.
+  \item Try to find patterns of frequencies. For instance the letters a, e, and
+                h show up frequently in English, and appear close together in the alphabet.
+                The letters j, q, and z hardly show up at all.
+  \item You can use the left shift slider to see what the original message would look like when decrypting it with a specific shift. Drag the
+                orange dot to where you think the encrypted letter 'a' would be
+                in the letter frequency graph.
+  \item Adjust the shift to the letter f to see the message
+  \item f is 5 letters to the
+                right of a. So the original message was shifted by 5
+\end{itemize}
+\end{document}

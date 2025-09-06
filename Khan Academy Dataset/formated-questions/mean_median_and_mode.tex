@@ -1,0 +1,33 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Mean, median, and mode}
+\textbf{Question.} What is the arithmetic mean of the following numbers?
+                    [[INTEGERS.join( ", " )]]
+
+\textbf{Answer.} [[mean( INTEGERS )]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item To find the mean, add all the numbers and then divide by the number of numbers.
+  \item [[INTEGERS.join( ", " )]]
+                        There are 22 numbers.
+  \item The mean is \textbackslash\{\}displaystyle [[fractionSimplification( sum(INTEGERS), INTEGERS\_COUNT )]].
+  \item First, order the numbers, giving:
+                        [, [, G, e, n, e, r, a, t, e, I, n, t, e, g, e, r, s, (, ), ], ]
+  \item Since we have 2 middle numbers, the median is the mean of those two numbers!
+                        The median is the 'middle' number:
+                        [[DisplayMedian( SORTED\_INTS )]]
+                        The median is $\frac{I + n}{2}$.
+  \item So the median is NaN, 1.
+                        Another way to find the middle number is to draw the numbers on a number line. If a number appears multiple times, count its corresponding dot multiple times.
+  \item The mode is the most frequent number.
+  \item We can draw a histogram to see how many times each number appears.
+  \item There are more [[mode( INTEGERS )]]s than any other number, so [[mode( INTEGERS )]] is the mode.
+\end{itemize}
+\end{document}

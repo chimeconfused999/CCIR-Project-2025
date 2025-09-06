@@ -1,0 +1,33 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Caesar cipher encryption}
+\textbf{Question.} Alex decides he wants to encrypt his name with a Caesar Cipher,
+                            using a shift of 25.
+                        
+                            What will his name look like after he encrypts it?
+                        
+                    
+                        
+                            Alex decides she wants to encrypt her name with a Caesar Cipher,
+                            using a shift of 25.
+                        
+                            What will her name look like after she encrypts it?
+
+\textbf{Answer.} [[applyCaesar(M\_LOWER, SHIFT)]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item We want to take each letter of the name and shift it right by 25.
+  \item If we take the first letter A and shift it right by 25, we get the letter
+                z.
+  \item If we take the second letter l and shift it right by 25, we get the letter
+                k.
+  \item Continuing this for each letter, the final cipher output is “[[applyCaesar(M\_LOWER, SHIFT)]]”
+\end{itemize}
+\end{document}

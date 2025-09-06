@@ -1,0 +1,69 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Converting mixed numbers and improper fractions}
+\textbf{Question.} Rewrite $\frac{NaN}{NaN}$ as a mixed number.
+
+\textbf{Answer.} [[I\_NUM / I\_DENOM]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item \textbackslash\{\}blue\{$\frac{NaN}{NaN}$\}
+                                is the same as the fraction $\frac{1}{[[M_DENOM / GCD]]}$
+                                added NaN[[M\_NUM / GCD]] times.
+                            
+                            
+                                We can add [[M\_DENOM / GCD]] of the $\frac{1}{[[M_DENOM / GCD]]}$
+                                fractions together to get 1 whole.
+                            
+                            
+                                \textbackslash\{\}qquad[[\_(I\_DENOM).times(function() \{ return FRACTION; \}).join("+")]]
+                                = \textbackslash\{\}green\{$\frac{[[M_DENOM / GCD]]}{[[M_DENOM / GCD]]}$\}
+  \item So we can write \textbackslash\{\}blue\{$\frac{NaN}{NaN}$\} like this:
+                            
+                                \textbackslash\{\}blue\{$\frac{NaN}{NaN}$\} = 
+                                [[\_(WHOLE).times(function() \{ return "\textbackslash\{\}\textbackslash\{\}green\{" + WHOLE\_FRAC + "\}"; \}).join("+")]]
+                                + \textbackslash\{\}pink\{$\frac{[[M_NUM / GCD]]}{[[M_DENOM / GCD]]}$\}
+  \item \textbackslash\{\}green\{$\frac{[[M_DENOM / GCD]]}{[[M_DENOM / GCD]]}$\} = \textbackslash\{\}green\{1\textbackslash\{\}text\{ whole\}\},
+                                so we can rewrite our equation like this:
+                            
+                            
+                                \textbackslash\{\}blue\{$\frac{NaN}{NaN}$\} = 
+                                [[\_(WHOLE).times(function() \{ return "\textbackslash\{\}\textbackslash\{\}green\{1\}"; \}).join("+")]]
+                                + \textbackslash\{\}pink\{$\frac{[[M_NUM / GCD]]}{[[M_DENOM / GCD]]}$\}
+                            
+                            
+                                \textbackslash\{\}blue\{$\frac{NaN}{NaN}$\} =
+                                \textbackslash\{\}green\{3\} + \textbackslash\{\}pink\{$\frac{[[M_NUM / GCD]]}{[[M_DENOM / GCD]]}$\}
+  \item The mixed number is 3$\frac{[[M_NUM / GCD]]}{[[M_DENOM / GCD]]}$
+  \item \textbackslash\{\}blue\{3$\frac{2}{5}$\} = 
+                                \textbackslash\{\}green\{3\} + \textbackslash\{\}pink\{$\frac{2}{5}$\}
+                            
+                            
+                                \textbackslash\{\}blue\{3$\frac{2}{5}$\} = 
+                                [[\_(WHOLE).times(function() \{ return "\textbackslash\{\}\textbackslash\{\}green\{1\}"; \}).join("+")]]
+                                + \textbackslash\{\}pink\{$\frac{2}{5}$\}
+  \item \textbackslash\{\}green\{1\textbackslash\{\}text\{ whole\}\} = \textbackslash\{\}green\{$\frac{[[M_DENOM / GCD]]}{[[M_DENOM / GCD]]}$\},
+                                so we can rewrite our equation like this:
+                            
+                            
+                                \textbackslash\{\}blue\{3$\frac{2}{5}$\} = 
+                                [[\_(WHOLE).times(function() \{ return "\textbackslash\{\}\textbackslash\{\}green\{" + WHOLE\_FRAC + "\}"; \}).join("+")]]
+                                + \textbackslash\{\}pink\{$\frac{2}{5}$\}
+  \item Now we can add the fractions:
+                            
+                                \textbackslash\{\}blue\{3$\frac{2}{5}$\} = 
+                                \textbackslash\{\}green\{$\frac{[[I_DENOM * WHOLE]]}{[[M_DENOM / GCD]]}$\} +
+                                \textbackslash\{\}pink\{$\frac{[[M_NUM / GCD]]}{[[M_DENOM / GCD]]}$\}
+                            
+                            
+                                \textbackslash\{\}blue\{3$\frac{2}{5}$\} = 
+                                $\frac{NaN}{NaN}$
+  \item The fraction is $\frac{NaN}{NaN}$.
+\end{itemize}
+\end{document}

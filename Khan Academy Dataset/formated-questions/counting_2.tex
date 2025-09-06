@@ -1,0 +1,44 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Counting 2}
+\textbf{Question.} If 45 is the 1st number that Alex counts. what is the 15th number that he counts?
+
+\textbf{Answer.} [[NUM\_COLORS * NUM\_POTS]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item What is the first number that he counts?
+  \item What is the first number that she counts?
+  \item 45
+  \item What is the second number that he counts?
+  \item What is the second number that she counts?
+  \item \textbackslash\{\}begin\{align*\}\&45 + 4 \textbackslash\{\}\textbackslash\{\}
+                        \&= 49\textbackslash\{\}end\{align*\}
+  \item What is the third number that he counts?
+  \item What is the third number that she counts?
+  \item \textbackslash\{\}begin\{align*\}\&45 + 4 + 4 \textbackslash\{\}\textbackslash\{\}
+                        \&= 45 + (2 $\times$ 4) \textbackslash\{\}\textbackslash\{\}
+                        \&= 53\textbackslash\{\}end\{align*\}
+  \item What is the 15th number that he counts?
+  \item What is the 15th number that she counts?
+  \item \textbackslash\{\}begin\{align*\}\&45 + (14$\times$4) \textbackslash\{\}\textbackslash\{\}
+                        \&= 45 + 56 \textbackslash\{\}\textbackslash\{\}
+                        \&= [[NUM\_COLORS * NUM\_POTS]]\textbackslash\{\}end\{align*\}
+  \item Given 5 people, each person shakes the hands of 4 other people.
+  \item The following is almost the answer.
+                        5 $\times$ 4 = 20
+  \item We have double counted the handshakes though, since Alex shaking Alex's hand is the same handshake as Alex shaking Alex's hand.
+  \item Therefore, the following is the correct answer.
+                        $\frac{5 $\textbackslash\{\}times$ 4}{2}$ = [[NUM\_COLORS * NUM\_POTS]]
+  \item If Alex decided on a flower color, how many different potted plant combinations are there?
+  \item He can choose one of [[NUM\_POTS]] flower pots, and so there are [[NUM\_POTS]] different potted plants possible (given that he already chose a flower color).
+  \item She can choose one of [[NUM\_POTS]] flower pots, and so there are [[NUM\_POTS]] different potted plants possible (given that she already chose a flower color).
+  \item Since there are 2, 5 flower colors, there are 2, 5 $\times$ [[NUM\_POTS]] = [[NUM\_COLORS * NUM\_POTS]] possible potted plants.
+\end{itemize}
+\end{document}

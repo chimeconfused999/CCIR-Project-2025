@@ -1,0 +1,29 @@
+% Auto-converted from khan-exercises
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\begin{document}
+\section*{Rounding numbers}
+\textbf{Question.} Round 85192.6743 to the nearest [[decimalPlaceNames[PLACE]]].
+
+\textbf{Answer.} [[roundTo( PLACE, NUM )]]
+
+\textbf{Hints.}
+\begin{itemize}
+  \item Because we want to round to the [[plural\_form(TPLACE, 2)]] place, we need to look at the digit in the [[plural\_form(decimalPlaceNames[PLACE + 1], 2)]] place.
+  \item The digit in the [[plural\_form(decimalPlaceNames[PLACE + 1], 2)]] place is 9.
+  \item Because 9 is more than 5, we round up to [[roundTo( PLACE, NUM )]].
+  \item Because the [[plural\_form(decimalPlaceNames[PLACE + 1], 2)]] place digit is 9,
+                    we round up to [[roundTo( PLACE, NUM )]].
+  \item Because 9 is less than 5, we round down to [[roundTo( PLACE, NUM )]].
+  \item Because we want to round to the [[plural\_form(TPLACE, 2)]] place, we need to look at the digit in the [[plural\_form(decimalPlaceNames[PLACE + 1], 2)]] place.
+  \item The digit in the [[plural\_form(decimalPlaceNames[PLACE + 1], 2)]] place is 9.
+  \item Because 9 is more than 5, we round up to [[roundTo( PLACE, NUM )]].
+  \item Because the [[plural\_form(decimalPlaceNames[PLACE + 1], 2)]] place digit is 9,
+                    we round up to [[roundTo( PLACE, NUM )]].
+  \item Because 9 is less than 5, we round down to [[roundTo( PLACE, NUM )]].
+\end{itemize}
+\end{document}
